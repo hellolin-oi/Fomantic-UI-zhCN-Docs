@@ -4,24 +4,24 @@ css         : 'layouts'
 standalone  : true
 order       : 3
 
-title       : 'Layouts'
-description : 'Examples of using Fomantic UI'
+title       : '布局'
+description : 'Fomantic UI 示例'
 type        : 'Usage'
 ---
 
 <%- @partial('header') %>
 <div class="ui main intro container">
-  <h2 class="ui dividing header">Starter</h2>
-  <p>Examples to introduce components and their function</p>
+  <h2 class="ui dividing header">初学示例</h2>
+  <p>介绍组件和它们的功能。</p>
   <div class="ui three stackable doubling cards">
     <a class="ui card" href="/examples/theming.html">
       <div class="image">
         <img src="/images/examples/theming.png">
       </div>
       <div class="content">
-        <div class="header">Theming</div>
+        <div class="header">主题化</div>
         <div class="description">
-          Examples of many common UI components, useful for testing custom themes.
+          常见 UI 组件的示例，可用于测试自定义主题。
         </div>
       </div>
     </a>
@@ -30,9 +30,9 @@ type        : 'Usage'
         <img src="/images/examples/responsive.png">
       </div>
       <div class="content">
-        <div class="header">Responsive</div>
+        <div class="header">响应式</div>
         <div class="description">
-          Patterns for adjusting display for different devices.
+          调整不同设备下的显示样式。
         </div>
       </div>
     </a>
@@ -41,9 +41,9 @@ type        : 'Usage'
         <img src="/images/examples/grid.png">
       </div>
       <div class="content">
-        <div class="header">Grid</div>
+        <div class="header">网格</div>
         <div class="description">
-          An introduction to using Fomantic UI grids.
+          网格使用的示例。
         </div>
       </div>
     </a>
@@ -52,9 +52,9 @@ type        : 'Usage'
         <img src="/images/examples/attached.png">
       </div>
       <div class="content">
-        <div class="header">Attached Content</div>
+        <div class="header">附加的内容</div>
         <div class="description">
-          Examples of content that can attach to other content.
+          对某个内容附加的内容的示例。
         </div>
       </div>
     </a>
@@ -63,25 +63,25 @@ type        : 'Usage'
         <img src="/images/examples/bootstrap.png">
       </div>
       <div class="content">
-        <div class="header">Bootstrap Migration</div>
+        <div class="header">从 Bootstrap 迁移</div>
         <div class="description">
-          Examples of replacements for components found in Bootstrap.
+          Bootstrap 中组件的替代示例。
         </div>
       </div>
     </a>
   </div>
 
-  <h2 class="ui dividing header">Pages</h2>
-  <p>Starter page templates</p>
+  <h2 class="ui dividing header">页面示例</h2>
+  <p>一些简易的页面示例。</p>
   <div class="ui three doubling stackable cards">
     <a class="ui card" href="/examples/homepage.html">
       <div class="image">
         <img src="/images/examples/homepage.png">
       </div>
       <div class="content">
-        <div class="header">Homepage</div>
+        <div class="header">主页</div>
         <div class="description">
-          A simple, responsive homepage design with sidebar.
+          一个简洁的、响应式的、带菜单的网站设计。
         </div>
       </div>
     </a>
@@ -90,9 +90,9 @@ type        : 'Usage'
         <img src="/images/examples/sticky.png">
       </div>
       <div class="content">
-        <div class="header">Sticky Menus</div>
+        <div class="header">粘性菜单</div>
         <div class="description">
-         Using visibility APIs to fix content after passing position in page.
+         在页面中使用可见性 API 变更内容。
         </div>
       </div>
     </a>
@@ -101,9 +101,9 @@ type        : 'Usage'
         <img src="/images/examples/fixed.png">
       </div>
       <div class="content">
-        <div class="header">Fixed Menu</div>
+        <div class="header">固定菜单</div>
         <div class="description">
-          Using a fixed menu with page content.
+          在页面中使用固定的菜单。
         </div>
       </div>
     </a>
@@ -112,9 +112,9 @@ type        : 'Usage'
         <img src="/images/examples/login.png">
       </div>
       <div class="content">
-        <div class="header">Login Form</div>
+        <div class="header">登录表单</div>
         <div class="description">
-          A full-screen login form.
+          全屏登录表单。
         </div>
       </div>
     </a>
