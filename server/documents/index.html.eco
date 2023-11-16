@@ -16,10 +16,10 @@ standalone : false
         </div>
       </div>
       <a class="view-ui item">
-        <i class="sidebar icon"></i> Menu
+        <i class="sidebar icon"></i> 菜单
       </a>
       <div id="docs-searchbox" class="item">
-        <input type="search" placeholder="Search...">
+        <input type="search" placeholder="搜索...">
       </div>
       <script type="application/javascript">
         docsearch({
@@ -32,11 +32,11 @@ standalone : false
       <div class="right menu">
         <div class="item">
           <a class="twitter-follow-button twitter" href="https://twitter.com/fomanticui" data-show-count="false">
-            Follow
+            关注 Twitter
           </a>
           <a class="twitter-share-button twitter"
             href="https://twitter.com/share"
-            data-text="Fomantic-UI <%= @getVersion() %> is out!"
+            data-text="Fomantic-UI <%= @getVersion() %> 已经发布！"
             data-url="https://fomantic-ui.com"
             data-via="fomanticui">
           </a>
@@ -60,15 +60,15 @@ standalone : false
           Fomantic-UI
         </span>
         <span class="tagline">
-          The official community fork of Semantic-UI
+          Semantic-UI 的官方社区分支
         </span>
       </h1>
       <div class="ui hidden divider"></div>
 
       <a href="/introduction/getting-started.html" class="ui huge inverted download button">
-        Get Started
+        立即上手
       </a>
-      <a href="/introduction/new.html" class="ui huge inverted basic button">New in 2.9</a>
+      <a href="/introduction/new.html" class="ui huge inverted basic button">2.9 中的新增功能</a>
     </div>
   </div>
 </div>
@@ -77,18 +77,18 @@ standalone : false
     <div class="row">
       <div class="twelve wide column">
         <img class="ui fluid image" src="/images/devices.png">
-        <h1 class="ui header">Design Beautiful Websites Quickly</h1>
-        <p>Fomantic is a development framework that helps create beautiful, responsive layouts using human-friendly HTML.</p>
+        <h1 class="ui header">快速设计漂亮的网站</h1>
+        <p>Fomantic 是一个开发框架，借助它，你可以使用人性化的 HTML 创建漂亮的、响应式布局网页。</p>
       </div>
     </div>
   </div>
   <div class="stackable very relaxed ui grid container">
     <div class="row">
       <div class="seven wide column">
-        <h2 class="ui header">Concise HTML</h2>
-        <p>Fomantic UI treats words and classes as exchangeable concepts.</p>
-        <p>Classes use syntax from natural languages like noun/modifier relationships, word order, and plurality to link concepts intuitively.</p>
-        <p>Get the same benefits as <a href="https://en.bem.info" target="_blank">BEM</a> or <a href="http://smacss.com" target="_blank">SMACSS</a>, but without the tedium.</p>
+        <h2 class="ui header">简洁易懂的 HTML</h2>
+        <p>Fomantic UI 将单词和类视为可交换的。</p>
+        <p>这些类使用自然语言的语法，如名词 / 定语关系、词序和复数等，概念之间的连接清晰且直观。</p>
+        <p>与 <a href="https://en.bem.info" target="_blank">BEM</a> 和 <a href="http://smacss.com" target="_blank">SMACSS</a> 拥有相同的优点，并且不再单调乏味。</p>
         </p>
       </div>
       <div class="nine wide column">
@@ -109,9 +109,9 @@ standalone : false
     <div class="ui divider"></div>
     <div class="row">
       <div class="seven wide column">
-        <h2 class="ui header">Intuitive Javascript</h2>
-        <p>Fomantic uses simple phrases called behaviors that trigger functionality.</p>
-        <p>Any arbitrary decision in a component is included as a setting that developers can modify.</p>
+        <h2 class="ui header">简洁明了的 Javascript</h2>
+        <p>Fomantic 使用称作 “行为” 的一些简单短语来触发各种功能。</p>
+        <p>开发人员可以对组件中任意的内容作修改。</p>
       </div>
       <div class="nine wide column">
         <div class="hidden code" data-demo="true" data-type="javascript">
@@ -146,9 +146,9 @@ standalone : false
     <div class="ui divider"></div>
     <div class="row">
       <div class="seven wide column">
-        <h2 class="ui header">Simplified Debugging</h2>
-        <p>Performance logging lets you track down bottlenecks without digging through stack traces.</p>
-        <div class="ui info message">Don't have access to development tools right now? Check out <a href="https://t.co/GOUQx8iCyG">this short clip</a>.</a>
+        <h2 class="ui header">易如反掌的调试</h2>
+        <p>你可以利用性能日志记录跟踪问题，无需挖掘堆栈跟踪。</p>
+        <div class="ui info message">还没有开发工具吗？看看 <a href="https://t.co/GOUQx8iCyG">这个短片</a>。</a>
         </div>
       </div>
       <div class="nine wide column">
@@ -176,14 +176,14 @@ standalone : false
     <div class="center aligned column">
       <h1 class="ui icon header">
         <img src="/images/icons/theming.png" class="ui icon image">
-        Unbelievable Theming
+        难以置信的主题
       </h1>
-      <p>Fomantic comes equipped with an intuitive inheritance system and high level theming variables that let you have complete design freedom.</p>
-      <p>Develop your UI once, then deploy with the same code everywhere.</p>
+      <p>Fomantic 配备了一个直观的继承系统和高层次的主题变量，让你拥有完全的设计自由。</p>
+      <p>只需开发 UI 一次，就可随时随地部署相同的代码。</p>
     </div>
     <div class="left aligned column">
       <div data-type="element" data-element="button" class="ui large floating dropdown theme button">
-        <span class="text">Select Theme</span>
+        <span class="text">选择主题</span>
         <i class="dropdown icon"></i>
         <div class="menu ui transition hidden" tabindex="-1">
           <div data-value="Default" class="item">Fomantic UI</div>
@@ -193,24 +193,24 @@ standalone : false
           <div data-value="Bootstrap3" class="item">Bootstrap</div>
           <div data-value="Twitter" class="item">Twitter</div>
           <div class="divider"></div>
-          <div data-value="Raised" class="item">Raised</div>
-          <div data-value="Chubby" class="item">Chubby</div>
-          <div data-value="Classic" class="item">Classic</div>
+          <div data-value="Raised" class="item">飘浮</div>
+          <div data-value="Chubby" class="item">圆润</div>
+          <div data-value="Classic" class="item">经典</div>
         </div>
       </div>
       <div class="ui divider"></div>
       <div class="ui button">
-        View
+        查看
       </div>
       <div class="ui primary button">
-        <i class="shop icon"></i> Add to Cart
+        <i class="shop icon"></i> 添加到购物车
       </div>
       <div class="ui secondary button">
-        <i class="save icon"></i> Save for Later
+        <i class="save icon"></i> 保存
       </div>
       <div class="ui labeled icon button">
         <i class="star icon"></i>
-        Rate
+        评分
       </div>
       <div class="ui demo buttons">
         <div class="ui active button">1</div>
@@ -221,12 +221,12 @@ standalone : false
   </div>
   <div class="ui two column center aligned relaxed stackable source grid">
     <div class="column">
-      <h3 class="ui header">Variable File</h3>
+      <h3 class="ui header">变量文件</h3>
       <div class="variable code" data-type="less" data-preserve="true">
       </div>
     </div>
     <div class="column">
-      <h3 class="ui header">Override File</h3>
+      <h3 class="ui header">覆盖文件</h3>
       <div class="override code" data-type="less" data-preserve="true">
       </div>
     </div>
@@ -238,31 +238,31 @@ standalone : false
       <div class="column">
         <h2 class="ui icon header">
           <img class="ui icon image" src="/images/icons/paint.png">
-          5000+ Theming Variables
-          <div class="sub header">600+ Switches to reduce CSS size</div>
+          5000+ 主题变量
+          <div class="sub header">600+ 开关，可减小 CSS 大小</div>
         </h2>
-        <p>The only dogma from this framework: <em>everything arbitrary is mutable</em>.</p>
-        <a class="ui large button" href="/usage/theming.html">Theming Guide</a>
+        <p>Fomantic 的唯一信仰是：<em>万物都是可变的</em>。</p>
+        <a class="ui large button" href="/usage/theming.html">主题指南</a>
       </div>
       <div class="column">
         <h2 class="ui icon header">
           <img class="ui icon image" src="/images/icons/book.png">
-          60+ UI Components
-          <div class="sub header">250+ Variations</div>
+          60+ UI 组件
+          <div class="sub header">250+ 变体</div>
         </h2>
-        <p>Build your entire site with one UI stack. Share your UI between multiple projects.</p>
-        <div class="ui primary view-ui large button">Browse UI</div>
+        <p>用一个 UI 堆栈构建整个网站，在多个项目之间共享 UI。</p>
+        <div class="ui primary view-ui large button">浏览 UI</div>
       </div>
       <div class="column">
         <h2 class="ui icon header">
           <img class="ui icon image" src="/images/icons/lab.png">
-          8000+ Commits
-          <div class="sub header"><a target="_blank" href="https://github.com/fomantic/Fomantic-UI/blob/master/CONTRIBUTORS.md">60+ Contributors</a></div>
+          8000+ 次提交
+          <div class="sub header"><a target="_blank" href="https://github.com/fomantic/Fomantic-UI/blob/master/CONTRIBUTORS.md">60+ 贡献者</a></div>
         </h2>
         <p>
-          Fomantic UI and Semantic UI are <b>free open source</b> projects already used in multiple <a href="https://www.quirky.com" target="_blank">large</a> scale <a href="https://www.newrepublic.com" target="_blank">production</a> environments.
+          Fomantic UI 和 Semantic UI 都是 <b>自由开源</b> 项目，已经在多个 <a href="https://www.quirky.com" target="_blank">大规模</a> <a href="https://www.newrepublic.com" target="_blank">生产/a> 环境中使用。
         </p>
-        <a href="https://github.com/fomantic/Fomantic-UI/issues" class="ui large button">Visit GitHub</a>
+        <a href="https://github.com/fomantic/Fomantic-UI/issues" class="ui large button">访问 GitHub</a>
       </div>
     </div>
   </div>
@@ -272,11 +272,11 @@ standalone : false
     <div class="fourteen wide center aligned centered column">
       <h1 class="ui icon header">
         <img src="/images/icons/toolbox.png" class="ui icon image">
-        Unbelievable Breadth
+        不可思议的宽度
       </h1>
-      <p>Definitions aren't limited to just buttons on a page. Fomantic's components allow several distinct types of definitions: elements, collections, views, modules and behaviors which cover the gamut of interface design.</p>
+      <p>不仅仅局限于页面上的按钮。Fomantic的组件允许几种不同类型的定义：元素，集合，视图，模块和行为，几乎涵盖了界面设计的所有领域。</p>
       <a class="ui large primary button" href="/usage/layout.html">
-        See Layout Examples
+        查看布局示例
         <i class="right chevron icon"></i>
       </a>
     </div>
@@ -284,64 +284,64 @@ standalone : false
       <div class="column">
         <div class="no example">
           <h4 class="ui header">
-            <a href="/collections/menu.html">Menu</a>
+            <a href="/collections/menu.html">菜单</a>
           </h4>
           <div class="ui vertical demo menu">
             <a class="active teal item">
-              Inbox
+              收件箱
               <div class="ui green label">1</div>
             </a>
             <a class="item">
-              Trash
+              垃圾箱
               <div class="ui label">1</div>
             </a>
             <div class="item">
               <div class="ui transparent icon input">
-                <input type="text" placeholder="Search mail...">
+                <input type="text" placeholder="搜索邮件...">
                 <i class="search icon"></i>
               </div>
             </div>
           </div>
           <div class="ui fluid demo tabular menu">
             <a class="active item">
-              Tab
+              选项卡
             </a>
             <a class="item">
-              Tab
+              选项卡
             </a>
           </div>
           <div class="ui secondary vertical demo menu">
             <a class="active item">
-              Inbox
+              收件箱
             </a>
             <a class="item">
-              Starred
+              星标
             </a>
             <a class="item">
-              Trash
+              垃圾箱
             </a>
           </div>
           <div class="ui secondary pointing vertical demo menu">
             <a class="active item">
-              Inbox
+              收件箱
             </a>
             <a class="item">
-              Starred
+              星标
             </a>
             <a class="item">
-              Trash
+              垃圾箱
             </a>
           </div>
         </div>
         <div class="no example">
           <h4 class="ui header">
-            <a href="/elements/divider.html">Divider</a>
+            <a href="/elements/divider.html">分割线</a>
           </h4>
           <div class="ui two column stackable center aligned grid segment">
             <div class="column">
               <div class="ui button">A</div>
             </div>
-            <div class="ui vertical divider">or</div>
+            <div class="ui vertical divider">或者</div>
             <div class="column">
               <div class="teal ui button">B</div>
             </div>
@@ -349,13 +349,13 @@ standalone : false
         </div>
         <div class="no example">
           <h4 class="ui header">
-            <a href="/modules/accordion.html">Accordion</a>
+            <a href="/modules/accordion.html">折叠框</a>
           </h4>
           <div class="ui vertical fluid accordion menu">
             <div class="item">
               <a class="active title">
                 <i class="dropdown icon"></i>
-                Size
+                大小
               </a>
               <div class="active content">
                 <div class="ui form">
@@ -363,25 +363,25 @@ standalone : false
                     <div class="field">
                       <div class="ui radio checkbox">
                         <input type="radio" name="size" value="small">
-                        <label>Small</label>
+                        <label>小</label>
                       </div>
                     </div>
                     <div class="field">
                       <div class="ui radio checkbox">
                         <input type="radio" name="size" value="medium">
-                        <label>Medium</label>
+                        <label>中</label>
                       </div>
                     </div>
                     <div class="field">
                       <div class="ui radio checkbox">
                         <input type="radio" name="size" value="large">
-                        <label>Large</label>
+                        <label>大</label>
                       </div>
                     </div>
                     <div class="field">
                       <div class="ui radio checkbox">
                         <input type="radio" name="size" value="x-large">
-                        <label>X-Large</label>
+                        <label>特大</label>
                       </div>
                     </div>
                   </div>
@@ -391,7 +391,7 @@ standalone : false
             <div class="item">
               <a class="title">
                 <i class="dropdown icon"></i>
-                Colors
+                颜色
               </a>
               <div class="content">
                 <div class="ui form">
@@ -399,25 +399,25 @@ standalone : false
                     <div class="field">
                       <div class="ui radio checkbox">
                         <input type="radio" name="color">
-                        <label>Red</label>
+                        <label>红色</label>
                       </div>
                     </div>
                     <div class="field">
                       <div class="ui radio checkbox">
                         <input type="radio" name="color">
-                        <label>Orange</label>
+                        <label>橙色</label>
                       </div>
                     </div>
                     <div class="field">
                       <div class="ui radio checkbox">
                         <input type="radio" name="color">
-                        <label>Green</label>
+                        <label>绿色</label>
                       </div>
                     </div>
                     <div class="field">
                       <div class="ui radio checkbox">
                         <input type="radio" name="color">
-                        <label>Blue</label>
+                        <label>蓝色</label>
                       </div>
                     </div>
                   </div>
@@ -428,38 +428,38 @@ standalone : false
         </div>
         <div class="no example">
           <h4 class="ui header">
-            <a href="/collections/message.html">Message</a>
+            <a href="/collections/message.html">信息</a>
           </h4>
           <div class="ui message">
             <i class="close icon"></i>
-            This site uses cookies
+            本网站使用 Cookies。
           </div>
           <div class="ui warning icon message">
             <div class="content">
-              <div class="header">Looking for help? </div>
+              <div class="header">需要帮助吗？</div>
               <ul class="list">
-                <li>Use our <a href="#">help center</a></li>
-                <li>Check our <a href"#"="">FAQ</a></li>
+                <li>前往 <a href="#">帮助中心</a></li>
+                <li>查看 <a href"#"="">常见问题</a></li>
               </ul>
             </div>
           </div>
           <div class="ui info message">
-            <div class="header">We're creating your profile page</div>
-            <p>It will be ready in just a second.</p>
+            <div class="header">我们正在创建你的个人资料页面</div>
+            <p>马上就好。</p>
           </div>
         </div>
       </div>
       <div class="tablet only computer only column">
         <div class="no example">
           <h4 class="ui header">
-            <a href="/views/card.html">Card</a>
+            <a href="/views/card.html">卡片</a>
           </h4>
           <div class="ui card">
             <div class="blurring dimmable image">
               <div class="ui dimmer">
                 <div class="content">
                   <div class="center">
-                    <div class="ui inverted button">Add Friend</div>
+                    <div class="ui inverted button">添加好友</div>
                   </div>
                 </div>
               </div>
@@ -468,23 +468,23 @@ standalone : false
             <div class="content">
               <div class="header">Rachel Maddaw</div>
               <div class="meta">
-                <a class="group">Pundit</a>
+                <a class="group">专家</a>
               </div>
             </div>
             <div class="extra content">
               <a class="right floated created">
-                Joined in 1998
+                于 1998 年加入
               </a>
               <a class="friends">
                 <i class="user icon"></i>
-                22 Friends
+                22 位好友
               </a>
             </div>
           </div>
         </div>
         <div class="no example">
           <h4 class="ui header">
-            <a href="/views/feed.html">Feed</a>
+            <a href="/views/feed.html">信息流</a>
           </h4>
           <div class="ui feed">
             <div class="event">
@@ -495,7 +495,7 @@ standalone : false
                 <div class="summary">
                   <a class="user">
                     Mark
-                  </a> added you as a friend
+                  </a> 加你为好友
                 </div>
               </div>
             </div>
@@ -504,7 +504,7 @@ standalone : false
                 <img src="/images/avatar2/small/lena.png">
               </div>
               <div class="content">
-                You added Lena to the group <a>Close Friends</a>
+                你已将 Lena 加入 <a>密友</a> 分组
               </div>
             </div>
             <div class="event">
@@ -512,14 +512,14 @@ standalone : false
                 <img src="/images/avatar2/small/eve.png">
               </div>
               <div class="content">
-                Eve just <a>posted on your page</a>
+                Eve 刚刚 <a>在你的页面上发布了内容</a>
               </div>
             </div>
           </div>
         </div>
         <div class="no example">
           <h4 class="ui header">
-            <a href="/elements/label.html">Label</a>
+            <a href="/elements/label.html">标签</a>
           </h4>
           <div class="ui image label">
             <img src="/images/avatar2/small/molly.png">
@@ -527,34 +527,34 @@ standalone : false
             <i class="delete icon"></i>
           </div>
           <a class="ui green label">
-            <i class="mail icon"></i> 23 New
+            <i class="mail icon"></i> 新增 23 个
           </a>
-          <a class="ui tag label">Dresses</a>
+          <a class="ui tag label">衣装</a>
         </div>
         <div class="no example">
           <h4 class="ui header">
-            <a href="/elements/step.html">Step</a>
+            <a href="/elements/step.html">步骤</a>
           </h4>
           <div class="ui fluid vertical steps">
             <a class="step">
               <i class="truck icon"></i>
               <div class="content">
-                <div class="title">Shipping</div>
-                <div class="description">Choose your shipping options</div>
+                <div class="title">运输</div>
+                <div class="description">选择运输选项</div>
               </div>
             </a>
             <a class="active step">
               <i class="payment icon"></i>
               <div class="content">
-                <div class="title">Billing</div>
-                <div class="description">Enter billing information</div>
+                <div class="title">支付</div>
+                <div class="description">输入支付信息</div>
               </div>
             </a>
             <a class="disabled step">
               <i class="info icon"></i>
               <div class="content">
-                <div class="title">Confirm Order</div>
-                <div class="description">Verify order details</div>
+                <div class="title">确认</div>
+                <div class="description">验证详细信息</div>
               </div>
             </a>
           </div>
@@ -563,12 +563,12 @@ standalone : false
       <div class="tablet only computer only column">
         <div class="no example">
           <h4 class="ui header">
-            <a href="/modules/dropdown.html">Dropdown</a>
+            <a href="/modules/dropdown.html">下拉框</a>
           </h4>
           <div class="ui fluid search selection dropdown">
             <input type="hidden" name="country">
             <i class="dropdown icon"></i>
-            <input class="search" tabindex="0"><div class="default text">Select Country</div>
+            <input class="search" tabindex="0"><div class="default text">选择国家</div>
             <div class="menu" tabindex="-1">
               <div class="item" data-value="ad"><i class="ad flag"></i>Andorra</div>
               <div class="item" data-value="ae"><i class="ae flag"></i>United Arab Emirates</div>
@@ -818,52 +818,52 @@ standalone : false
           <div class="ui divider"></div>
           <div class="ui floating dropdown labeled icon button">
             <i class="filter icon"></i>
-            <span class="text">Filter Posts</span>
+            <span class="text">过滤文章</span>
             <div class="menu">
               <div class="ui icon search input">
                 <i class="search icon"></i>
-                <input type="text" placeholder="Search tags...">
+                <input type="text" placeholder="搜索标签...">
               </div>
               <div class="header">
                 <i class="tags icon"></i>
-                Tag Label
+                标签
               </div>
               <div class="scrolling menu">
                 <div class="item">
                   <div class="ui red empty circular label"></div>
-                  Important
+                  重要
                 </div>
                 <div class="item">
                   <div class="ui blue empty circular label"></div>
-                  Announcement
+                  公告
                 </div>
                 <div class="item">
                   <div class="ui black empty circular label"></div>
-                  Cannot Fix
+                  无法修复
                 </div>
                 <div class="item">
                   <div class="ui purple empty circular label"></div>
-                  News
+                  新闻
                 </div>
                 <div class="item">
                   <div class="ui orange empty circular label"></div>
-                  Enhancement
+                  增强
                 </div>
                 <div class="item">
                   <div class="ui empty circular label"></div>
-                  Change Declined
+                  更改被拒绝
                 </div>
                 <div class="item">
                   <div class="ui yellow empty circular label"></div>
-                  Off Topic
+                  跑题
                 </div>
                 <div class="item">
                   <div class="ui pink empty circular label"></div>
-                  Interesting
+                  有趣
                 </div>
                 <div class="item">
                   <div class="ui green empty circular label"></div>
-                  Discussion
+                  讨论
                 </div>
               </div>
             </div>
@@ -871,7 +871,7 @@ standalone : false
       </div>
         <div class="no segment example">
           <h4 class="ui header">
-            <a href="/elements/segment.html">Segment</a>
+            <a href="/elements/segment.html">段</a>
           </h4>
           <div class="ui stacked segment"></div>
           <div class="ui raised segment"></div>
@@ -884,12 +884,12 @@ standalone : false
         </div>
         <div class="no example">
           <h4 class="ui header">
-            <a href="/elements/input.html">Input</a>
+            <a href="/elements/input.html">输入</a>
           </h4>
           <div class="ui action left icon input">
             <i class="search icon"></i>
-            <input type="text" placeholder="Search...">
-            <div class="ui teal button">Search</div>
+            <input type="text" placeholder="搜索...">
+            <div class="ui teal button">搜索</div>
           </div>
           <div class="ui hidden divider"></div>
           <div class="ui labeled right icon input">
@@ -904,29 +904,29 @@ standalone : false
           <div class="ui right labeled input">
             <input type="text" placeholder="Enter categories">
             <a class="ui tag label">
-              Add Tags
+              添加标签
             </a>
           </div>
         </div>
         <div class="no example">
           <h4 class="ui header">
-            <a href="/modules/checkbox.html">Checkbox</a>
+            <a href="/modules/checkbox.html">复选框</a>
           </h4>
           <div class="ui checkbox">
             <input type="checkbox" name="fun">
-            <label>I enjoy having fun</label>
+            <label>我喜欢找乐子</label>
           </div>
 
           <div class="ui hidden divider"></div>
           <div class="ui slider checkbox">
             <input type="checkbox" name="newsletter">
-            <label>Receive weekly poodle newsletter</label>
+            <label>接受每周的贵宾犬资讯</label>
           </div>
 
           <div class="ui hidden divider"></div>
           <div class="ui toggle checkbox">
             <input type="checkbox" name="public">
-            <label>Make my dog's profile public</label>
+            <label>将我的狗的资料公开</label>
           </div>
         </div>
       </div>
@@ -939,18 +939,18 @@ standalone : false
       <div class="column">
         <h2 class="ui icon header">
           <img class="ui icon image" src="/images/icons/mobile.png">
-          Responsively Designed
+          灵活的响应式设计
         </h2>
-        <p>Fomantic is <b>designed completely with em</b> making responsive sizing a breeze. Design <em>variations</em> built into elements allow you to make the choice how content adjusts for tablet and mobile.</p>
-        <a class="ui large button" href="/usage/layout.html">Responsive Examples</a>
+        <p>Fomantic <b>完全采用 em 设计</b>，响应大小轻而易举。元素中内置的设计 <em>变体</em> 允许您选择如何针对平板电脑和移动的设备调整内容。</p>
+        <a class="ui large button" href="/usage/layout.html">响应示例</a>
       </div>
       <div class="column">
         <h2 class="ui icon header">
           <img class="ui icon image" src="/images/icons/heart.png">
-          Partners with Libraries You Love
+          与你喜爱的库集成
         </h2>
-        <p>Fomantic has integrations with <b>React, Angular, Meteor, Ember</b> and many other frameworks to help organize your UI layer alongside your application logic.</p>
-        <a class="ui large button" href="/introduction/integrations.html">See Integrations</a>
+        <p>Fomantic 可以与 <b>React, Angular, Meteor, Ember</b> 和许多其他框架集成，可以帮助组织你的 UI 层面以及应用逻辑。</p>
+        <a class="ui large button" href="/introduction/integrations.html">看看集成</a>
       </div>
     </div>
   </div>
@@ -960,15 +960,15 @@ standalone : false
     <div class="fourteen wide column">
       <h1 class="ui icon header">
         <img class="ui inline icon image" src="/images/icons/rocket.png">
-        Liberate your Development
+        解放你的开发
       </h1>
       <div class="ui stackable center aligned vertically padded grid">
         <div class="eight wide column">
-          <h3 class="ui header">Enterprise Ready</h3>
-          <p>Build tools, performance logging, support for custom definitions, multiple-levels of theme inheritance—a developer's dream.</p>
+          <h3 class="ui header">企业也可用</h3>
+          <p>构建工具、性能日志、对自定义的支持、多层次的主题继承——这是开发人员的梦想。</p>
           <a class="ui large right labeled primary icon button" href="/introduction/getting-started.html">
             <i class="right chevron icon"></i>
-            Get Started Now
+            立即上手
           </a>
         </div>
       </div>
