@@ -4,8 +4,8 @@ css         : 'theming'
 standalone  : true
 order       : 2
 
-title       : 'Theming'
-description : 'An introduction to theming'
+title       : '主题化'
+description : '主题化介绍 '
 type        : 'Usage'
 ---
 
@@ -20,60 +20,63 @@ type        : 'Usage'
 <div class="main ui intro container">
 
   <h2 class="ui dividing header">
-    Preface
+    前言
   </h2>
 
   <div class="no example">
-    <h4>Progressive Truthfulness</h4>
+    <h4>渐进真实性</h4>
     <blockquote>
       <p>[Progressive truthfulness] is perhaps a better way to build models of physical objects...Start with a model that is fully detailed but only resembles what is wanted. Then, one adjusts one attribute after another, bringing the result ever closer to the mental vision of the new creation, or to the real properties of a real-world object</p>
       <p>...Starting with exemplars that themselves have consistency of style ensures that such consistency is the designer's to lose.</p>
-      <span class="author">Frederick Brooks - <a href="https://www.amazon.com/gp/product/0201362988" target="_blank">The Design of Design</a><span>
+      <p>参考译文：</p>
+      <p>[渐进真实性]或许是构建物理对象模型的更好方式……从一个完全详细但仅类似于所需的模型开始。然后，逐个调整属性，将结果越来越接近新创作的心理视觉或真实世界对象的真实属性。</p>
+      <p>……从具有一致风格的范例开始确保了这种一致性是设计师可以失去的。</p>
+      <span class="author">弗雷德 · 布鲁克斯 - <a href="https://www.amazon.com/gp/product/0201362988" target="_blank">《设计原本》</a><span>
     </blockquote>
-    <p>Components in Fomantic UI are designed to help developers adhere to <a href="https://books.google.com/books?id=0qG4TQi-e-4C&pg=PT234&lpg=PT234&dq=%22progressive+truthfulness%22+frederick+brooks&source=bl&ots=yrjNc6wnz8&sig=PJoYODuRku2A1kBoFOPfn4iGYnc&hl=en&sa=X&ved=0CCIQ6AEwAGoVChMImdSMpIOVxgIVCx-sCh3EQgBu#v=onepage&q=%22progressive%20truthfulness%22%20frederick%20brooks&f=false" target="_blank">progressive truthfulness</a> in their development.</p>
-    <p>Instead of having to create components from a blank canvas, developers using Fomantic UI only need to specify how their components should differ from the default theme using <a href="https://lesscss.org/features/#variables-feature" target="_blank">CSS variables</a>.</p>
-    <p>For developers who don't have time to hone a specific look-and-feel the default theme is elegant and neutral with a legible, open source sans-serif font <a href="https://www.latofonts.com"><code>Lato</code></a>.</p>
+    <p>Fomantic UI 中的组件旨在帮助开发人员在开发中坚持渐进真实性。</p>
+    <p>使用 Fomantic UI 的开发人员不必从空白画布创建组件，只需使用 <a href="https://lesscss.org/features/#variables-feature" target="_blank">CSS 变量</a> 指定其组件与默认主题的区别。</p>
+    <p>对于那些没有时间来磨练特定外观的开发人员来说，默认主题是优雅和中性的，带有清晰的开源无衬线字体 <a href="https://www.latofonts.com"><code>Lato</code></a>。</p>
 
   </div>
 
 
   <h2 class="ui dividing header">
-    Lead By Example
+    简单的示例
   </h2>
   <div class="no example">
-    <h4>Recreating GitHub</h4>
-    <p>Fomantic UI includes an <a target="_blank" href="https://semantic-org.github.io/example-github/">example project</a> designed to showcase theming. This project includes examples of creating a packaged theme, using component CSS overrides, and managing your themes with <code>theme.config</code>.</p>
+    <h4>复刻一个 GitHub</h4>
+    <p>Fomantic UI 有一个用于展示主体化的 <a target="_blank" href="https://semantic-org.github.io/example-github/">示例项目</a>。这个项目包括创建一个打包的主题，使用组件 CSS 覆盖，并使用 <code>theme.config</code> 管理主题的例子。</p>
 
-    <p>To get started click <b>the paint can</b> icon next to the notification button in the top right</p>
+    <p>要开始，请点击右上角的 <b>油漆桶</b> 图标。</p>
 
-    <p>The example project includes two HTML files, <code>index.html</code> is designed to swap themes using a sidebar, and uses precompiled CSS. <code>static.html</code> uses files outputted by Fomantic UI and can be used alongside our <a href="/introduction/build-tools.html">gulp pipeline</a> to try modifying themes hands on.</p>
+    <p>示例项目包括两个 HTML 文件，<code>index.html</code> 使用侧栏更改主题，并使用预编译的 CSS。<code>static.html</code> 使用 Fomantic UI 输出的文件，可以与我们的 <a href="/introduction/build-tools.html">gulp 管道</a> 一起使用，以尝试手动修改主题。</p>
 
-    <p>Some special things to note:</p>
+    <p>需要注意的事情：</p>
 
     <div class="ui large bulleted list">
-      <div class="item"><a target="_blank" href="https://github.com/Semantic-Org/example-github/blob/master/semantic/src/themes/github/globals/site.variables">Using site.variables</a> to modify page container sizes, default fonts, and colors</div>
-      <div class="item"><a target="_blank" href="https://github.com/Semantic-Org/example-github/blob/master/semantic/src/themes/github/collections/menu.overrides">Using overrides</a> with variables to add GitHub's specially formatted tab style</div>
-      <div class="item">Combining multiple individual component themes together in one <a target="_blank" href="https://github.com/Semantic-Org/example-github/blob/master/semantic/src/theme.config">theme.config</a></div>
-      <div class="item">Using a <a target="_blank" href="https://github.com/Semantic-Org/example-github/blob/master/semantic/src/themes/github/elements/icon.overrides">custom icon font</a>, and <a target="_blank" href="https://github.com/Semantic-Org/example-github/blob/master/semantic/src/themes/github/elements/icon.variables">modifying paths</a> to assets.</div>
+      <div class="item"><a target="_blank" href="https://github.com/Semantic-Org/example-github/blob/master/semantic/src/themes/github/globals/site.variables">使用 site.variables</a> 来修改页面容器大小、默认字体和颜色。</div>
+      <div class="item"><a target="_blank" href="https://github.com/Semantic-Org/example-github/blob/master/semantic/src/themes/github/collections/menu.overrides">使用带变量的 overrides</a> 来添加 GitHub 样式的选项卡样式。</div>
+      <div class="item">将多个单组件主题组合在一个 <a target="_blank" href="https://github.com/Semantic-Org/example-github/blob/master/semantic/src/theme.config">theme.config</a> 中。</div>
+      <div class="item">使用 <a target="_blank" href="https://github.com/Semantic-Org/example-github/blob/master/semantic/src/themes/github/elements/icon.overrides">自定义图标字体</a>，并且 <a target="_blank" href="https://github.com/Semantic-Org/example-github/blob/master/semantic/src/themes/github/elements/icon.variables">修改 assets 的路径</a>。</div>
     </div>
     <a target="_blank" href="https://semantic-org.github.io/example-github/" class="ui primary right labeled icon button">
       <i class="external link icon"></i>
-      View Theming Demo
+      查看主题化演示
     </a>
   </div>
 
   <h2 class="ui dividing header">
-    Using Themes
+    使用主题
   </h2>
   <div class="no example">
-    <h4>Sitewide Defaults</h4>
+    <h4>全站默认值</h4>
 
-    <p>Fomantic UI includes twelve named colors. Components with color variations inherit these global variables when defining how colors should appear.</p>
+    <p>Fomantic UI 具有 12 种颜色。具有颜色的组件在定义颜色时继承这些全局变量。</p>
 
-    <p>Each <a href="#theme-inheritance">level of inheritance</a> includes a special file <code>site.variables</code> which defines theme-wide defaults that each component can extend.</p>
+    <p>每一个 <a href="#theme-inheritance">继承级别</a> 都包括一个特殊文件 <code>site.variables</code>，它定义了每个组件可以扩展的主题范围内的默认值。</p>
 
-    <p>Global variables use higher level abstractions, to avoid tedium in having to modify multiple properties to change the appearance of an element.</p>
-    <p>Other button shades like those used in <code>hover</code>, <code>active</code> and <code>focus</code> states are created by modifying the saturation and lightness of color variables, these derived variables will automatically adjust to your new color palette.</a>
+    <p>全局变量使用更高级别的抽象概念，以避免修改多个属性来改变元素外观的繁琐操作。</p>
+    <p>其他按钮阴影，例如在 <code>hover</code>、<code>active</code> 和 <code>focus</code> 状态下使用的按钮阴影，是通过修改颜色变量的饱和度和亮度来创建的，这些派生变量将自动调整到新调色板。</p>
 
     <div class="ui ignored code" data-type="less" data-less="true" data-title="site/globals/site.variables">
     @primaryColor   : @pink;
@@ -94,30 +97,30 @@ type        : 'Usage'
     </div>
 
     <button class="ui primary button">
-      Primary Button
+      主要按钮
     </button>
     <button class="ui secondary button">
-      Secondary Button
+      次要按钮
     </button>
-    <div class="ui horizontal divider">All Colors</div>
-    <button class="ui red button">Red</button>
-    <button class="ui orange button">Orange</button>
-    <button class="ui yellow button">Yellow</button>
-    <button class="ui olive button">Olive</button>
-    <button class="ui green button">Green</button>
-    <button class="ui teal button">Teal</button>
-    <button class="ui blue button">Blue</button>
-    <button class="ui violet button">Violet</button>
-    <button class="ui purple button">Purple</button>
-    <button class="ui pink button">Pink</button>
-    <button class="ui brown button">Brown</button>
-    <button class="ui grey button">Grey</button>
-    <button class="ui black button">Black</button>
+    <div class="ui horizontal divider">所有颜色</div>
+    <button class="ui red button">红色</button>
+    <button class="ui orange button">橙色</button>
+    <button class="ui yellow button">黄色</button>
+    <button class="ui olive button">黄褐色</button>
+    <button class="ui green button">绿色</button>
+    <button class="ui teal button">青色</button>
+    <button class="ui blue button">蓝色</button>
+    <button class="ui violet button">紫罗兰色</button>
+    <button class="ui purple button">紫色</button>
+    <button class="ui pink button">粉色</button>
+    <button class="ui brown button">棕色</button>
+    <button class="ui grey button">灰色</button>
+    <button class="ui black button">黑色</button>
   </div>
   <div class="no example">
-    <h4>Component Defaults</h4>
-    <p>Components inherit default values from <code>site.variables</code> which they may redefine specifically for their component</p>
-    <p>For example, you could decide that instead of the boring default grey checkboxes, you want yours to include your site's branded colors. This can be accomplished in just a few variables.</p>
+    <h4>组件默认值</h4>
+    <p>组件从 <code>site.variables</code> 继承默认值，它们可以专门为其组件重定义这些值。</p>
+    <p>例如，你可以决定不再使用无聊的默认灰色复选框，而是想要使用你网站的品牌颜色。这只需改变几个变量就能实现。</p>
     <div class="ui ignored code" data-type="less" data-less="true" data-title="site/modules/checkbox.variables">
       /* Checkbox */
       @checkboxActiveBackground: @primaryColor;
@@ -143,7 +146,7 @@ type        : 'Usage'
     </div>
     <div class="ui checkbox">
       <input type="checkbox" name="checkbox" checked >
-      <label>Checkbox</label>
+      <label>复选框</label>
     </div>
 
     <div class="ui hidden divider"></div>
@@ -179,16 +182,16 @@ type        : 'Usage'
     <div class="ui hidden divider"></div>
     <div class="ui slider checkbox">
       <input type="checkbox" name="slider" checked>
-      <label>Slider</label>
+      <label>滑块</label>
     </div>
   </div>
   <div class="no example">
-    <h4>Using Packaged Themes</h4>
-    <p>When you download Fomantic UI all components will be set up to use the default theme. Semantic uses a special file <code>theme.config</code> for controlling your project's packaged theming configuration.</p>
-    <p>Packaged themes are applied per component, and not globally. This means you can specify individual themes for each component, mixing and matching from available themes.</p>
-    <p>The default <code>theme.config</code> will have all component values set to default. To choose a theme, simply change a component to match the theme name.</p>
+    <h4>使用打包的主题</h4>
+    <p>下载 Fomantic UI 后，所有组件都使用默认主题。由 <code>theme.config</code> 文件来控制项目的打包主题设置。</p>
+    <p>打包的主题按组件应用，而非全局应用。这意味着你可以为每个组件指定单独的主题，可以混搭主题。</p>
+    <p>默认的 <code>theme.config</code> 会将所有组件主题设置为默认。要选择一个主题，只需要改动主题字符串。</p>
 
-    <p>For example: </p>
+    <p>例如：</p>
     <div class="code" data-title="src/theme.config" data-type="less">
     /*******************************
             Theme Selection
@@ -260,22 +263,22 @@ type        : 'Usage'
   </div>
 
   <div class="no example">
-    <h4>Browsing for Themes</h4>
-    <p>Each UI definitions include a dropdown at the top of the page to preview themes included with the project.</p>
-    <p>Themes are <b>per component</b>, so although, for example, material themes are available for <a href="/collections/menu.html">menu</a>, <a href="/elements/button.html">button</a>, and <a href="/globals/site.html">site</a>, changing all values to "material" will produce an error for components which are not included in that theme.</p>
+    <h4>浏览主题</h4>
+    <p>每个 UI 组件介绍页面都在顶部有一个按钮，用它可以预览项目中包含的主题。</p>
+    <p>主题是针对 <b>单个组件的</b>，因此，例如，material 主题适用于<a href="/collections/menu.html">菜单</a>、<a href="/elements/button.html">按钮</a> 和 <a href="/globals/site.html">全站</a>，将不包含 material 主题的组件设置为 material 主题会报错。</p>
   </div>
 
   <h2 class="ui dividing header">
-    Composing a Component
+    自定义组件
   </h2>
 
 
   <div class="no example">
-    <h4 class="ui header">Definition File</h4>
-    <p>Each component includes a source CSS and Javascript file which declares how a components variables should affect its display on screen. Definition files are updated with each new release of Fomantic UI, which may also include new variables.</p>
-    <p>Navigating definition files are a great way for developers who are comfortable with CSS to get an idea of how themes affect a components display.</p>
+    <h4 class="ui header">定义文件</h4>
+    <p>每个组件都包含一个 CSS 和 JS 文件，该文件声明了组件变量在屏幕上的显示效果。定义文件随 Fomantic UI 的每个新版本更新，其中可能还包含新变量。</p>
+    <p>导航定义文件是开发者了解主题如何影响组件显示的一个很好方式，尤其是对于那些熟悉CSS的开发者来说。</p>
 
-    <p>Here's an abridged version of <a href="/elements/button.html">button</a> with an explanation of each section of the file.</p>
+    <p>以下是一个简化版本的 <a href="/elements/button.html">按钮</a>。</p>
 
     <div class="code" data-type="less" data-title="src/definitions/elements/button.less">
 
@@ -344,54 +347,54 @@ type        : 'Usage'
   </div>
 
   <div class="no example">
-    <h4 class="ui header">Theme Files</h4>
-    <p>Themes are made up of two files: a <code>.variables</code> file and a <code>.overrides</code> file. A theme can include both variables and overrides, or just either one alone.</p>
+    <h4 class="ui header">主题文件</h4>
+    <p>主题由两个文件组成：<code>.variables</code> 和 <code>.overrides</code>。主题可以包括其中的一个或两个。</p>
   </div>
   <div class="no example">
-    <h4 class="ui header">Variables Files</h4>
-    <p>A <code>.variables</code> file specifies variables which should be adjusted for a theme.</p>
-    <p>A theme's variable file only needs to include variables which are different for a theme.</p>
+    <h4 class="ui header">变量文件</h4>
+    <p><code>.variables</code> 文件指定了应该为这个主题调整的变量。</p>
+    <p>一个主题的变量文件只需要包含不同主题的变量。</p>
   </div>
   <div class="no example">
-    <h4 class="ui header">Override Files</h4>
-    <p>An .overrides file specifies additional CSS rules to be added to a definition for a theme. This file also has access to all inherited variables for a component.</p>
+    <h4 class="ui header">覆写文件</h4>
+    <p><code>.overrides</code> 文件指定要添加到主题定义中的其他 CSS 规则。该文件还可以访问组件的所有继承变量。</p>
   </div>
 
   <h2 class="ui dividing header">
-    Cascading Inheritance
+    级联继承
   </h2>
 
   <div class="no example">
-    <h4 class="ui header">Theme Inheritance</h4>
-    <p>Themes contain three separate levels of variable inheritance.</p>
-    <p>Each level of inheritance corresponds to a different level of permanence for a variable.</p>
+    <h4 class="ui header">主题继承</h4>
+    <p>主题包含三个独立的变量继承级别。</p>
+    <p>每个继承级别对应于变量的不同持久性级别。</p>
     <div class="ui fluid steps">
       <div class="step">
         <i class="lock icon"></i>
         <div class="content">
-          <div class="title">Defaults</div>
-          <div class="description">UI Defaults</div>
+          <div class="title">默认</div>
+          <div class="description">UI 默认主题</div>
         </div>
       </div>
       <div class="step">
         <i class="download icon"></i>
         <div class="content">
-          <div class="title">Packaged Theme</div>
-          <div class="description">Distributable Packages</div>
+          <div class="title">打包主题</div>
+          <div class="description">可分发的主题包</div>
         </div>
       </div>
     <div class="step">
         <i class="user icon"></i>
         <div class="content">
-          <div class="title">Site Theme</div>
-          <div class="description">Site Specific Changes</div>
+          <div class="title">网站主题</div>
+          <div class="description">站点特别指定的变更</div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="no example">
-    <h4 class="ui header">Default Theme</h4>
+    <h4 class="ui header">默认主题</h4>
     <div class="ui breadcrumb">
       <div class="section">
         <i class="disabled folder icon"></i>
@@ -408,12 +411,12 @@ type        : 'Usage'
         default
       </div>
     </div>
-    <p>The default theme provides baseline variables for a component.</p>
-    <p>The best way to understand what variables are available for inclusion in a theme is to examine a component's default <code>.variables</code> file.</p>
+    <p>默认主题为每个组件提供基本的变量。</p>
+    <p>了解主题中包含哪些变量的最佳方式是参阅组件默认 <code>.variables</code> 文件。</p>
   </div>
 
   <div class="no example">
-    <h4 class="ui header">Packaged Theme</h4>
+    <h4 class="ui header">打包主题</h4>
     <div class="ui breadcrumb">
       <div class="section">
         <i class="disabled folder icon"></i>
@@ -430,12 +433,12 @@ type        : 'Usage'
         theme-name
       </div>
     </div>
-    <p>Packaged themes are themes bundled together in a folder for distribution. These can be downloaded from the internet, or carried between projects.</p>
-    <p>Packaged themes can be used by modifying values in your <a href="#using-packaged-themes">theme.config</a> file.</p>
+    <p>打包主题将主题捆绑到一个文件夹中以便于分发。这些主题可以从互联网上下载，也可在不同项目中使用。</p>
+    <p>可以通过修改 <a href="#using-packaged-themes">theme.config</a> 来使用打包主题。</p>
   </div>
 
   <div class="no example">
-    <h4 class="ui header">Site Theme</h4>
+    <h4 class="ui header">网站主题</h4>
     <div class="ui breadcrumb">
       <div class="section">
         <i class="disabled folder icon"></i>
@@ -447,8 +450,8 @@ type        : 'Usage'
         site
       </div>
     </div>
-    <p>A site theme, not to be mistaken with <code>site.variables</code> a file located in every theme, is a special user theme that can be loaded on top of all other themes.</p>
-    <p>This is the best location to store changes that will be used on a single site. A site theme can be thought of as similar to a <a href="https://codex.wordpress.org/Child_Themes" target="_blank">child theme</a> in Wordpress.</p>
-    <p>Site theme files <b>are optional includes</b> and can be safely removed if you do not need to add additional changes to a component on your project.</p>
+    <p>网站主题，不同于 <code>site.variables</code>，这是一个用户定义的主题，其优先级在前两个主题之上。</p>
+    <p>如果某个主题只适用于一个站点，那么网站主题是最佳的选择。网站主题类似于 WordPress 中的 <a href="https://codex.wordpress.org/zh-cn:%E5%AD%90%E4%B8%BB%E9%A2%98" target="_blank">子主题</a>。</p>
+    <p>网站主题是 <b>可选的</b>，如果不需要，你可以安全地将它删除。</p>
   </div>
 </div>
