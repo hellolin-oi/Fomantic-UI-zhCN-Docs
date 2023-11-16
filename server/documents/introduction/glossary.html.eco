@@ -4,56 +4,62 @@ css         : 'started'
 standalone  : true
 order       : 5
 
-title       : 'Glossary'
-description : 'Jargon specific to Fomantic UI'
+title       : '术语表'
+description : 'Fomantic UI 的专用术语'
 type        : 'Introduction'
 ---
 <%- @partial('header') %>
 
 <div class="main ui intro container">
 
-<h2 class="ui header">Terminology</h2>
+<h2 class="ui header">术语</h2>
+
+<div class="ui ignored info message">
+  译者注：为避免混淆，所有术语均带上了英文原名。
+</div>
 
 <div class="no example">
-  <h4>Types of Components</h4>
-  <p>Fomantic UI classifies components into different definition types depending on its qualities. Each of these five types uses a unique definition format.</p>
+  <h4>组件的类型</h4>
+  <p>Fomantic UI 根据组件的质量将其分为不同的定义类型。这五种类型中的每一种都使用唯一的定义格式。</p>
   <table class="ui large very padded definition table">
     <tbody>
       <tr>
-        <td class="three wide">Globals</td>
+        <td class="three wide">Globals 全局</td>
         <td>
-          Globals are styles that are applied across a site. These include things like CSS resets, and sitewide font, link and sizing defaults.</p>
-          <p>Most importantly, globals include site-wide <a href="/usage/theming.html">theming variables</a> that other components can inherit and modify.</td>
+          <p>全局样式是应用于整个站点的样式。包括 CSS 重置和整个网站的字体，链接和大小默认值等。</p>
+          <p>最重要的是，全局变量包括站点范围的 <a href="/usage/theming.html">主题变量</a>，其他组件可以继承和修改这些变量。</p>
+        </td>
       </tr>
       </tr>
       <tr>
-        <td>Element</td>
+        <td>Element 元素</td>
         <td>
-          UI elements are page elements with a single function. They can exist alone or in a plural form with elements sharing qualities.</p>
-          <p>For example, a group of <a href="/elements/button.html">buttons</a> may use <code>ui red buttons</code> as a grouping with individual <code>ui button</code> children.</td>
-      </tr>
-      <tr>
-        <td>Collection</td>
-        <td>
-          <p>Collections are heterogeneous groups of components which are usually found together. They describe a list of "usual suspects" which appear in a certain context. They may include and extend other ui elements for use in certain contexts—for example <a href="/collections/form.html">form</a> may extend <a href="/modules/dropdown.html">dropdown</a> or <a href="/elements/input.html">input</a>—as well as include their own content.</p>
+          <p>UI 元素是具有单一功能的页面元素。它们可以单独存在，也可以以多种形式存在，具有共同的性质。</p>
+          <p>例如，一组 <a href="/elements/button.html">按钮</a> 可以使用 <code>ui red buttons</code> 作为具有单个 <code>ui button</code> 子项的分组。</p>
         </td>
       </tr>
       <tr>
-        <td>Views</td>
+        <td>Collection 集合</td>
         <td>
-          <p>A view is a convention for presenting specific types of content that is usually consistent across a website. These include things like <a href="/views/comment.html">comments</a>, <a href="/views/feed.html">activity feeds</a>, or <a href="/views/card.html">cards</a>.</p>
+          <p>集合是通常在一起的组件的异构组，集合描述了一份在特定背景下出现的 “常见嫌疑人” 名单。它们可以包含和扩展其他 UI 元素以在特定的情景中使用。例如，<a href="/collections/form.html">表单</a> 可以扩展 <a href="/modules/dropdown.html">下拉框</a> 或 <a href="/elements/input.html">输入</a> 或自己的内容。</p>
         </td>
       </tr>
       <tr>
-        <td>Modules</td>
+        <td>Views 视图</td>
         <td>
-          <p>Modules are components that include both a definition of how they appear and how they behave. These include components like, accordions, dropdowns, and popups.</p>
+          <p>视图是用于呈现特定类型的内容的约定，这些内容通常在整个网站中是一致的。例如 <a href="/views/comment.html">评论</a>、<a href="/views/feed.html">信息流</a> 或 <a href="/views/card.html">卡片</a>。</p>
         </td>
       </tr>
       <tr>
-        <td>Behaviors</td>
+        <td>Modules 模块</td>
         <td>
-          <p>Behaviors are standalone Javascript components that describe how page elements should act, but not how they should appear. Behaviors include things like form validation, state management, and API request routing.</p>
+          <p>模块不仅包括组件，还包括它们行为的定义。这些包括组件，例如折叠框、下拉框或弹出框。</p>
+        </td>
+      </tr>
+      <tr>
+        <td>Behaviors 行为</td>
+        <td>
+          <p>行为是独立的 JavaScript 组件，描述页面元素应该如何操作，而不是它们应该如何显示。行为包括表单验证、状态管理和 API 请求路由。</p>
         </td>
       </tr>
     </tbody>
@@ -61,31 +67,31 @@ type        : 'Introduction'
 </div>
 
 <div class="no example">
-  <h4>Project Terminology</h4>
+  <h4>项目术语</h4>
   <p>Fomantic UI classifies components into separate definition groupings.<p>
 
   <table class="ui large very padded definition table">
     <tbody>
       <tr>
-        <td class="three wide">Component</td>
+        <td class="three wide">Component 组件</td>
         <td>
-          A component is a general term used to refer to any user interface element packaged for distribution.
+          组件是一个通用术语，用于指代任何打包用于分发的用户界面元素。
         </td>
       </tr>
       <tr>
-        <td>Definition</td>
+        <td>Definition 定义</td>
         <td>
-          <p>A definition is a set of CSS and Javascript which describe a component's essential qualities.</p>
-          <p>Definition use variables to express arbitrary parts of a component's appearance so that they can be changed with themes.</p>
+          <p>定义是一组 CSS 和 JavaScript，描述了组件的基本特性。</p>
+          <p>定义使用变量来表示组件外观的任意部分，以便它们可以随主题进行更改。</p>
         </td>
       </tr>
       <tr>
         <td>ui</td>
         <td>
-          <p><code>ui</code> is a special class name used to distinguish parts of components from components.</p>
-          <p>For example, a <a href="/elements/list.html">list</a> will receive the class <code>ui list</code> because it has a corresponding definition, however a list item, will receive just the class <code>item</code>.</p>
-          <p>The ui class name helps encapsulate CSS rules by making sure all 'parts of a component' are defined in context to a 'whole' component.</p>
-          <p>It also helps make scanning unknown code simpler. If you see <code>ui</code> you know you are looking at a component.</p>
+          <p><code>ui</code> 是一个特殊的类名，用于区分组件的各个部分。</p>
+          <p>例如，<a href="/elements/list.html">列表</a> 接受类 <code>ui list</code>，而列表项仅接受类 <code>item</code>。</p>
+          <p><code>ui</code> 类名通过确保所有 “组件的部分” 都在 “整个组件” 的上下文中定义，来帮助封装 CSS 规则。</p>
+          <p>它还可以让你读别人代码更简单，因为看到 <code>ui</code> 你就知道这是一个组件。</p>
         </td>
       </tr>
     </tbody>
@@ -93,55 +99,55 @@ type        : 'Introduction'
 </div>
 
 <div class="no example">
-  <h4>Definition Terminology</h4>
-  <p>When browsing Fomantic UI definitions, you will see content grouped into different sections. These parts of a definition are consistent across definitions, and are common patterns for describing components.<p>
+  <h4>定义术语</h4>
+  <p>浏览 Fomantic UI 定义时，你会看到内容被分组到不同的部分。这些部分在定义之间是一致的，并且是描述组件的常见模式。<p>
 
   <table class="ui large very padded definition table">
     <tbody>
       <tr>
-        <td class="three wide">Component</td>
+        <td class="three wide">Component 组件</td>
         <td>
-          A component is a general term used to refer to any user interface element packaged for distribution.
+          组件是一个通用术语，用于指代任何打包用于分发的用户界面元素。
         </td>
       </tr>
       <tr>
-        <td>Definition</td>
+        <td>Definition 定义</td>
         <td>
-          <p>A definition is a set of CSS and Javascript which describe a component's essential qualities.</p>
-          <p>Definition use variables to express arbitrary parts of a component's appearance so that they can be changed with themes.</p>
+          <p>定义是一组 CSS 和 JavaScript，描述了组件的基本特性。</p>
+          <p>定义使用变量来表示组件外观的任意部分，以便它们可以随主题进行更改。</p>
         </td>
       </tr>
       <tr>
-        <td>Types</td>
+        <td>Types 类型</td>
         <td>
-          <p>Types are versions of an element that modify the element's standard appearance.</p>
-          <p>Types cannot be used simultaneously on the same element. For example, "cats" and "dogs" are types of animals, but are <b>mutually exclusive</b>.</p>
+          <p>类型是修改元素标准外观的元素版本。</p>
+          <p>不能在同一元素上同时使用类型。例如，“猫” 和 “狗” 是动物的类型，但其 <b>相互排斥</b>。</p>
         </td>
       </tr>
       <tr>
-        <td>Variations</td>
+        <td>Variations 变体</td>
         <td>
-          <p>Variations modify qualities of an element like size, or color.</p>
-          <p>Variations are <b>mutually inclusive</b>, and can be used together to modify an element.</p>
+          <p>变体修改元素的外观，如大小或颜色。</p>
+          <p>变体是 <b>相互包容</b> 的，可以多个变体一起使用。</p>
         </td>
       </tr>
       <tr>
-        <td>Content</td>
+        <td>Content 内容</td>
         <td>
-          <p>Content are parts which only have meaning in the context of a component. Content use names which describe the type of expected content like header, description, menu, or item.</p>
-          <p>Content inside a collection or view often includes stubbed versions of other components. For example cards let you use <a href="/views/card.html#image">image content</a>, which can be extended by using <a href="/elements/image.html#variations">ui image variations</a>.
+          <p>内容是指只有在组件上下文中才有意义的部分。内容使用的名称可描述预期内容的类型，如标题、说明、菜单或项目。</p>
+          <p>集合或视图中的内容通常包括其他组件的存根版本。例如卡片允许你使用 <a href="/views/card.html#image">图片内容</a>，可以通过 <a href="/elements/image.html#variations">ui image variations</a> 来扩展。
         </td>
       </tr>
       <tr>
-        <td>States</td>
+        <td>States 状态</td>
         <td>
-          <p>States are modifications to an element that help indicate a change in <a href="https://www.usabilityfirst.com/glossary/affordance/" target="_blank">affordances</a>. Common states include <code>loading</code>, <code>disabled</code>, and <code>active</code>.</p>
+          <p>状态是对元素的修改，有助于表明 <a href="https://zh.wikipedia.org/wiki/%E6%89%BF%E6%93%94%E7%89%B9%E8%B3%AA" target="_blank">直观功能</a> 的变化。常见状态有 <code>loading</code>、<code>disabled</code> 和 <code>active</code>。</p>
         </td>
       </tr>
       <tr>
-        <td>Behaviors</td>
+        <td>Behaviors 行为</td>
         <td>
-          <p>Behaviors are actions that a component can perform. Behaviors are represented by simple phrases like "set value" or "increment", that can be invoked in Javascript. Behaviors are automatically converted from spaced lowercase phrases to internal Javascript methods at invocation.</p>
+          <p>行为是组件可以执行的操作。行为由简单的短语表示，如 “设置值” 或 “增量”，可以在 JavaScript 中调用。在调用时，行为会自动从空格分隔的短语转换为内部 JavaScript 方法。</p>
         </td>
       </tr>
     </tbody>
@@ -149,31 +155,31 @@ type        : 'Introduction'
 </div>
 
 <div class="no example">
-  <h4>General Terms</h4>
+  <h4>通用术语</h4>
 
-  <p>These terms are general programming terms that may be used without explanation in other documentation pages.</p>
+  <p>这些术语是通用的编程术语。</p>
 
   <table class="ui large very padded definition table">
     <tr>
-      <td class="three wide">Namespace</td>
-      <td>A name given to an element for the explicit purpose of containing the application of properties.</p>
-      <p>In Fomantic UI, components are given the class name <code>ui</code> to help distinguish them from parts of elements in code, and to provide a namespace for definitions which can limit the scope of CSS rules.</td>
+      <td class="three wide">命名空间</td>
+      <td>指定给元素的名称，用于包含属性的应用。</p>
+      <p>在 Fomantic UI 中，组件被赋予了类名 <code>ui</code>，以帮助将它们与代码中的元素部分区分开来，还为定义提供命名空间，以限制 CSS 规则的范围。</td>
     </tr>
     <tr>
       <td>Gulp</td>
-      <td>Gulp is a tool for automating command line tasks <a href="https://www.gulpjs.com" target="_blank">Gulpjs.com</a></td>
+      <td>Gulp 是一个自动执行命令行任务的工具。参阅 <a href="https://www.gulpjs.com" target="_blank">Gulpjs.com</a>。</td>
     </tr>
     <tr>
       <td>NPM</td>
-      <td>NPM is a package manager used for downloading Node JS packages.</td>
+      <td>NPM 是一个用于下载 NodeJS 包的包管理器。</td>
     </tr>
     <tr>
-      <td>yarn</td>
-      <td>yarn is an alternative package manager used for downloading Node JS packages.</td>
+      <td>Yarn</td>
+      <td>Yarn 是一个用于下载 NodeJS 包的包管理器。</td>
     </tr>
     <tr>
       <td>Node JS</td>
-      <td>Node is a event driven programming language frequently used to run command line tools for front end development. <a href="https://www.nodejs.org" target="_blank">nodejs.org</a></td>
+      <td>Node是一种事件驱动的编程语言，经常用于运行前端开发的命令行工具。参阅 <a href="https://www.nodejs.org" target="_blank">nodejs.org</a>。</td>
     </tr>
   </table>
 
