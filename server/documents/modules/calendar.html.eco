@@ -1,0 +1,1470 @@
+---
+layout      : 'default'
+css         : 'calendar'
+element     : 'calendar'
+elementType : 'module'
+standalone  : true
+
+title       : 'Calendar'
+description : 'A calendar allows users to select any date or time'
+type        : 'UI Module'
+
+themes      : ['Default']
+---
+<link rel="stylesheet/less" type="text/css" href="/src/definitions/modules/calendar.less" />
+<link rel="stylesheet" type="text/css" class="ui" href="/stylesheets/calendar.css">
+
+<script src="/javascript/calendar.js"></script>
+
+<%- @partial('header', { tabs: 'module' }) %>
+
+<div class="main ui container">
+
+  <div class="ui active tab" data-tab="definition">
+
+    <h2 class="ui dividing header">Types</h2>
+    <div class="example">
+      <h4 class="ui header">Calendar</h4>
+      <p>A standard calendar</p>
+      <div class="ui calendar" id="standard_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date/Time">
+        </div>
+      </div>
+      <div class="evaluated code" data-type="javascript">
+      $('#standard_calendar')
+        .calendar()
+      ;
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Range</h4>
+      <p>A range calendar allow you to select a start date and a stop date</p>
+      <div class="ui form">
+        <div class="two fields">
+          <div class="field">
+            <label>Start date</label>
+            <div class="ui calendar" id="rangestart">
+              <div class="ui input left icon">
+                <i class="calendar icon"></i>
+                <input type="text" placeholder="Start">
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label>End date</label>
+            <div class="ui calendar" id="rangeend">
+              <div class="ui input left icon">
+                <i class="calendar icon"></i>
+                <input type="text" placeholder="End">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code" data-type="javascript">
+      $('#rangestart').calendar({
+        type: 'date',
+        endCalendar: $('#rangeend')
+      });
+      $('#rangeend').calendar({
+        type: 'date',
+        startCalendar: $('#rangestart')
+      });
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Inline calendar</h4>
+      <p>An inline calendar isn't shown in a popup</p>
+      <div class="ui calendar" id="inline_calendar">
+      </div>
+      <div class="evaluated code" data-type="javascript">
+      $('#inline_calendar')
+        .calendar()
+      ;
+      </div>
+    </div>
+
+   <h2 class="ui dividing header">Variations</h2>
+    <div class="example" data-since="2.9.3">
+      <h4 class="ui header">Size</h4>
+      <p>A calendar can have different sizes</p>
+      <div class="ui tiny calendar" id="tiny_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date/Time">
+        </div>
+      </div>
+      <br />
+      <div class="ui medium calendar" id="medium_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date/Time">
+        </div>
+      </div>
+      <br />
+      <div class="ui big calendar" id="big_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date/Time">
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Inverted</h4>
+      <p>A calendar can have its colors inverted</p>
+      <div class="ui inverted calendar" id="inverted_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date/Time">
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Multimonth</h4>
+      <p>You can display multiple months. Use <code>monthOffset</code>, to adjust the the startmonth relative to the selected date</p>
+      <div class="ui calendar" id="multimonth_calendar">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+        $('#multimonth_calendar')
+          .calendar({
+              type: 'date',
+              multiMonth: 3,
+              monthOffset: -1 // current month will be shown in the middle of 3 months
+          })
+        ;
+      </div>
+    </div>
+
+    <h2 class="ui dividing header">States</h2>
+    <div class="example" data-since="2.6.3">
+      <h4 class="ui header">Disabled</h4>
+      <p>A disabled calendar does not allow user interaction</p>
+      <div class="ui disabled calendar">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date/Time">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ui tab" data-tab="examples">
+
+    <h2 class="ui dividing header">Examples</h2>
+
+    <div class="example">
+      <h4 class="ui header">Date calendar</h4>
+      <p>A date calendar disable the time selection</p>
+      <div class="ui calendar" id="date_calendar">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#date_calendar')
+        .calendar({
+          type: 'date'
+        })
+      ;
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Time calendar</h4>
+      <p>A time calendar disable the date selection</p>
+      <div class="ui calendar" id="time_calendar">
+        <div class="ui input left icon">
+          <i class="time icon"></i>
+          <input type="text" placeholder="Time">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#time_calendar')
+        .calendar({
+          type: 'time'
+        })
+      ;
+      </div>
+    </div>
+    <div class="another example" data-since="2.8.0">
+      <p>You can also set the type or date using HTML markup</p>
+      <div class="ui ignored info message">This could be useful when used with form validation without the need to instantiate the calendar via javascript before. Form validation recognizes a calendar component within the form and instantiates it automatically by using existing metadata values.</div>
+      <div class="ui calendar" id="type_calendar" data-type="date" data-date="2019-12-24">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Year first calendar</h4>
+      <p>A year first calendar allow you to select a date by starting to select a year</p>
+      <div class="ui calendar" id="year_first_calendar">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#year_first_calendar')
+        .calendar({
+          startMode: 'year'
+        })
+      ;
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">24 hour format</h4>
+      <p>You can get rid of the AM/PM notation by adjusting the format-token</p>
+      <div class="ui ignored info message">For details about the token string format see <a href="#custom-format">Custom Format</a></div>
+      <div class="ui calendar" id="no_ampm">
+        <div class="ui input left icon">
+          <i class="time icon"></i>
+          <input type="text" placeholder="Time">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#no_ampm')
+        .calendar({
+          type: 'time',
+          formatter: {
+            time: 'H:mm',
+            cellTime: 'H:mm'
+          }
+        })
+      ;
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Month and year calendar</h4>
+      <p>A month and year calendar disable the date and time selection</p>
+      <div class="ui calendar" id="month_year_calendar">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#month_year_calendar')
+        .calendar({
+          type: 'month'
+        })
+      ;
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Year calendar</h4>
+      <p>A year calendar allow you to select a year only</p>
+      <div class="ui calendar" id="year_calendar">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#year_calendar')
+        .calendar({
+          type: 'year'
+        })
+      ;
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Min/max date</h4>
+      <p>You can set a minimum and a maximum selection date</p>
+      <div class="ui calendar" id="minmax_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      var today = new Date();
+
+      $('#minmax_calendar')
+        .calendar({
+          minDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() - 5),
+          maxDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5)
+        })
+      ;
+      </div>
+    </div>
+    <div class="another example">
+      <p>You can also set a minimum and a maximum selection date using HTML markup</p>
+      <div class="ui calendar" id="minmax_calendar_2" data-min-date="2018/10/05 08:00:00" data-max-date="2018/10/19 18:00:00">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Day first calendar</h4>
+      <p>You can chose to use a day first display calendar (parsing and conversion are impacted too)</p>
+      <div class="ui calendar" id="day_first_calendar">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#day_first_calendar')
+        .calendar({
+          type: 'date',
+          monthFirst: false
+        })
+      ;
+      </div>
+    </div>
+
+    <div class="example" data-since="2.9.0">
+      <h4 class="ui header">Custom format</h4>
+      <p>You can entirely change the date format by using a token string formatter.</p>
+      <p>
+        Tokens are placeholder characters for a specific output format. Fomantic-UI supports the following tokens:
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Token</th>
+              <th>Resultset</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Day of Week</td>
+              <td>d</td>
+              <td>0-6</td>
+            </tr>
+            <tr>
+              <td>Day of Week (2 char text)</td>
+              <td>dd</td>
+              <td>Su - Sa</td>
+            </tr>
+            <tr>
+              <td>Day of Week (3 char text)</td>
+              <td>ddd</td>
+              <td>Sun - Sat</td>
+            </tr>
+            <tr>
+              <td>Day of Week (Full text)</td>
+              <td>dddd</td>
+              <td>Sunday - Saturday</td>
+            </tr>
+            <tr>
+              <td>Day of Month</td>
+              <td>D</td>
+              <td>1 to 31</td>
+            </tr>
+            <tr>
+              <td>Day of Month (Leading zero)</td>
+              <td>DD</td>
+              <td>01-31</td>
+            </tr>
+            <tr>
+              <td>Day suffix</td>
+              <td>S</td>
+              <td>st,nd,rd,th</td>
+            </tr>
+            <tr>
+              <td>Month</td>
+              <td>M</td>
+              <td>1 to 12</td>
+            </tr>
+            <tr>
+              <td>Month (Leading zero)</td>
+              <td>MM</td>
+              <td>01-12</td>
+            </tr>
+            <tr>
+              <td>Month (3 char text)</td>
+              <td>MMM</td>
+              <td>Jan-Dec</td>
+            </tr>
+            <tr>
+              <td>Month (Full text)</td>
+              <td>MMMM</td>
+              <td>January-December</td>
+            </tr>
+            <tr>
+              <td>Year</td>
+              <td>YYYY or Y</td>
+              <td>2022</td>
+            </tr>
+            <tr>
+              <td>Year (2 Digits)</td>
+              <td>YY</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td>Week</td>
+              <td>w</td>
+              <td>1-53</td>
+            </tr>
+            <tr>
+              <td>Week (Leading zero)</td>
+              <td>ww</td>
+              <td>01-53</td>
+            </tr>
+            <tr>
+              <td>Hour (12h Format)</td>
+              <td>h</td>
+              <td>1-12</td>
+            </tr>
+            <tr>
+              <td>Hour (12h Format, Leading zero)</td>
+              <td>hh</td>
+              <td>01-12</td>
+            </tr>
+            <tr>
+              <td>Hour (24h Format)</td>
+              <td>H</td>
+              <td>0-23</td>
+            </tr>
+            <tr>
+              <td>Hour (24h Format, Leading zero)</td>
+              <td>HH</td>
+              <td>00-23</td>
+            </tr>
+            <tr>
+              <td>Minute</td>
+              <td>m</td>
+              <td>0-59</td>
+            </tr>
+            <tr>
+              <td>Minute (Leading zero)</td>
+              <td>mm</td>
+              <td>00-59</td>
+            </tr>
+            <tr>
+              <td>Second</td>
+              <td>s</td>
+              <td>0-59</td>
+            </tr>
+            <tr>
+              <td>Second (Leading zero)</td>
+              <td>ss</td>
+              <td>00-59</td>
+            </tr>
+            <tr>
+              <td>AM/PM</td>
+              <td>A</td>
+              <td>AM-PM</td>
+            </tr>
+            <tr>
+              <td>AM/PM (lowercase)</td>
+              <td>a</td>
+              <td>am-pm</td>
+            </tr>
+            <tr>
+              <td>Custom Text</td>
+              <td>Wrap in double or single quotes</td>
+              <td>Your text without quotes</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="ui ignored warning message">
+            <p>If you previously used the <code>ampm</code> setting in FUI < 2.9.0, you will need to update your code to (not) use the <code>A</code> or <code>a</code> token for date/datetime/time/cellTime formatter instead.</p>
+            <p>For quicker migration you could globally override the format settings like this:
+                <div class="code" data-type="javascript">
+                    $.fn.calendar.settings.formatter.datetime = 'MMMM D, YYYY H:mm';
+                    $.fn.calendar.settings.formatter.time = 'H:mm';
+                    $.fn.calendar.settings.formatter.cellTime = 'H:mm';
+                </div>
+            </p>
+        </div>
+      </p>
+
+      <div class="ui calendar" id="token_format_calendar">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date" readonly>
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#token_format_calendar')
+        .calendar({
+          type: 'date',
+          formatter: {
+            date: '"approx:"YYYY-MM-DD'
+          }
+        })
+      ;
+      </div>
+    </div>
+    <div class="another example">
+      <p>You can also provide a custom function to return anything you want</p>
+      <div class="ui calendar" id="custom_format_calendar">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date" readonly>
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#custom_format_calendar')
+        .calendar({
+          type: 'date',
+          formatter: {
+            date: function (date, settings) {
+              if (!date) return '';
+              // Show the selected year 85 Years ahead
+              return 'Expires in ' + (date.getFullYear() + 85);
+            }
+          }
+        })
+      ;
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Century Calculation for shortyears</h4>
+      <p>When a 2-digit shortyear is entered, you can adjust how to calculate the belonging century</p>
+      <h5>Example 1:<br> Shortyears 00-99 -> 2000-2099</h5>
+        <div class="ui calendar" id="shortyear_example1">
+            <div class="ui input left icon">
+                <i class="calendar icon"></i>
+                <input type="text" placeholder="Date">
+            </div>
+        </div>
+        <div class="code" data-type="javascript">
+        $('#shortyear_example1')
+            .calendar({
+                type: 'date',
+                centuryBreak: 100
+            })
+        ;
+      </div>
+    </div>
+    <div class="another example">
+      <h5>Example 2:<br> Shortyears 00-99 -> 1900-1999</h5>
+      <div class="ui calendar" id="shortyear_example2">
+          <div class="ui input left icon">
+              <i class="calendar icon"></i>
+              <input type="text" placeholder="Date">
+          </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#shortyear_example2')
+          .calendar({
+              type: 'date',
+              centuryBreak: 0
+          })
+      ;
+      </div>
+    </div>
+    <div class="another example">
+      <h5>Example 3:<br> Shortyears 00-59 -> 3000-3059<br>
+          Shortyears 60-99 -> 2900-2959</h5>
+      <div class="ui calendar" id="shortyear_example3">
+          <div class="ui input left icon">
+              <i class="calendar icon"></i>
+              <input type="text" placeholder="Date">
+          </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#shortyear_example3')
+          .calendar({
+              type: 'date',
+              currentCentury: 3000
+          })
+      ;
+      </div>
+    </div>
+    <div class="another example">
+      <h5>Example 4:<br>Shortyears 00-39 -> 1800-1839<br>
+          Shortyears 40-99 -> 1740-1799</h5>
+      <div class="ui calendar" id="shortyear_example4">
+          <div class="ui input left icon">
+              <i class="calendar icon"></i>
+              <input type="text" placeholder="Date">
+          </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#shortyear_example4')
+          .calendar({
+              type: 'date',
+              currentCentury: 1800,
+              centuryBreak: 40
+          })
+      ;
+      </div>
+    </div>
+
+    <div class="example" data-since="2.7.3">
+      <h4 class="ui header">Select adjacent days</h4>
+      <p>It's possible to also select adjacent days of the previous and next month in the current month view instead of being disabled</p>
+      <div class="ui calendar" id="adjacentdays_calendar">
+          <div class="ui input left icon">
+              <i class="calendar icon"></i>
+              <input type="text" placeholder="Date">
+          </div>
+      </div>
+      <div class="evaluated code" data-type="javascript">
+      $('#adjacentdays_calendar')
+        .calendar({
+          selectAdjacentDays: true,
+          type: 'date'
+        })
+      ;
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Language</h4>
+      <p>It's possible to change the calendar language to fit with your needs</p>
+      <div class="ui calendar" id="french_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date/Time">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#french_calendar')
+        .calendar({
+          text: {
+            days: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+            dayNamesShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+            dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+            months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Decembre'],
+            monthsShort: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aou', 'Sep', 'Oct', 'Nov', 'Dec'],
+            today: 'Aujourd\'hui',
+            now: 'Maintenant',
+            am: 'AM',
+            pm: 'PM',
+            weekNo: 'Semaine'
+          }
+        })
+      ;
+      </div>
+    </div>
+
+    <h2 class="ui dividing header">Coupling</h2>
+    <div class="example">
+      <h4 class="ui header">Button</h4>
+      <p>A calendar can be coupled to a button</p>
+      <div class="ui calendar" id="button_calendar">
+        <div class="ui button">Select date</div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#button_calendar')
+        .calendar()
+      ;
+      </div>
+    </div>
+
+    <div class="no example" data-since="2.9.1">
+      <h4 class="ui header">Context</h4>
+      <p>A calendar popup inside an overflowing container does not allow the calendar popup to be shown completely, because it's still placed inside the same overflowing container of the triggering element by default.
+         To solve this, you can now use the context setting and provide a (non-overflowing) parent element to move the calendar popup outside of the overflowing container and display the calendar popup properly.
+         <br>
+         The following example places the calendar input inside a overflowing scrolling segment. By defining the context to body the calendar popup is rendered as direct child of body, thus displays the calendar popup properly overlaying the otherwise restricted segment.
+      </p>
+      <div class="ui calendar" id="context_calendar">
+        <div class='ui very short scrolling segment'>
+          <div class="ui fluid input left icon">
+            <i class="calendar icon"></i>
+            <input type="text" placeholder="Date">
+          </div>
+          <p>
+          Some text ...<br>
+          Some text ...<br>
+          Some text ...<br>
+          Some text ...<br>
+          Some text ...<br>
+          Some text ...<br>
+          Some text ...<br>
+          Some text ...<br>
+          Some text ...<br>
+          </p>
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#context_calendar')
+        .calendar({
+            context: 'body'
+        })
+      ;
+      </div>
+    </div>
+
+    <h2 class="ui dividing header">Disabling specific Days</h2>
+    <div class="example" data-since="2.6.4">
+      <h4 class="ui header">Days of Week</h4>
+      <p>Disable each Monday, Wednesday and Friday from selection</p>
+      <div class="ui calendar" id="disableddaysofweek_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#disableddaysofweek_calendar')
+        .calendar({
+            disabledDaysOfWeek: [1,3,5]
+        })
+      ;
+      </div>
+    </div>
+    <div class="example">
+      <h4 class="ui header">Single Dates</h4>
+      <p>Disabling specific single dates which can optionally display a reason in popup on hover</p>
+      <div class="ui calendar" id="disableddates_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+      <div class="code" data-type="javascript">
+      $('#disableddates_calendar')
+        .calendar({
+            initialDate: new Date('2018-12-01'),
+            disabledDates: [{
+                    date: new Date('2018-12-22'),
+                    message: 'xmas gift shopping'
+                },
+                {
+                    date: new Date('2018-12-25'),
+                    message: 'Santa Clause is coming to town',
+                    inverted: true,
+                    variation: 'basic'
+                },
+                new Date('2018-12-31')  /* No Reason. Everybody knows why ;) */
+            ]
+        })
+      ;
+      </div>
+    </div>
+    <div class="example" data-since="2.9.0">
+      <h4 class="ui header">Hours</h4>
+      <p>Disabling specific hours of specific days which can optionally display a reason in popup on hover</p>
+      <div class="ui calendar" id="disabledhours_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+
+      <div class="code" data-type="javascript">
+      $('#disabledhours_calendar')
+        .calendar({
+            initialDate: new Date('2021-07-01'),
+            formatter: {
+                datetime: 'MMMM D, YYYY H:mm',
+                time: 'H:mm',
+                cellTime: 'H:mm'
+            },
+            disabledHours: [
+              0, // Midnight will always be disabled
+              {
+              // Every Saturday and Sunday will be entirely disabled
+                days: [0, 6],
+                hours: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+                message: 'We dont work on Saturday and Sunday',
+                inverted: true,
+                variation: 'basic'
+              },
+              {
+               // Friday afternoon will be disabled
+                date: new Date('2021-07-02'),
+                hours: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+                message: 'Sorry this afternoon we are closed !',
+                inverted: true
+              },
+              {
+               // All hours between 1 and 7 will be disabled every day
+                hours: [1, 2, 3, 4, 5, 6, 7],
+                message: 'We are sleeping !'
+              },
+              {
+              // 12:00 and 13:00 will be disabled every day
+                hours: [12, 13],
+                message: 'Lunch time !'
+              }
+            ]
+        })
+      ;
+      </div>
+    </div>
+
+    <div class="example" data-since="2.8.4">
+      <h4 class="ui header">Whole Months</h4>
+      <p>It's possible to disable all days of specific months</p>
+      <div class="ui calendar" id="disabledmonth_calendar">
+          <div class="ui input left icon">
+              <i class="calendar icon"></i>
+              <input type="text" placeholder="Date">
+          </div>
+      </div>
+      <div class="evaluated code" data-type="javascript">
+          $('#disabledmonth_calendar')
+          .calendar({
+            type: 'date',
+            initialDate: new Date('2020-12-01'),
+            disabledDates: [{
+                month: 11,     //Javascript months start from 0 (!)
+                message: 'All days in December are booked out'
+            },
+            {
+                month: [0,1],  //Javascript months start from 0 (!)
+                message: 'No booking in January or February'
+            }
+          ]
+          })
+          ;
+      </div>
+    </div>
+    <div class="example" data-since="2.8.4">
+      <h4 class="ui header">Whole Years</h4>
+      <p>It's possible to disable all days of a whole year</p>
+      <div class="ui calendar" id="disabledyear_calendar">
+          <div class="ui input left icon">
+              <i class="calendar icon"></i>
+              <input type="text" placeholder="Date">
+          </div>
+      </div>
+      <div class="evaluated code" data-type="javascript">
+          $('#disabledyear_calendar')
+          .calendar({
+            type: 'date',
+            initialDate: new Date('2020-12-01'),
+            disabledDates: [{
+                year: 2020,
+                message: '2020 is not available'
+            },
+            {
+                year: [2022,2023],
+                message: 'Years 2022 and 2023 are not available'
+            }
+            ]
+          })
+          ;
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Enable only specific Dates</h4>
+      <p>Disable all dates by default and only enable specific given dates.</p>
+      <div class="ui calendar" id="enableddates_calendar">
+          <div class="ui input left icon">
+              <i class="calendar icon"></i>
+              <input type="text" placeholder="Date">
+          </div>
+      </div>
+      <div class="code" data-type="javascript">
+          $('#enableddates_calendar')
+          .calendar({
+            type: 'date',
+            initialDate: new Date('2019-03-01'),
+            enabledDates: [
+                new Date('2019-03-05'),
+                new Date('2019-03-10'),
+                new Date('2019-03-20')
+            ]
+          })
+          ;
+      </div>
+    </div>
+
+    <h2 class="ui dividing header">Highlighting specific Days</h2>
+    <div class="example" data-since="2.7.5">
+      <h4 class="ui header">Event Dates</h4>
+      <p>Mark specific days as events, giving them a different cell style and a tooltip message</p>
+      <div class="ui calendar" id="eventdates_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+      <div class="evaluated code" data-type="javascript">
+      $('#eventdates_calendar').calendar({
+          initialDate: new Date('2019-04-01'),
+          eventDates: [
+              {
+                date: new Date('2019-04-21'),
+                message: 'Show me in light purple',
+                class: 'inverted purple',   // cellclass
+                variation: 'purple'         // tooltip variation
+              },{
+                date: new Date('2019-04-22'),
+                message: 'Show me in green',
+                class: 'green',
+                variation: 'green'
+              }
+          ]
+      });
+      </div>
+    </div>
+    <div class="another example">
+      <div class="ui calendar" id="eventdates2_calendar">
+        <div class="ui fluid input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date">
+        </div>
+      </div>
+      <div class="evaluated code" data-type="javascript">
+      $('#eventdates2_calendar').calendar({
+          initialDate: new Date('2019-04-01'),
+          eventClass: 'inverted red',
+          eventDates: [
+              new Date('2019-04-20'), //no message tooltip
+              {
+                date: new Date('2019-04-21'),
+                message: 'I got the default color (light red)'
+              },{
+                date: new Date('2019-04-22'),
+                message: 'Me too'
+              }
+          ]
+      });
+      </div>
+    </div>
+
+  </div>
+  <div class="ui tab" data-tab="usage">
+
+    <h2 class="ui dividing header">Initializing</h2>
+
+    <div class="no example">
+      <h4 class="ui header">Initializing a calendar</h4>
+      <p>Calendar is initialized on pre-existing markup</p>
+      <div class="test code" data-type="javascript">
+      $('.ui.calendar')
+        .calendar()
+      ;
+      </div>
+    </div>
+
+    <h2 class="ui dividing header">Behaviors</h2>
+
+    <p>All the following behaviors can be called using the syntax:<p>
+    <div class="code" data-type="javascript">
+    $('.ui.calendar').calendar('behavior', argumentOne, argumentTwo...);
+    </div>
+
+    <table class="ui definition celled table">
+      <tr>
+        <td>refresh</td>
+        <td>Refresh the calendar</td>
+      </tr>
+      <tr>
+        <td>popup(arguments)</td>
+        <td>Call the popup module (e.g. passing <code>show</code> will show the calendar popup)</td>
+      </tr>
+      <tr>
+        <td>focus</td>
+        <td>Focus the calendar input</td>
+      </tr>
+      <tr>
+        <td>blur</td>
+        <td>Blur the calendar input</td>
+      </tr>
+      <tr>
+        <td>clear</td>
+        <td>Clear the selected date</td>
+      </tr>
+      <tr>
+        <td>get date</td>
+        <td>Get the selected date</td>
+      </tr>
+      <tr>
+        <td>set date(date, updateInput = true, fireChange = true)</td>
+        <td>Set the selected date. Pass <code>false</code> to <code>updateInput</code> to disable updating the input. Pass <code>false</code> to <code>fireChange</code> to disable the <code>onBeforeChange</code> and <code>onChange</code> callbacks for this change</td>
+      </tr>
+      <tr>
+        <td>get mode</td>
+        <td>Get the current selection mode (<code>year</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>minute</code>)</td>
+      </tr>
+      <tr>
+        <td>set mode(mode)</td>
+        <td>Set the current selection mode (<code>year</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>minute</code>)</td>
+      </tr>
+      <tr>
+        <td>get startDate</td>
+        <td>Get the start date for range selection</td>
+      </tr>
+      <tr>
+        <td>set startDate(date)</td>
+        <td>Set the start date for range selection</td>
+      </tr>
+      <tr>
+        <td>get endDate</td>
+        <td>Get the end date for range selection</td>
+      </tr>
+      <tr>
+        <td>set endDate(date)</td>
+        <td>Set the end date for range selection</td>
+      </tr>
+      <tr>
+        <td>get focusDate</td>
+        <td>Get the currently focused date</td>
+      </tr>
+      <tr>
+        <td>set focusDate(date)</td>
+        <td>Set the currently focused date</td>
+      </tr>
+      <tr>
+        <td>set minDate(date)</td>
+        <td>Set the minimal selectable date</td>
+      </tr>
+      <tr>
+        <td>set maxDate(date)</td>
+        <td>Set the maximal selectable date</td>
+      </tr>
+      <tr>
+        <td>destroy</td>
+        <td>Destroys instance and removes all events</td>
+      </tr>
+    </table>
+
+  </div>
+
+  <div class="ui tab" data-tab="settings">
+    <h2 class="ui dividing header">
+      Calendar
+    </h2>
+
+    <h4 class="ui header">
+      Behavior
+    </h4>
+    <table class="ui sortable celled definition table">
+      <thead>
+        <th>Setting</th>
+        <th class="four wide">Default</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>type</td>
+          <td>datetime</td>
+          <td>Picker type, can be <code>datetime</code>, <code>date</code>, <code>time</code>, <code>month</code>, or <code>year</code></td>
+        </tr>
+        <tr>
+          <td>firstDayOfWeek</td>
+          <td>0</td>
+          <td>Day for first day column (0 = Sunday)</td>
+        </tr>
+        <tr>
+          <td>constantHeight</td>
+          <td>true</td>
+          <td>Add row(s) to shorter months to keep day calendar height consistent (6 rows)</td>
+        </tr>
+        <tr>
+          <td>today</td>
+          <td>false</td>
+          <td>Show a 'today/now' button at the bottom of the calendar</td>
+        </tr>
+        <tr>
+          <td>closable</td>
+          <td>true</td>
+          <td>Close the popup after selecting a date/time</td>
+        </tr>
+        <tr>
+          <td>monthFirst</td>
+          <td>true</td>
+          <td>Month before day when parsing/converting date from/to text</td>
+        </tr>
+        <tr>
+          <td>touchReadonly</td>
+          <td>true</td>
+          <td>Set input to readonly on touch devices</td>
+        </tr>
+        <tr>
+          <td>inline</td>
+          <td>false</td>
+          <td>Create the calendar inline instead of inside a popup</td>
+        </tr>
+        <tr>
+          <td>showWeekNumbers</td>
+          <td>false</td>
+          <td>Display the week number on the left</td>
+        </tr>
+        <tr>
+          <td>disabledDaysOfWeek</td>
+          <td>[]</td>
+          <td>Disable some days of the week from selection (0= Sunday, 1=Monday, ...)</td>
+        </tr>
+        <tr>
+          <td>disabledDates</td>
+          <td>[]</td>
+          <td>An array of Date-Objects or Objects with given message to show in a popup when hovering over the appropriate date <code>{date: Date, message: string}</code></td>
+        </tr>
+        <tr>
+          <td>disabledHours</td>
+          <td>[]</td>
+          <td>An array of integer values from 0-23 or Objects with given message to show in a popup when hovering over the appropriate date <code>{days: intArray, hours: intArray, message: string}</code></td>
+        </tr>
+        <tr>
+          <td>enabledDates</td>
+          <td>[]</td>
+          <td>An array of Date-Objects to be enabled for selection. All other dates are disabled</td>
+        </tr>
+        <tr>
+          <td>eventDates</td>
+          <td>[]</td>
+          <td>An array of Date-Objects or Objects with given message to show in a popup when hovering over the appropriate date and an individual class for the cell <code>{date: Date, message: string, class: string}</code></td>
+        </tr>
+        <tr>
+          <td>eventClass</td>
+          <td>blue</td>
+          <td>Default class to be added to each cell of an eventDate date element when no specific class is given to the eventDate element</td>
+        </tr>
+        <tr>
+          <td>on</td>
+          <td>null</td>
+          <td>Choose when to show the popup (defaults to <code>click</code>)</td>
+        </tr>
+        <tr>
+          <td>initialDate</td>
+          <td>null</td>
+          <td>Date to display initially when no date is selected (null = now)</td>
+        </tr>
+        <tr>
+          <td>startMode</td>
+          <td>false</td>
+          <td>Display mode to start in, can be <code>year</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>minute</code> (false = 'day')</td>
+        </tr>
+        <tr>
+          <td>minDate</td>
+          <td>null</td>
+          <td>Minimum date/time that can be selected, dates/times before are disabled</td>
+        </tr>
+        <tr>
+          <td>maxDate</td>
+          <td>null</td>
+          <td>Maximum date/time that can be selected, dates/times after are disabled</td>
+        </tr>
+        <tr>
+          <td>disableYear</td>
+          <td>false</td>
+          <td>Disable year selection mode</td>
+        </tr>
+        <tr>
+          <td>disableMonth</td>
+          <td>false</td>
+          <td>Disable month selection mode</td>
+        </tr>
+        <tr>
+          <td>disableMinute</td>
+          <td>false</td>
+          <td>Disable minute selection mode</td>
+        </tr>
+        <tr>
+          <td>formatInput</td>
+          <td>true</td>
+          <td>Format the input text upon input blur and module creation</td>
+        </tr>
+        <tr>
+          <td>startCalendar</td>
+          <td>null</td>
+          <td>jQuery object or selector for another calendar that represents the start date of a date range</td>
+        </tr>
+        <tr>
+          <td>endCalendar</td>
+          <td>null</td>
+          <td>jQuery object or selector for another calendar that represents the end date of a date range</td>
+        </tr>
+        <tr>
+          <td>multiMonth</td>
+          <td>1</td>
+          <td>Show multiple months when in <code>day</code> mode</td>
+        </tr>
+        <tr>
+          <td>monthOffset</td>
+          <td>0</td>
+          <td>Position current month by offset when multimonth > 1</td>
+        </tr>
+        <tr>
+          <td>minTimeGap</td>
+          <td>5</td>
+          <td>Minimum time gap, can only be 5, 10, 15, 20, 30</td>
+        </tr>
+        <tr>
+          <td>centuryBreak</td>
+          <td>60</td>
+          <td>Starting short year until 99 where it will be assumed to belong to the last century</td>
+        </tr>
+        <tr>
+          <td>currentCentury</td>
+          <td>2000</td>
+          <td>century to be added to 2-digit years (00 to <code>centuryBreak</code>-1)</td>
+        </tr>
+        <tr>
+          <td>selectAdjacentDays</td>
+          <td>false</td>
+          <td>Make adjacent days from previous and next month also selectable</td>
+        </tr>
+        <tr>
+          <td>popupOptions</td>
+          <td colspan="2">
+            <div class="code" data-type="javascript">
+            popupOptions: {
+              position: 'bottom left',
+              lastResort: 'bottom left',
+              prefer: 'opposite',
+              hideOnScroll: false
+            }
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>text</td>
+          <td colspan="2">
+            <div class="code" data-type="javascript">
+            text: {
+              days: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+              dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+              dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+              months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+              monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+              today: 'Today',
+              now: 'Now',
+              am: 'AM',
+              pm: 'PM'
+            }
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>formatter</td>
+          <td colspan="2">
+            <div class="ui ignored info message">For details about the below mentioned token string format see <a href="#custom-format">Custom Format</a></div>
+            <div class="code" data-type="javascript">
+            // Different customizable methods to format a certain part of the date or popup text output
+            formatter: {
+                // do whatever you like to the given cell
+                // cellOptions is an object containing values for {mode,adjacent,disabled,active,today}
+                cell: function (cell, date, cellOptions) {}
+
+                // Every other method can either be a token string
+                // or a function(date,settings) which has to return a string
+                cellTime: 'h:mm A',
+                date: 'MMMM D, YYYY',
+                datetime: 'MMMM D, YYYY h:mm A',
+                dayColumnHeader: function (day, settings) {},
+                dayHeader: 'MMMM YYYY',
+                hourHeader: 'MMMM D, YYYY',
+                minuteHeader: 'MMMM D, YYYY',
+                month: 'MMMM YYYY',
+                monthHeader: 'YYYY',
+                time: 'h:mm A',
+                today: function (settings) {},
+                year: 'YYYY',
+                yearHeader: function (date, settings) {},
+            }
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>parser</td>
+          <td colspan="2">
+            <div class="code" data-type="javascript">
+            // Customizable methods to parse a given date
+            // Has to return a date object
+            parser: {
+                date: function (text, settings) {}
+            }
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>context</td>
+          <td>
+            false
+          </td>
+          <td>DOM selector where the calendar popup should be attached to. By default (false) the calendar popoup is attached as direct child of the triggering element</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 class="ui header">
+      Callbacks
+    </h4>
+    <table class="ui sortable celled definition table">
+      <thead>
+        <th class="three wide">Callback</th>
+        <th class="three wide">Context</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="five wide">onBeforeChange(date, text, mode)</td>
+          <td>active content</td>
+          <td data-since="2.8.0">Is called before a calendar date changes. <code>return false;</code> will cancel the change</td>
+        </tr>
+        <tr>
+          <td>onChange(date, text, mode)</td>
+          <td>active content</td>
+          <td>Is called after a calendar date has changed.</td>
+        </tr>
+        <tr>
+          <td>onShow</td>
+          <td>active content</td>
+          <td>Is called before a calendar is shown. <code>return false;</code> will prevent the calendar to be shown</td>
+        </tr>
+        <tr>
+          <td>onVisible</td>
+          <td>active content</td>
+          <td>Is called when the calendar is shown</td>
+        </tr>
+        <tr>
+          <td>onHide</td>
+          <td>active content</td>
+          <td>Is called before a calendar is hidden. <code>return false;</code> will prevent the calendar to be hidden</td>
+        </tr>
+        <tr>
+          <td>onHidden</td>
+          <td>active content</td>
+          <td>Is called when the calendar is hidden</td>
+        </tr>
+        <tr>
+          <td>onSelect(date,mode)</td>
+          <td>active content</td>
+          <td>Is called when a cell of the calendar is selected providing its value and current mode. <code>return false;</code> will prevent the selection</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 class="ui header">
+      DOM Settings
+      <div class="sub header">DOM settings specify how this module should interface with the DOM</div>
+    </h4>
+    <table class="ui sortable celled definition table">
+      <thead>
+        <th>Setting</th>
+        <th class="seven wide">Default</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>name</td>
+          <td>Calendar</td>
+          <td>Name used in log statements</td>
+        </tr>
+        <tr>
+          <td>namespace</td>
+          <td>calendar</td>
+          <td>Event namespace. Makes sure module teardown does not effect other events attached to an element.</td>
+        </tr>
+        <tr>
+          <td>selector</td>
+          <td>
+            <div class="code" data-type="javascript">
+            selector    : {
+              popup: '.ui.popup',
+              input: 'input',
+              activator: 'input',
+              append: '.inline.field,.inline.fields'
+            }
+            </div>
+          </td>
+          <td>If the calendars parent node matches the <code>append</code> selector, the calendar is appended to the input field instead of prepended.</td>
+        </tr>
+        <tr>
+          <td>className</td>
+          <td colspan="2">
+            <div class="code" data-type="javascript">
+            className   : {
+              calendar: 'calendar',
+              active: 'active',
+              popup: 'ui popup',
+              grid: 'ui equal width grid',
+              column: 'column',
+              table: 'ui celled center aligned unstackable table',
+              prev: 'prev link',
+              next: 'next link',
+              prevIcon: 'chevron left icon',
+              nextIcon: 'chevron right icon',
+              link: 'link',
+              cell: 'link',
+              disabledCell: 'disabled',
+              weekCell: 'disabled',
+              adjacentCell: 'adjacent',
+              activeCell: 'active',
+              rangeCell: 'range',
+              focusCell: 'focus',
+              todayCell: 'today',
+              today: 'today link'
+            }
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>regExp</td>
+          <td colspan="2">
+            <div class="code" data-type="javascript">
+            regExp : {
+              dateWords: /[^A-Za-z\u00C0-\u024F]+/g,
+              dateNumbers: /[^\d:]+/g
+            }
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>metadata</td>
+          <td colspan="2">
+            <div class="code" data-type="javascript">
+            metadata : {
+              date: 'date',
+              focusDate: 'focusDate',
+              startDate: 'startDate',
+              endDate: 'endDate',
+              mode: 'mode',
+              monthOffset: 'monthOffset'
+            }
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>silent</td>
+          <td>false</td>
+          <td>Silences all console output including error messages, regardless of other debug settings.</td>
+        </tr>
+        <tr>
+          <td>debug</td>
+          <td>false</td>
+          <td>Debug output to console</td>
+        </tr>
+        <tr>
+          <td>performance</td>
+          <td>true</td>
+          <td>Show <code>console.table</code> output with performance metrics</td>
+        </tr>
+        <tr>
+          <td>verbose</td>
+          <td>false</td>
+          <td>Debug output includes all internal behaviors</td>
+        </tr>
+        <tr>
+          <td>errors</td>
+          <td colspan="2">
+            <div class="code" data-type="javascript">
+            error   : {
+              popup: 'UI Popup, a required component is not included in this page',
+              method: 'The method you called is not defined.'
+            }
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

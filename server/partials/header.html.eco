@@ -1,0 +1,75 @@
+
+<% @tabs = {  definition: 'Definition', examples: 'Examples', usage: 'Usage', settings: 'Settings' } if @tabs == 'module' %>
+<% @tabs = {  overview: 'Overview', usage: 'Usage', examples: 'Examples', settings: 'Settings' } if @tabs == 'behavior' %>
+<div class="ui masthead vertical<% if @tabs?: %> tab<% end %> segment">
+  <div class="ui container">
+    <div class="introduction">
+
+      <h1 class="ui header">
+        <%=@document.title %>
+        <% if @document.status?: %><span class="ui <%= if @document.statusColor? then @document.statusColor else 'yellow' %> label"><%= @document.status %></span><% end %>
+        <div class="sub header">
+          <a class="twitter-share-button twitter"
+            href="https://twitter.com/share"
+            data-text="Fomantic-UI <%= @getVersion() %> is the official community fork of Semantic-UI&#010;Find the <%= @document.element %> <%= @document.elementType %> here"
+            data-url="https://fomantic-ui.com/<%= @document.elementType %>s/<%= @document.element %>.html"
+            data-via="fomanticui">
+          </a>
+          <script type="text/javascript">
+          window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+          </script>
+          <iframe title="github star button" class="github" src="https://ghbtns.com/github-btn.html?user=fomantic&amp;repo=fomantic-ui&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+          <%=@document.description %>
+        </div>
+      </h1>
+
+      <div class="ui hidden divider"></div>
+
+      <div class="ui right floated main menu">
+        <a class="bug popup icon item" data-content="Edit This Page" href="https://github.com/fomantic/Fomantic-UI-Docs/edit/<%= @getBranch() %>/server/documents/<%= @document.relativePath %>">
+          <i class="edit icon"></i>
+        </a>
+        <% if @document.type is 'UI Element' or @document.type is 'UI View' or @document.type is 'UI Collection' or @document.type is 'UI Module': %>
+        <a class="bug popup icon item" data-content="Submit Bug Report" href="https://github.com/fomantic/Fomantic-UI/issues/new?body=%23%20Bug%20Report%0A%0A%3C!--%0ATitle%20Format%0A%20%20%5BScope%5D%20Summary%20of%20what%20is%20broken%0A--%3E%0A%0A%23%23%20Steps%20to%20reproduce%0A1.%0A2.%0A3.%0A%0A%23%23%20Expected%20result%0A%0A%23%23%20Actual%20result%0A%0A%23%23%20Testcase%0A%3C!--%20Fork%20https%3A%2F%2Fjsfiddle.net%2F31d6y7mn%20--%3E%0A%0A%23%23%20Screenshot%20(when%20possible)%0A!%5B%5D()%0A%0A%23%23%20Version%0Ax.x.x">
+          <i class="bug icon"></i>
+        </a>
+        <% end %>
+        <a class="github popup icon item" data-content="View project on GitHub" href="https://github.com/fomantic/Fomantic-UI">
+          <i class="alternate github icon"></i>
+        </a>
+      </div>
+
+      <% if @document.type is 'UI Module': %>
+<!--       <a href="/module.html" class="ui right floated basic right labeled icon button">
+        Learn about Modules
+        <i class="help icon" data-title="What are Modules?" data-content="Modules are UI elements that include behaviors as part of their definition. Modules require some knowledge of Javascript to use."></i>
+      </a> -->
+      <% end %>
+      <% if @document.themes? && @document.themes.length > 1: %>
+      <div class="ui floating <% if @document.themes.length > 4: %>scrolling <% end %>dropdown theme basic button" data-element="<%= @document.element %>" data-type="<%= @document.elementType %>">
+        <span class="text"><%= @document.themes.length %> Themes</span>
+        <div class="menu transition hidden">
+          <% for id, name of @document.themes: %>
+            <div class="item" data-value="<%= name %>" data-text="<%= name %> Theme"><%= (name.charAt(0).toUpperCase() + name.slice(1)) %></div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% if @tabs?: %>
+    <% index = 0 %>
+    <% tabCount = 0 %>
+    <% numbers = ['', '', 'two item', 'three item', 'four item', 'five item', 'six item', 'seven item', 'eight item', 'nine item'] %>
+    <% colors = ['red', 'teal', 'blue', 'purple', 'black', 'orange'] %>
+      <% for id, name of @tabs: %>
+        <% tabCount++ %>
+      <% end %>
+      <div class="ui <%= numbers[tabCount] %> stackable tabs menu">
+        <% for id, name of @tabs: %>
+          <a class="<%= if index == 0 then 'active ' %>item" data-tab="<%= id %>"><%= name %></a>
+          <% index++ %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

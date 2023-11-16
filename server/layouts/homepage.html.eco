@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- @partial('meta') %>
+  <%- @partial('css') %>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+  <link rel="stylesheet/less" type="text/css" href="/src/definitions/elements/button.less" />
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+</head>
+<body id="example" class="<%= @document.css %>" ontouchstart="">
+
+  <%- @partial('sidebar') %>
+  <%- @partial('fixed-menu') %>
+
+  <div class="pusher">
+    <div class="full height">
+      <%- @content %>
+    </div>
+    <%- @partial('footer') %>
+  </div>
+
+  <% if 'development' in @getEnvironments(): %>
+  <script src="/javascript/library/jquery.js"></script>
+  <% else: %>
+  <script src="/javascript/library/jquery.min.js"></script>
+  <% end %>
+
+  <script src="/javascript/library/highlight.min.js"></script>
+  <script src="/javascript/library/easing.min.js"></script>
+  <%- @partial('ui-javascript') %>
+  <script src="/javascript/docs.js"></script>
+  <script src="/javascript/home.js"></script>
+  <%- @partial('less') %>
+</body>
+
+</html>

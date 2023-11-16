@@ -1,0 +1,467 @@
+---
+layout      : 'default'
+css         : 'rating'
+standalone  : true
+
+element     : 'rating'
+elementType : 'module'
+
+title       : 'Rating'
+description : 'A rating indicates user interest in content'
+type        : 'UI Module'
+
+themes      : ['Default']
+---
+
+<%- @partial('header', { tabs: 'module' }) %>
+
+<link rel="stylesheet/less" type="text/css" href="/src/definitions/modules/rating.less" />
+<script src="/javascript/rating.js"></script>
+
+<div class="main ui container">
+
+  <div class="ui active tab" data-tab="definition">
+
+    <h2 class="ui dividing header">Types</h2>
+
+    <div class="example">
+      <h4 class="ui header">Rating
+        <span class="ui orange label">Flexbox</span>
+      </h4>
+      <p>A basic rating </p>
+      <div class="ui rating" data-max-rating="1"></div>
+    </div>
+
+    <div class="example" data-since="2.7">
+      <h4 class="ui header">Icon</h4>
+      <p>You can use any available icon as rating indicator</p>
+
+      <div class="ui yellow rating" data-icon="star" data-rating="2"></div>
+      <br><br>
+      <div class="ui red rating" data-icon="heart" data-rating="2"></div>
+      <br><br>
+      <div class="ui purple rating" data-icon="female" data-rating="2"></div>
+      <br><br>
+      <div class="ui blue rating" data-icon="male" data-rating="2"></div>
+      <br><br>
+      <div class="ui grey rating" data-icon="cloud" data-rating="2"></div>
+      <br><br>
+      <div class="ui pink rating" data-icon="cat" data-rating="2"></div>
+      <br><br>
+      <div class="ui orange rating" data-icon="circle" data-rating="2"></div>
+
+    </div>
+
+    <div class="example" data-since="2.7" data-class="colors">
+      <h4 class="ui header">Color</h4>
+      <p>You can specify any color of the FUI color palette</p>
+      <div class="ui red rating" data-icon="star" data-rating="1" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui orange rating" data-icon="star" data-rating="2" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui yellow rating" data-icon="star" data-rating="3" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui olive rating" data-icon="star" data-rating="4" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui green rating" data-icon="star" data-rating="5" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui teal rating" data-icon="star" data-rating="6" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui blue rating" data-icon="star" data-rating="6" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui violet rating" data-icon="star" data-rating="5" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui purple rating" data-icon="star" data-rating="4" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui pink rating" data-icon="star" data-rating="3" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui brown rating" data-icon="star" data-rating="2" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui grey rating" data-icon="star" data-rating="1" data-max-rating="7"></div>
+      <br><br>
+      <div class="ui black rating" data-icon="star" data-rating="1" data-max-rating="7"></div>
+      <br><br>
+    </div>
+
+    <div class="example" data-since="2.8.0">
+      <h4 class="ui header">Partial Ratings</h4>
+      <p>You can use decimal values for showing partially filled ratings</p>
+      <div class="ui ignored warning message">
+        <p>Partial ratings require jQuery version >3.2 and are only supported by browsers with support for <a href="https://caniuse.com/#feat=css-variables">CSS Variables</a> and <a href="https://caniuse.com/#feat=mdn-css_types_image_gradient_linear-gradient_interpolation_hints">Gradient Midpoints</a>. Unsupported browsers will use a rounded down value.</p>
+      </div>
+      <div class="ui black rating" data-rating="0.5" data-max-rating="5"></div>
+      <br><br>
+      <div class="ui pink rating" data-rating="1.25" data-max-rating="5"></div>
+      <br><br>
+      <div class="ui red rating" data-rating="1.775" data-max-rating="5"></div>
+      <br><br>
+      <div class="ui yellow rating" data-rating="2.5" data-max-rating="5"></div>
+      <br><br>
+      <div class="ui green rating" data-rating="3.225" data-max-rating="5"></div>
+      <br><br>
+      <div class="ui purple rating" data-rating="3.65" data-max-rating="5"></div>
+      <br><br>
+      <div class="ui blue rating" data-rating="4.375" data-max-rating="5"></div>
+      <br><br>
+      <div class="ui brown rating" data-rating="4.75" data-max-rating="5"></div>
+    </div>
+
+    <h2 class="ui dividing header">States</h2>
+
+    <div class="example">
+      <h4 class="ui header">Disabled</h4>
+      <p>A rating can be started in non-interactive mode by adding a <code>disabled</code> class</p>
+      <div class="ui yellow disabled rating" data-rating="3" data-max-rating="5"></div>
+    </div>
+
+    <h2 class="ui dividing header">Variations</h2>
+
+    <div class="example">
+      <h4 class="ui header">Size</h4>
+      <p>A rating can vary in size</p>
+      <div class="ui mini yellow rating"></div>
+      <br><br>
+      <div class="ui tiny yellow rating"></div>
+      <br><br>
+      <div class="ui small yellow rating"></div>
+      <br><br>
+      <div class="ui yellow rating"></div>
+      <br><br>
+      <div class="ui large yellow rating"></div>
+      <br><br>
+      <div class="ui huge yellow rating"></div>
+      <br><br>
+      <div class="ui massive yellow rating"></div>
+    </div>
+  </div>
+
+  <div class="ui tab" data-tab="examples">
+
+    <h2 class="ui dividing header">Examples</h2>
+
+    <div class="example">
+      <h4 class="ui header">Setting existing values</h4>
+      <p>The icon can be set either using metadata value <code>data-icon</code> or the setting <code>icon</code>.</p>
+      <p>The starting rating can be set either using metadata value <code>data-rating</code> or the setting <code>initialRating</code>.</p>
+      <p>The maximum rating can be be set using the metadata value <code>data-max-rating</code> or the settings <code>maxRating</code>, or you can just include the icon HTML yourself on initialization to avoid the overhead of the <code>DOM template insertions</code>. </p>
+      <div class="ui ignored info message">If a metadata icon or rating is specified it will automatically override the default value specified in Javascript.</div>
+      <div class="code" data-type="javascript">
+      $('.toggle.example .rating')
+        .rating({
+          initialRating: 2,
+          maxRating: 4
+        })
+      ;
+      </div>
+      <div class="ui very relaxed celled list">
+        <div class="item">
+          <img class="ui wireframe image" src="/images/wireframe/square-image.png">
+          <div class="content">
+            <div class="header">
+              New York Dog Fair
+              <div class="ui red rating" data-icon="heart" data-rating="2"></div>
+            </div>
+            A fun day at the fair
+          </div>
+        </div>
+        <div class="item">
+          <img class="ui wireframe image" src="/images/wireframe/square-image.png">
+          <div class="content">
+            <div class="header">
+              Dog Appreciation Day
+              <div class="ui red rating" data-icon="heart" data-rating="2"></div>
+            </div>
+            I'd like to tell your dog he's great
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toggle no example">
+      <h4 class="ui header">Read-Only Ratings</h4>
+      <p>You can disable or enable interactive rating</p>
+      <div class="code" data-type="javascript" data-demo="true">
+      $('.toggle.example .rating')
+        .rating('disable')
+      ;
+      </div>
+      <div class="code" data-type="javascript" data-demo="true">
+      $('.toggle.example .rating')
+        .rating('enable')
+      ;
+      </div>
+      <div class="ui red demo rating" data-icon="heart" data-rating="3">
+        <i class="heart icon"></i>
+        <i class="heart icon"></i>
+        <i class="heart icon"></i>
+        <i class="heart icon"></i>
+        <i class="heart icon"></i>
+      </div>
+    </div>
+
+    <div class="clearing no example">
+      <h4 class="ui header">Clearing Ratings</h4>
+      <p>When clearable is set to <code>true</code> you can clear the rating by clicking on the current start rating.</p>
+      <div class="evaluated code" data-type="javascript">
+      $('.clearing.example .rating')
+        .rating('setting', 'clearable', true)
+      ;
+      </div>
+      <div class="ui red demo rating" data-icon="heart" data-rating="3">
+        <i class="heart icon"></i>
+        <i class="heart icon"></i>
+        <i class="heart icon"></i>
+        <i class="heart icon"></i>
+        <i class="heart icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui tab" data-tab="usage">
+
+    <h2 class="ui dividing header">Initializing</h2>
+
+    <div class="ui example">
+      <h4 class="ui header">Metadata</h4>
+      <p>You can specify the icon, starting rating and max rating in metadata.
+      <div class="code" data-type="javascript">
+        $('.ui.rating')
+          .rating()
+        ;
+      </div>
+      <div class="code" data-type="html">
+        <div class="ui rating" data-icon="circle" data-rating="3" data-max-rating="5"></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Javascript</h4>
+      <p>You can specify the icon and rating values in Javascript</p>
+      <div class="code" data-type="javascript">
+        $('.ui.rating')
+          .rating({
+            icon: 'circle',
+            initialRating: 3,
+            maxRating: 5
+          })
+        ;
+      </div>
+      <div class="code" data-type="html">
+        <div class="ui rating"></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Without Javascript</h4>
+      <p>If you don't need user interaction, you can use the rating module as a pure read-only CSS element</p>
+      <div class="code" data-type="html">
+        <div class="ui red rating disabled">
+          <i class="heart icon active"></i>
+          <i class="heart icon active"></i>
+          <i class="heart icon active"></i>
+          <i class="heart icon"></i>
+          <i class="heart icon"></i>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="ui dividing header">Behaviors</h2>
+
+    <p>All the following behaviors can be called using the syntax:</p>
+    <div class="code" data-type="javascript">
+    $('.ui.rating')
+      .rating('behavior name', argumentOne, argumentTwo)
+    ;
+    </div>
+
+    <table class="ui definition celled sortable table segment">
+      <thead>
+        <th>Behavior</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>set rating(rating)</td>
+          <td>Sets rating programmatically</td>
+        </tr>
+        <tr>
+          <td>get rating</td>
+          <td>Gets current rating</td>
+        </tr>
+        <tr>
+          <td>disable</td>
+          <td>Disables interactive rating mode</td>
+        </tr>
+        <tr>
+          <td>enable</td>
+          <td>Enables interactive rating mode</td>
+        </tr>
+        <tr>
+          <td>clear rating</td>
+          <td>Clears current rating</td>
+        </tr>
+        <tr>
+          <td>destroy</td>
+          <td>Destroys instance and removes all events</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ui tab" data-tab="settings">
+    <h3 class="ui header">
+      Rating Settings
+      <div class="sub header">Rating settings modify the rating's behavior</div>
+    </h3>
+    <table class="ui celled sortable definition table segment">
+      <thead>
+        <th>Setting</th>
+        <th class="four wide">Default</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>icon</td>
+          <td>star</td>
+          <td>The icon classname</td>
+        </tr>
+        <tr>
+          <td>initialRating</td>
+          <td>0</td>
+          <td>A number representing the default rating to apply</td>
+        </tr>
+        <tr>
+          <td>maxRating</td>
+          <td>4</td>
+          <td>The maximum rating value</td>
+        </tr>
+        <tr>
+          <td>fireOnInit</td>
+          <td>false</td>
+          <td>Whether callbacks like <code>onRate</code> should fire immediately after initializing with the current value.</td>
+        </tr>
+        <tr>
+          <td>clearable</td>
+          <td>auto</td>
+          <td>By default a rating will be only clearable if there is 1 icon. Setting to true/false will allow or disallow a user to clear their rating</td>
+        </tr>
+        <tr>
+          <td>interactive</td>
+          <td>true</td>
+          <td>Whether to enable user's ability to rate</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="ui header">
+      Callbacks
+      <div class="sub header">Callbacks specify a function to occur after a specific behavior.</div>
+    </h3>
+    <table class="ui celled sortable definition table segment">
+      <thead>
+        <th class="four wide">Setting</th>
+        <th>Context</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>onRate(value)</td>
+          <td>Rating</td>
+          <td>Is called after user selects a new rating</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="ui header">
+      DOM Settings
+      <div class="sub header">DOM settings specify how this module should interface with the DOM</div>
+    </h3>
+    <table class="ui celled sortable definition table segment">
+      <thead>
+        <th>Setting</th>
+        <th class="four wide">Default</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>namespace</td>
+          <td>rating</td>
+          <td>Event namespace. Makes sure module teardown does not effect other events attached to an element.</td>
+        </tr>
+        <tr>
+          <td>selector</td>
+          <td colspan="2">
+            <div class="code" data-type="javascript">
+      selector  : {
+        icon : '.icon'
+      }
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>className</td>
+          <td colspan="2">
+            <div class="code" data-type="javascript">
+      className : {
+        active     : 'active',
+        hover      : 'hover',
+        loading    : 'loading'
+      },
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h3 class="ui header">
+      Debug Settings
+      <div class="sub header">Debug settings controls debug output to the console</div>
+    </h3>
+    <table class="ui celled sortable definition table segment">
+      <thead>
+        <th>Setting</th>
+        <th class="four wide">Default</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>name</td>
+          <td>Rating</td>
+          <td>Name used in debug logs</td>
+        </tr>
+        <tr>
+          <td>silent</td>
+          <td>false</td>
+          <td>Silences all console output including error messages, regardless of other debug settings.</td>
+        </tr>
+        <tr>
+          <td>debug</td>
+          <td>false</td>
+          <td>Provides standard debug output to console</td>
+        </tr>
+        <tr>
+          <td>performance</td>
+          <td>true</td>
+          <td>Provides standard debug output to console</td>
+        </tr>
+        <tr>
+          <td>verbose</td>
+          <td>false</td>
+          <td>Provides ancillary debug output to console</td>
+        </tr>
+        <tr>
+          <td>error</td>
+          <td colspan="2">
+            <div class="code" data-type="javascript">
+      error   : {
+        method    : 'The method you called is not defined'
+      }
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

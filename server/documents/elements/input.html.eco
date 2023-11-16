@@ -1,0 +1,483 @@
+---
+layout      : 'default'
+css         : 'input'
+standalone  : true
+
+element     : 'input'
+elementType : 'element'
+
+title       : 'Input'
+description : 'An input is a field used to elicit a response from a user'
+type        : 'UI Element'
+
+themes      : ['Default', 'GitHub']
+---
+
+<%- @partial('header') %>
+<script src="/javascript/input.js"></script>
+<link rel="stylesheet/less" type="text/css" href="/src/definitions/elements/input.less" />
+
+<div class="main ui container">
+
+  <h2 class="ui dividing header">Types</h2>
+
+  <div class="example">
+    <h4 class="ui header">
+      Input
+    </h4>
+    <p>A standard input</p>
+    <div class="ui input">
+      <input type="text" placeholder="Search...">
+    </div>
+  </div>
+
+  <div class="example" data-since="2.9.0">
+    <h4 class="ui header">
+      File Input
+    </h4>
+    <p>A file input</p>
+    <div class="ui file input">
+      <input type="file">
+    </div>
+    <div class="ui ignored message">
+    If you want the trigger button having a custom text or an icon, you should use a <a href="#file-action">File Action Input</a>
+    </div>
+  </div>
+  <div class="example" data-since="2.9.0">
+    <h4 class="ui header">
+      Invisible File Input
+    </h4>
+    <p>A file input can be made invisible so you are able to design another element to trigger the file dialog.</p>
+    <p>To accomplish this, you have to use a corresponding <code>&lt;label&gt;</code> element. This can be styled as desired, most probably as a button element</p>
+    <div class="ui ignored info icon message">
+      <i class="outline lightbulb icon"></i>
+      <div class="content">
+        In order to support button highlighting on key tabbing, the label element has to be placed immediatly after the invisible input element.
+      </div>
+    </div>
+    <input type="file" id="invisibleupload1" class="ui invisible file input">
+    <label for="invisibleupload1" class="ui red icon button">
+      <i class="file icon"></i>
+      Open any file
+    </label>
+    <input type="file" id="invisibleupload2" class="ui invisible file input">
+    <label for="invisibleupload2" class="ui placeholder segment">
+      <div class="ui icon header">
+        <i class="upload icon"></i>
+        Click here to upload
+      </div>
+    </label>
+  </div>
+
+  <h2 class="ui dividing header">States</h2>
+
+  <div class="example">
+    <h4 class="ui header">Focus</h4>
+    <p>An input field can show a user is currently interacting with it</p>
+    <div class="ui input focus">
+      <input type="text" placeholder="Search...">
+    </div>
+  </div>
+
+  <div class="example">
+    <h4 class="ui header">Loading</h4>
+    <p>An icon input field can show that it is currently loading data</p>
+    <div class="ui ignored message">Loading inputs automatically modify the input's icon on loading state to show loading indication</div>
+    <div class="ui left icon input loading">
+      <input type="text" placeholder="Search...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui icon input loading">
+      <input type="text" placeholder="Search...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui icon input purple double loading">
+        <input type="text" placeholder="Search...">
+        <i class="search icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui icon input red fast elastic loading">
+        <input type="text" placeholder="Search...">
+        <i class="search icon"></i>
+    </div>
+  </div>
+
+  <div class="example">
+    <h4 class="ui header">Disabled</h4>
+    <p>An input field can show that it is disabled</p>
+    <div class="ui disabled input">
+      <input type="text" placeholder="Search...">
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui disabled icon input">
+      <i class="search icon"></i>
+      <input type="text" placeholder="Search...">
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui input">
+      <input type="text" placeholder="Search..." disabled>
+    </div>
+  </div>
+
+  <div class="example">
+    <h4 class="ui header">Error</h4>
+    <p>An input field can show the data contains errors</p>
+    <div class="ui input error">
+      <input type="text" placeholder="Search...">
+    </div>
+  </div>
+  <div class="another example">
+    <p>Some input types like "week", "date", "email", "url", etc. have a browser inbuild validation and will automatically get the error styling when those get invalid.
+        In general all input field types, which have the required attribute set and are empty, are considered invalid.
+        <div class="ui ignored info message">
+        To prevent showing the error class on empty and required fields, use a placeholder. If you don't want a textual placeholder use a space character.
+        </div>
+    </p>
+    <div class="ui input">
+        <input type="date">
+    </div>
+    <br>
+    <div class="ui input">
+        <input type="email" placeholder="E-Mail Address" required>
+    </div>
+  </div>
+  <h2 class="ui dividing header">Variations</h2>
+
+  <div class="example">
+    <h4 class="ui header">Icon</h4>
+    <p>An input can be formatted with an icon</p>
+    <div class="ui ignored message">
+      Input icons do not receive <code>pointer-events</code> unless a <code>link icon</code> is used.
+    </div>
+    <div class="ui icon input">
+      <input type="text" placeholder="Search...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui left icon input">
+      <input type="text" placeholder="Search users...">
+      <i class="users icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui icon input">
+      <input type="text" placeholder="Search...">
+      <i class="circular search link icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui icon input">
+      <input type="text" placeholder="Search...">
+      <i class="inverted circular search link icon"></i>
+    </div>
+  </div>
+
+  <div class="example" data-class="!left icon, left labeled, !left corner labeled, !corner labeled, right corner labeled, !right labeled, labeled">
+    <h4 class="ui header">Labeled</h4>
+    <p>An input can be formatted with a label</p>
+    <div class="ui labeled input">
+      <div class="ui label">
+        https://
+      </div>
+      <input type="text" placeholder="mysite.com">
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui right labeled input">
+      <input type="text" placeholder="Find domain">
+      <div class="ui dropdown label">
+        <div class="text">.com</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">.com</div>
+          <div class="item">.net</div>
+          <div class="item">.org</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui right labeled input">
+      <input type="text" placeholder="Enter weight..">
+      <div class="ui basic label">
+        kg
+      </div>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui right labeled input">
+      <label for="amount" class="ui label">$</label>
+      <input type="text" placeholder="Amount" id="amount">
+      <div class="ui basic label">.00</div>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui right labeled left icon input">
+      <i class="tags icon"></i>
+      <input type="text" placeholder="Enter tags">
+      <a class="ui tag label">
+        Add Tag
+      </a>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui left corner labeled input">
+      <input type="text" placeholder="Search...">
+      <div class="ui left corner label">
+        <i class="asterisk icon"></i>
+      </div>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui corner labeled input">
+      <input type="text" placeholder="Search...">
+      <div class="ui corner label">
+        <i class="asterisk icon"></i>
+      </div>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui labeled input">
+        <div class="ui label">I am a</div>
+        <select class="ui selection dropdown">
+          <option>Developer</option>
+          <option>Software engineer</option>
+          <option>System admin</option>
+          <option>Database admin</option>
+        </select>
+      </div>
+  </div>
+  <div class="another example">
+      <div class="ui right labeled input">
+        <select class="ui selection dropdown">
+          <option>1-5</option>
+          <option>6-10</option>
+          <option>11-20</option>
+          <option>21-50</option>
+          <option>51-100</option>
+        </select>
+        <div class="ui basic label">Persons</div>
+      </div>
+  </div>
+  <div class="example" data-class="!left action, right action, action">
+    <h4 class="ui header">Action</h4>
+    <p>An input can be formatted to alert the user to an action they may perform</p>
+    <div class="ui action input">
+      <input type="text" placeholder="Search...">
+      <button class="ui button">Search</button>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui left action input">
+      <button class="ui green labeled icon button">
+        <i class="cart icon"></i>
+        Checkout
+      </button>
+      <input type="text" value="$52.03">
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui right action left icon input">
+      <i class="search icon"></i>
+      <input type="text" placeholder="Search">
+      <div class="ui basic floating dropdown button">
+        <div class="text">This Page</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">This Organization</div>
+          <div class="item">Entire Site</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui action input">
+      <input type="text" placeholder="Search...">
+      <select class="ui compact selection dropdown">
+        <option value="all">All</option>
+        <option selected value="articles">Articles</option>
+        <option value="products">Products</option>
+      </select>
+      <div class="ui button">Search</div>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui action input">
+      <input type="text" value="https://ww.short.url/c0opq">
+      <button class="ui teal right labeled icon button">
+        <i class="copy icon"></i>
+        Copy
+      </button>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui action input">
+      <input type="text" placeholder="Search...">
+      <button class="ui icon button">
+        <i class="search icon"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="example" data-since="2.9.0">
+    <h4 class="ui header">File Action</h4>
+    <p>A File action input allows custom content inside the file trigger button. File action input buttons have to be made out of a label element.</p>
+    <div class="ui ignored warning message">
+        Although <code>left action</code> also works with file action inputs, in order to support button highlighting on key tabbing, the action button needs to be placed after the file input so it appears to the right.
+    </div>
+    <div class="ui file action input">
+      <input id="actionfileinput" type="file">
+      <label for="actionfileinput" class="ui blue button">
+         <i class="wizard icon"></i>
+            Choose wisely
+      </label>
+    </div>
+  </div>
+
+  <div class="example">
+    <h4 class="ui header">Transparent</h4>
+    <p>A transparent input has no background</p>
+    <div class="ui transparent input">
+      <input type="text" placeholder="Search...">
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui transparent icon input">
+      <input type="text" placeholder="Search...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui transparent left icon input">
+      <input type="text" placeholder="Search...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+
+  <div class="example">
+    <h4 class="ui header">Inverted</h4>
+    <p>An input can be formatted to appear on dark backgrounds</p>
+    <div class="ui inverted segment">
+      <div class="ui inverted input">
+        <input type="text" placeholder="Search...">
+      </div>
+      <div class="ui inverted divider"></div>
+      <div class="ui inverted left icon input">
+        <input type="text" placeholder="Search...">
+        <i class="search icon"></i>
+      </div>
+      <div class="ui inverted divider"></div>
+      <div class="ui inverted transparent icon input">
+        <input type="text" placeholder="Search...">
+        <i class="search icon"></i>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="example">
+    <h4 class="ui header">Fluid</h4>
+    <p>An input can take the size of its container</p>
+    <div class="ui fluid icon input">
+      <input type="text" placeholder="Search a very wide input...">
+      <i class="search icon"></i>
+    </div>
+    <div class="ui ignored divider"></div>
+    <div class="ui fluid action input">
+      <input type="text" placeholder="Search...">
+      <div class="ui button">Search</div>
+    </div>
+  </div>
+
+  <div class="example">
+    <h4 class="ui header">Size</h4>
+    <p>An input can vary in size</p>
+    <div class="ui ignored info message">Inputs will automatically size themselves unless you manually declare a width</div>
+    <div class="ui mini icon input">
+      <input type="text" placeholder="Search mini...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui small icon input">
+      <input type="text" placeholder="Search small...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui large icon input">
+      <input type="text" placeholder="Search large...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui big icon input">
+      <input type="text" placeholder="Search big...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui huge icon input">
+      <input type="text" placeholder="Search huge...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+  <div class="another example">
+    <div class="ui massive icon input">
+      <input type="text" placeholder="Search massive...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+
+  <div class="example" data-since="2.7">
+    <h4 class="ui header">
+        Textarea
+    </h4>
+    <p>Using the input class you can also use some features on <code>textarea</code> as well</p>
+    <div class="ui form">
+        <div class="ui left corner labeled input">
+            <div class="ui left corner label">
+                <i class="asterisk icon"></i>
+            </div>
+            <textarea> I have a left corner label</textarea>
+        </div>
+        <div class="ui corner labeled input">
+            <div class="ui corner label">
+                <i class="asterisk icon"></i>
+            </div>
+            <textarea> I have a right corner label</textarea>
+        </div>
+        <div class="ui left icon input">
+            <textarea> I have an left icon</textarea>
+            <i class="search icon"></i>
+        </div>
+        <div class="ui icon input">
+            <textarea> I have a right icon</textarea>
+            <i class="search icon"></i>
+        </div>
+        <div class="ui left corner labeled left icon input">
+            <div class="ui left corner label">
+                <i class="asterisk icon"></i>
+            </div>
+            <textarea> I have a left icon and left corner label</textarea>
+            <i class="search icon"></i>
+        </div>
+        <div class="ui corner labeled icon input">
+            <div class="ui  corner label">
+                <i class="asterisk icon"></i>
+            </div>
+            <textarea>I have a right icon and right corner label</textarea>
+            <i class="search icon"></i>
+        </div>
+    </div>
+  </div>
+
+</div>

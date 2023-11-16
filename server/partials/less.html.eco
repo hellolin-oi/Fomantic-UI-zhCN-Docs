@@ -1,0 +1,15 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es5%2Ces2015"></script>
+<script>
+window.less = {
+  async        : true,
+  environment  : 'production',
+  fileAsync    : false,
+  onReady      : false,
+  useFileCache : true
+};
+</script>
+<% if 'development' in @getEnvironments(): %>
+<script src="/javascript/library/less.js"></script>
+<% else: %>
+<script src="/javascript/library/less.min.js"></script>
+<% end %>

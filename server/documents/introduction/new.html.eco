@@ -1,0 +1,1674 @@
+---
+layout      : 'default'
+css         : 'new'
+standalone  : true
+order       : 1
+
+title       : "What's New"
+description : 'An introduction to new features found in the latest release'
+type        : 'Main'
+---
+
+<%- @partial('header',  { tabs: { twonine: 'New in 2.9', twoeight: 'New in 2.8', twoseven: 'New in 2.7', twosix: 'New in 2.6', twofive: 'New in 2.5', twofour: 'New in 2.4', twothree: 'New in 2.3' } }) %>
+<script src="/javascript/loader.js"></script>
+<script src="/javascript/new.js"></script>
+
+<div class="main ui intro container">
+  <div class="ui active tab" data-tab="twonine">
+    <h2 class="ui dividing header">One big step ahead</h2>
+    <p>Fomantic <code>2.9</code> once again includes more than <a href="https://github.com/fomantic/Fomantic-UI/pulls?q=is%3Apr+milestone%3A2.9.0+">200</a> new features, improvements and bugfixes.</p>
+    <div class="ui small info message">
+     The few SUI 2.5.0 fixes, which were not already fixed within the past 4 years in previous Fomantic UI Versions <em class="ui emoji" data-emoji=":wink:"></em>, are included as well
+    </div>
+    <h2 class="ui dividing header">
+      New UI Component
+    </h2>
+    <div class="content example">
+      <h4 class="ui header">
+        Flyout
+      </h4>
+      <p><a href="/modules/flyout.html">Flyouts</a> are the result of a marriage between <a href="/modules/modal.html">Modal</a> and <a href="/modules/sidebar.html">Sidebar</a>.</p>
+      <div class="ui ignored warning message">If you are upgrading from a previous FUI version, be sure to add <code>@flyout</code> to your <a href="/introduction/build-tools.html#themeconfig"><code>theme.config</code></a> to include the flyout component in your code.</div>
+      <div class="code" data-demo="true">
+        $.flyout({
+          autoShow: true,
+          title: 'Flyout Notice',
+          class: 'wide',
+          closeIcon: true,
+          content: 'Fomantic-UI 2.9.0 was released today!',
+          actions: [{
+            text: 'Awesome, thanks!',
+            class: 'green',
+            icon: 'save'
+          }]
+        });
+      </div>
+    </div>
+    <h2 class="ui dividing header">
+      New features
+    </h2>
+    <div class="no example">
+      <h4 class="ui header">
+         General
+      </h4>
+      <div class="ui bulleted list">
+        <div class="item">
+          New variable<code>@supportIE</code> controls whether IE/old Edge specific CSS Code should be compiled
+        </div>
+        <div class="item">
+          Only <a target="_blank" href="https://caniuse.com/?search=woff">woff/woff2</a> font files are supported, eot/svg/ttf have been removed
+        </div>
+        <div class="item">
+          All <code>onShow</code> and <code>onHide</code> callbacks now have cancel support. Returning false from such callbacks will prevent the related module to be shown/hidden
+        </div>
+        <div class="item">
+          Emoji, Flag and Icon are now build out of <a target="_blank" href="https://lesscss.org/features/#maps-feature">LESS-maps</a> which can then be easily overridden or reduced to only the ones needed in your own theme
+        </div>
+        <div class="item">
+          A11y as well as jQuery short notation<code>$.</code> support for dynamically created modal, toast and the new flyout
+        </div>
+        <div class="item">
+          Focus trap in modals and flyouts
+        </div>
+        <div class="item">
+          Dependency to jquery serialize-object in Api was removed. It's now built-in and enhanced.
+        </div>
+        <div class="item">
+          Added input support for color,week,month,file (see below) and url inputs
+        </div>
+        <div class="item">
+          All elements can now have their individual color variants
+        </div>
+        <div class="item">
+          Accordion now has an <a href="/modules/accordion.html#inverted">inverted</a>, <a href="/modules/accordion.html#basic-styled">basic styled</a> and <a href="/modules/accordion.html#tree">tree</a> variant and icon can be displayed <a href="/modules/accordion.html#right-icon">to the right</a>
+        </div>
+        <div class="item">
+          Button Groups now supports <a href="/elements/button.html#wrapping-buttons">wrapping</a> and can be <a href="/elements/button.html#spaced-buttons">spaced</a>
+        </div>
+        <div class="item">
+          <a href="/modules/calendar.html">Calendar</a> now supports <code>disabledHours</code>
+        </div>
+        <div class="item">
+          <a href="/collections/table.html">Table</a> now supports inverted colors
+        </div>
+        <div class="item">
+          <a href="/modules/toast.html">Toast</a> now allows clickable items as content without closing the toast
+        </div>
+      </div>
+    </div>
+    <div class="no example">
+      <h4 class="ui header">
+         Bundled Lato Font
+      </h4>
+      <p>The Lato font of the default theme is now bundled and upgraded to 2.0 to also support cyrillic and greek characters. Loading via googleFonts is now disabled by default.</p>
+    </div>
+    <div class="file-input content example">
+      <h4 class="ui header">
+         File Inputs
+      </h4>
+      <p><a href="/elements/input.html#file-input">File inputs</a> are supported now</p>
+      <div class="ui file input">
+        <input type="file">
+      </div>
+      <div class="ui file action input">
+        <input id="actionfileinput" type="file">
+        <label for="actionfileinput" class="ui blue button">
+           <i class="wizard icon"></i>
+              Choose wisely
+        </label>
+      </div>
+    </div>
+    <div class="content example">
+      <h4 class="ui header">
+         SVG Flags
+      </h4>
+      <p><a href="/elements/flag.html">Flags</a> now use the same SVG icons as Emoji, making them now resizable and added lots of missing countrycodes and other global identifications.</p>
+      <i class="small de flag"></i>
+      <i class="medium fr flag"></i>
+      <i class="large li flag"></i>
+      <i class="big jp flag"></i>
+      <i class="huge gb flag"></i>
+    </div>
+    <div class="no example">
+      <h4 class="ui header">
+         Calendar Token Format
+      </h4>
+      <p>Calendar now supports <a href="/modules/calendar.html#custom-format">tokens</a> as string formatter</p>
+      <div class="code" data-type="javascript">
+      $('.ui.calendar')
+        .calendar({
+          formatter: {
+            date: 'DD.MM.YYYY'
+          }
+        })
+      ;
+      </div>
+    </div>
+    <div class="content example">
+      <h4 class="ui header">
+        Icon Update
+      </h4>
+      <p>We have updated the icons to FontAwesome 5.15.4</p>
+        <i class="huge head side mask icon"></i>
+        <i class="huge hands wash icon"></i>
+        <i class="huge toilet paper icon"></i>
+        <i class="huge hand holding water icon"></i>
+        <p>You can see a list of all the available icons <a href="/elements/icon.html">here</a>.</p>
+        <div class="ui ignored info message">
+            As we optimized the way to reduce the icon list to only those you need in your custom theme via LESS maps, we also released a new version of <a target="_blank" href="https://github.com/fomantic/create-fomantic-icons">Create-Fomantic-Icons</a> which supports FUI 2.9.0.
+        </div>
+    </div>
+    <div class="no example">
+      <h4 class="ui header">
+        Scrolling and Stuck Table
+      </h4>
+      <p>Tables now support <a href="/collections/table.html#scrolling">scrolling</a> tbody and <a href="/collections/table.html#stuck">stuck</a> columns</p>
+      <div class="code" data-type="html">
+        <table class="ui scrolling table">
+        </table>
+          ...
+        <table class="ui first last head foot stuck table">
+        </table>
+      </div>
+    </div>
+    <div class="content example">
+      <h4 class="ui header">
+        Accordion CSS Only
+      </h4>
+      <p>Accordion can now be used without Javascript using the details/summary tag</p>
+      <details class="ui basic styled accordion">
+        <summary class="title">
+          <i class="dropdown icon"></i> How many people are working on Fomantic-UI
+        </summary>
+        <div class="content">
+          <p><a target="_blank" href="https://github.com/fomantic/Fomantic-UI/blob/master/CONTRIBUTORS.md">Many people</a> from the community helped improving Fomantic-UI over the past 4 years. Thanks!</p>
+        </div>
+      </details>
+    </div>
+    <h2 class="ui dividing header">
+      Breaking changes
+    </h2>
+    <div class="ui bulleted list">
+      <div class="item">
+        <div>Build</div>
+        <div class="list">
+          <div class="item">Installing from npm does not automatically start the building script anymore to make other package managers, like yarn, work.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>API</div>
+        <div class="list">
+          <div class="item">New default value for <code>rawResponse</code> is <code>true</code></div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Button</div>
+        <div class="list">
+          <div class="item"><code>@tertiaryLinePadding</code> variable was split into <code>@tertiaryVerticalPadding</code> and <code>@tertiaryHorizontalPadding</code></div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Calendar</div>
+        <div class="list">
+          <div class="item"><code>ampm</code> setting is removed. Use the new <a href="/modules/calendar.html#custom-format">token string</a> formatters instead</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Checkbox</div>
+        <div class="list">
+          <div class="item">Legacy v1 <code>box</code> styling (instead of using <code>label</code> in v2) was removed</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Dropdown</div>
+        <div class="list">
+          <div class="item">New default value for <code>showOnFocus</code> is <code>false</code></div>
+          <div class="item">New default value for <code>fullTextSearch</code> is <code>'exact'</code></div>
+          <div class="item">New default value for <code>forceSelection</code> is <code>false</code></div>
+          <div class="item"><code>@upwardMenuBorderRadius</code> was renamed into <code>@upwardSelectionMenuBorderRadius</code></div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Emoji and Flag</div>
+        <div class="list">
+          <div class="item">The default line height was slightly reduced to match usage inside dropdowns. In case your emojis/flags appear too small, add a size class to them.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Form</div>
+        <div class="list">
+          <div class="item">New default value for <code>errorFocus</code> is <code>true</code></div>
+          <div class="item">"length" rule was removed, use <code>minlength</code> instead</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Icon</div>
+        <div class="list">
+          <div class="item"><code>chart line</code> was renamed to <code>chartline</code></div>
+          <div class="item"><code>line graph</code> was renamed to <code>linegraph</code></div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Label</div>
+        <div class="list">
+          <div class="item"><code>left icon</code> and <code>right icon</code> have to be declared in exact that class order</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Sidebar</div>
+        <div class="list">
+          <div class="item"><code>onShow</code> and <code>onVisible</code> callbacks have swapped to match the same logic as in all other modules</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Shape</div>
+        <div class="list">
+          <div class="item"><code>beforeChange</code> was renamed to <code>onBeforeChange</code></div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Slider</div>
+        <div class="list">
+          <div class="item">Behavior<code>is touch</code> was removed</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Tab</div>
+        <div class="list">
+          <div class="item">Tabular menus and their related segments have to stay in a dedicated parent node to allow more than two attached segments</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Table</div>
+        <div class="list">
+          <div class="item">When marked cells should also be colored you have to use an additional <code>colored</code> class and follow a fixed class order like <code>red colored right orange marked</code></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="ui dividing header">
+      Bugfixes
+    </h2>
+    <p><a target="_blank" href="https://github.com/fomantic/Fomantic-UI/pulls?q=is%3Apr+sort%3Aupdated-desc+milestone%3A2.9.0+label%3Atype%2Fbug+">More than 80 Bugs</a> were fixed, some important to mention are</p>
+    <div class="ui bulleted list">
+      <div class="item">
+         Step had double semicolon in font face breaking webpack 5
+      </div>
+      <div class="item">
+        Dropdown additions were encoded in some cases and broke on mobile
+      </div>
+      <div class="item">
+        node 15+ / npm 7, yarn, pnpm broke on install
+      </div>
+      <div class="item">
+        Firefox font gap warning and Firefox 103+ broke Accordion
+      </div>
+      <div class="item">
+         ScrollLock in sidebar was not working
+      </div>
+      <div class="item">
+        Pressing Escape-Key in inputs inside modals closed the modal itself
+      </div>
+    </div>
+  </div>
+
+  <div class="ui tab" data-tab="twoeight">
+    <h2 class="ui dividing header">Toasty Emotion</h2>
+    <p>Fomantic <code>2.8</code> brings some of the best updates yet including variation feature customization for components, more toast changes and EMOTES <em data-emoji="tada"></em> <em data-emoji="smile"></em> and of course A LOT of critical and much needed bug fixes.</p>
+
+    <p>Since this is a breaking changes update here is a list of breaking changes:</p>
+    <div class="ui bulleted list">
+      <div class="item">
+        <div>API</div>
+        <div class="list">
+          <div class="item">Context for the <code>beforeSend</code> function now is set to the initialized element instead of the content of <code>stateContext</code> (was already correct in the docs)</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Calendar</div>
+        <div class="list">
+          <div class="item">New callback <code>onBeforeChange</code> does, what <code>onChange</code> was doing before (being called before changing the date, given the chance to deny the change)</div>
+          <div class="item"><code>onChange</code> instead is now called after the date was changed</div>
+          <div class="item">When a month is parsed it is now mapped against the whole month name instead of only the first three characters</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Dropdown</div>
+        <div class="list">
+          <div class="item">A "required" attribute on a select-tag gets removed automatically</div>
+          <div class="item">When a search entry is not found in the dropdown list and no additions are allowed, the <code>searchterm</code> is now removed on blur</div>
+          <div class="item">When multiple items are selected <code>set.value()</code> internally provided a wrong additional parameter which probably isn't correctly fetched in an own <code>onChange</code> callback</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Emoji</div>
+        <div class="list">
+          <div class="item">An existing theme.config needs to have <code>@emoji: 'default';</code> added to the elements block</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Slider</div>
+        <div class="list">
+          <div class="item">New option <code>preventCrossover</code> is set to <code>true</code> by default to avoid range sliders to cross each other avoiding wrongly calculated values</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Toast</div>
+        <div class="list">
+          <div class="item">New defaults (<code>progressbar</code> decreases, title uses <code>ui header</code> having a slightly larger font size, shadow, white background, centered icon)</div>
+        </div>
+      </div>
+      <div class="item">
+        <div>Other</div>
+        <div class="list">
+          <div class="item">Possible heavy reduce of the created CSS file via dynamic LESS compilation: A new file variation.variables exists to control, which variants of the elements should be created in LESS. Setting some of them to <code>false</code> (in your own site.variables, you don't need to (but of course can) touch the variation.variables files!) By default everything is enabled and every component is rendered in any existing size (just as before)</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="ui dividing header">
+      Sneak peek at some new features
+    </h2>
+
+    <div class="content example">
+      <h4 class="ui header">
+        Toast
+      </h4>
+
+      <p>In <code>2.8</code> we added lots of new variations and features to the toast component, here is just a few of the amazing new changes.</p>
+
+      <div class="ui buttons" id="twoeight-toasts">
+        <button class="image-support ui button">Image Support</button>
+        <button class="pausing-on-hover ui button">Pause timer on hover</button>
+        <button class="action-buttons ui button">Action Buttons</button>
+        <button class="from-dom-elements ui button">Create from DOM elements</button>
+        <div class="ui blue toast" id="from-dom-elements-element">
+          <div class="content">
+            A Toast created from a DOM element
+          </div>
+        </div>
+        <button class="info-states ui button">Information states</button>
+      </div>
+    </div>
+
+    <div class="content example">
+      <h4 class="ui header">
+        EMOJIS
+      </h4>
+
+      <p><code>2.8</code> introduces the new emoji element with support for all <a href="https://unicode.org/emoji/charts/full-emoji-list.html">Unicode 12.1 Emoji Characters</a>.</p>
+
+      <p><em data-emoji="tada" class="large"></em> <em data-emoji="partying_face" class="large"></em> <em data-emoji="champagne" class="large"></em></p>
+
+      <p>You can find a full list of all emojis <a href="/elements/emoji.html">here</a>.</p>
+    </div>
+
+    <div class="content example">
+      <h4 class="ui header">
+        Dynamic LESS Compilation
+      </h4>
+
+      <p>In <code>2.8</code> we are introducing a new feature for building custom themes, Dynamic LESS Compilation. This new feature allows you to disable specific variations of components allowing you to generate CSS files which only contain features you require. This makes your custom distribution files much smaller in size speeding up your website <em data-emoji="clap"></em></p>
+    </div>
+
+    <div class="content example">
+      <h4 class="ui header">
+        Icon Update
+      </h4>
+
+      <p>Once again we have updated the icons to FontAwesome 5.11.2</p>
+
+      <i class="ui huge cowboy hat icon"></i>
+      <i class="ui huge running icon"></i>
+      <i class="ui huge vinyl record icon"></i>
+
+      <p>You can see a list of all the available icons <a href="/elements/icon.html">here</a>.</p>
+    </div>
+  </div>
+
+  <div class="ui tab" data-tab="twoseven">
+    <h2 class="ui dividing header">Merry Christmas 🎅</h2>
+    <p>Fomantic <code>2.7</code> brings lots of new goodies and fixes and just in time for christmas!</p>
+
+    <h4>Announcement</h4>
+    <p>
+      With 2019 around the corner and a lot of discussion we (core contributors) have agreed to move our core focus to FUI v3.0.
+      This doesn't mean we won't be working on 2.x but means releases may be slowed down a little due to more work being put into v3.0.
+      You can read more about the future of FUI and v3.0 <a href="https://github.com/fomantic/Fomantic-UI/issues/319">here</a>
+    </p>
+
+    <h4>Notes:</h4>
+    <ul>
+      <li>
+        With this release we removed the dependency of <code>prompt-sui</code> which removes the child dependency of <code>event-stream</code> this ensures
+        that the library won't be downloading any (now deprecated) malicious code. If you want to learn more about the recent security
+        issues with <code>event-stream</code> please read <a href="https://github.com/fomantic/Fomantic-UI/issues/268">this issue</a>.
+      </li>
+      <li>
+        In this release we had a big focus on removing a lot of the <code>!important</code> usage which in turn produced lots of issues.
+        Now with a big help from our core contributors we have removed ~85% of the usage and reduced the complexity of a lot of
+        the color code base which makes it easier to make changes and helps reduce the size of the general code base as well as removing duplicate code.
+      </li>
+    </ul>
+
+    <h2 class="ui dividing header">
+      New features
+    </h2>
+    <div class="content example">
+      <h4 class="ui header">
+        Slider
+      </h4>
+      <p>In <code>2.7</code> we renamed the range component to slider and also add a lot of new features to play around with.</p>
+
+      <p>Labeled & Ticked Sliders</p>
+      <div class="ui labeled ticked slider" id="ticket-slider-27"></div>
+
+      <p>Range Slider (yes an actual range slider)</p>
+      <div class="ui labeled ticked range slider" id="slider-range-27"></div>
+      <div class="ui input">
+        <input type="text" id="range-slider-input-27" disabled="">
+      </div>
+
+      <p>Vertical Slider</p>
+      <div style="height: 200px;">
+        <div class="ui vertical slider" id="vertical-slider-27"></div>
+      </div>
+
+      <br />
+      <p>And a lot more, check the release notes to see all slider changes</p>
+    </div>
+
+    <div class="content example">
+      <h4 class="ui header">
+        Loader
+      </h4>
+      <p>We have added some new loader styles in <code>2.7</code> so your not restricted to a boring spinner</p>
+
+      <p>Doubled</p>
+      <div class="ui segment">
+        <div class="ui active slow green double loader"></div>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+      <p>Elastic</p>
+      <div class="ui segment">
+        <div class="ui active blue elastic loader"></div>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+      <p>You can also apply all loader modifiers to these loaders</p>
+    </div>
+
+    <div class="content example">
+      <h4 class="ui header">
+        Colors
+      </h4>
+      <p>
+        In <code>2.7</code> we went colors mad and changed a lot of the code base to make colors more consistent
+        across the framework and to make it so you can define your own colors 🎉
+      </p>
+
+      <p>
+        In <code>/globals/colors.less</code> you will find a list of colors which you can tweak to your liking.
+        You can change color values and even rename or add your own colors!
+
+        You will notice there is a lot of variables like <code>@primaryColor</code> which are located in <code>/globals/site.variables</code>
+        this allows this change to stay backwards compatible.
+      </p>
+
+      <p>
+        We also have added a new element called <code>text</code> which allows you to color text with the framework colors via wrapping
+        text in side of a <code>&lt;span&gt;</code>.
+      </p>
+      <div class="ui segment">
+        <p>As you can see I am <span class="ui red text">red</span> and I am <span class="ui blue text">blue</span>.</p>
+      </div>
+      <div class="ui inverted segment">
+        <p>Oh and you can use inverted colors like this inverted <span class="ui inverted purple text">purple</span> and <span class="ui inverted orange text">orange</span> text</p>
+      </div>
+    </div>
+
+    <div class="content example">
+      <h4 class="ui header">
+        Modal
+      </h4>
+
+      <p>In <code>2.7</code>, we can position modals. Default is middle aligned.</p>
+
+      <div class="code" data-demo="true" data-eval="$('.top.aligned.test.modal').modal('show');">
+        $('.ui.top.aligned.modal').modal('show') ;
+      </div>
+
+      <div class="code" data-demo="true" data-eval="$('.bottom.aligned.test.modal').modal('show');">
+        $('.ui.bottom.aligned.modal') .modal('show') ;
+      </div>
+
+      <p>We can open modals that completely overlay the entire screen.</p>
+
+      <div class="code" data-demo="true" data-eval="$('.overlay.fullscreen.modal').modal('show');">
+        $('.ui.overlay.fullscreen.modal') .modal('show') ;
+      </div>
+
+      <div class="ui top aligned test modal">
+        <div class="header">
+          Top Aligned
+        </div>
+        <div class="actions">
+          <div class="ui black deny button">
+            Close
+          </div>
+        </div>
+      </div>
+
+      <div class="ui bottom aligned test modal">
+        <div class="header">
+          Bottom Aligned
+        </div>
+        <div class="actions">
+          <div class="ui black deny button">
+            Close
+          </div>
+        </div>
+      </div>
+
+      <div class="ui overlay fullscreen modal">
+        <div class="header">
+          Overlay Full Screen
+        </div>
+        <div class="content">
+          <div class="description">
+            <div class="ui header">Even if there is not much content here...</div>
+            ...the overlay fullscreen modal will occupy the entire screen
+          </div>
+        </div>
+        <div class="actions">
+          <div class="ui black deny button">
+            Close
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content example">
+      <h4 class="ui header">
+        Dropdown
+      </h4>
+
+      <p>In <code>2.7</code>, dropdown module has new variant to display more contents at glance.
+        These could be useful if you have tons of options in dropdown.</p>
+
+      <p>One is columnar. We can make dropdown columnar, from <code>three column</code> to <code>five column</code>.</p>
+      <select class="ui fluid search four column dropdown" multiple>
+        <%- @partial('examples/single/state-options') %>
+      </select>
+
+      <p>Another is height variation. We can make dropdown <code>long</code> or <code>very long</code>.</p>
+      <div class="ui secondary segment">
+        Show me
+        <div class="ui inline very long dropdown">
+          <input type="hidden" name="skill" value="css">
+          <div class="text">css</div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <%- @partial('examples/single/preset-menu') %>
+          </div>
+        </div>
+        classes currently available.
+      </div>
+     </div>
+
+    <div class="content example">
+      <h4 class="ui header">
+        Progress
+      </h4>
+      <p>In <code>2.7</code>, progress now can have multiple bars.</p>
+
+      <div class="ui multiple progress no-label" data-total="200" data-value="60,30,20,30">
+        <div class="blue bar">
+          <div class="progress"></div>
+        </div>
+        <div class="yellow bar">
+          <div class="progress"></div>
+        </div>
+        <div class="purple bar">
+          <div class="progress"></div>
+        </div>
+        <div class="green bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+
+      <div class="ui multiple progress has-label" data-total="100" data-value="50,30,20">
+        <div class="red bar">
+          <div class="progress"></div>
+        </div>
+        <div class="yellow bar">
+          <div class="progress"></div>
+        </div>
+        <div class="blue bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <p>We didn't just stop there we also added a lot of cool new features for other components and addressed lots of bugs. You can find a full list of changes
+      <a href="https://github.com/fomantic/Fomantic-UI/commit/cb3026ed46714ef19b87938ea7bd884d1ab2d92d">here</a></p>
+  </div>
+
+  <div class="ui tab" data-tab="twosix">
+    <h2 class="ui dividing header">Toasty loaders</h2>
+    <p>Fomantic <code>2.6</code> brings a new components for handling content loading <a href="/elements/placeholder.html"><code>ui placeholder</code></a>, as well as a new type of <code>segment</code> used to reserve space for content: <a href="/elements/segment.html#empty"><code>ui placeholder segment</code></a>.</p>
+
+    <p>Additionally several important component updates are included in this release.
+    <div class="ui large bulleted list">
+      <div class="item">Modals have been re-architected to use hybrid flex support, falling back to JS positioning for more complex use-cases (or older browsers). </div>
+      <div class="item">Dropdowns now include a <code>clearable</code> setting for letting users reset dropdowns to its empty state.</div>
+    </div>
+
+    <p>We are also introducing the new <code>Toast</code> component</p>
+
+    <div class="ui ignored warning message">If you are upgrading from a previous SUI version, be sure to add <code>@placeholder</code> & <code>@toast</code> to your <a href="/introduction/build-tools.html"><code>theme.config</code></a> to include the placeholder or toast components in your code.</div>
+
+    <h2 class="ui dividing header">
+      New UI Component
+    </h2>
+    <div class="content example">
+      <h4 class="ui header">
+        Placeholders
+      </h4>
+      <P><a href="/elements/placeholder.html">Placeholders</a> can be used to reduce the jarringness, and perceived load time when loading new content</p>
+      <%- @partial('examples/content-loader') %>
+    </div>
+    <div class="another example">
+      <div class="ui relaxed divided list">
+        <div class="item">
+          <i class="large github middle aligned icon"></i>
+          <div class="content">
+            <a class="header">fomantic/Fomantic-UI-Docs</a>
+            <div class="description">Updated 22 mins ago</div>
+          </div>
+        </div>
+        <div class="item">
+          <i class="large github middle aligned icon"></i>
+          <div class="content">
+            <div class="ui placeholder">
+              <div class="paragraph">
+                <div class="medium line"></div>
+                <div class="short line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <i class="large github middle aligned icon"></i>
+          <div class="content">
+            <div class="ui placeholder">
+              <div class="paragraph">
+                <div class="medium line"></div>
+                <div class="short line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <i class="large github middle aligned icon"></i>
+          <div class="content">
+            <div class="ui placeholder">
+              <div class="paragraph">
+                <div class="medium line"></div>
+                <div class="short line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <i class="large github middle aligned icon"></i>
+          <div class="content">
+            <div class="ui placeholder">
+              <div class="paragraph">
+                <div class="medium line"></div>
+                <div class="short line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="example">
+      <h4 class="ui header">
+        Placeholder Segment
+      </h4>
+      <p><a href="/elements/segment.html#placeholder">Placeholder segments</a> allow you to reserve space in your design for where content is intended to appear. This is useful when a page should prompt a user about its intended functionality, even when no content is present.</p>
+      <div class="ui placeholder segment">
+        <div class="ui icon header">
+          <i class="dont icon"></i>
+          No users have been added yet
+        </div>
+        <div class="ui primary button">Add User</div>
+      </div>
+    </div>
+    <div class="another example">
+      <div class="ui placeholder segment">
+        <div class="ui two column center aligned grid">
+          <div class="ui vertical divider">Or</div>
+          <div class="middle aligned row">
+            <div class="column">
+              <div class="ui icon header">
+                <i class="search icon"></i>
+                Find Country
+              </div>
+              <div class="field">
+                <div class="ui search">
+                  <div class="ui icon input">
+                    <input class="prompt" type="text" placeholder="Search countries...">
+                    <i class="search icon"></i>
+                  </div>
+                  <div class="results"></div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui icon header">
+                <i class="world icon"></i>
+                Add New Country
+              </div>
+              <div class="ui primary button">
+                Create
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 class="ui dividing header">
+      New Features
+    </h2>
+    <div class="clearable no example">
+      <h4 class="ui header">
+        Clearable Dropdowns
+      </h4>
+      <p>Now dropdowns can specify that their content can be cleared with <code>clearable: true</code>.</p>
+
+      <div class="ui search selection dropdown">
+        <input type="hidden" name="country" value="kr">
+        <div class="text">
+          <i class="kr flag"></i>South Korea
+        </div>
+        <i class="dropdown icon"></i>
+        <%- @partial('examples/single/flag-menu') %>
+      </div>
+      <div class="ui divider"></div>
+      <div class="ui secondary segment">
+        Show me
+        <div class="ui inline scrolling dropdown">
+          <input type="hidden" name="skill" value="css">
+          <div class="text">css</div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <%- @partial('examples/single/preset-menu') %>
+          </div>
+        </div>
+        classes currently available.
+      </div>
+    </div>
+    <div class="example">
+      <h4 class="ui header">
+        Improved Flexbox Modals
+      </h4>
+      <p>Although flex-box were introduced in <code>2.3.0</code> there were limitations which may have prevented some advanced use-cases. For example, flexbox modals did not support modals that used <code>detachable: false</code> and weren't directly inside dimmer flex containers. Also some flex browsers (IE11) do not support absolutely positioned elements inside flex containers, so multiple overlapping modals could not be used in those cases.</p>
+      <p>
+        <code>2.4.0</code> solves this by introducing a hybrid flex system, that will fall back to javascript positioning for browsers or layouts that aren't compatible with flex.
+      </p>
+    </div>
+  </div>
+
+  <div class="ui tab" data-tab="twofive">
+    <h2 class="ui dividing header">The beginning of something new</h2>
+
+    <p>Fomantic-UI is starting to mature and we are starting to push bigger and better updates, we hope you like the new Calendar and Range slider modules!</p>
+
+    <h2 class="ui dividing header">New Components</h2>
+
+    <div class="no example">
+      <h4 class="ui header">Calendar</h4>
+      <div class="ui calendar">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date/Time">
+        </div>
+      </div>
+    </div>
+
+    <div class="no example">
+      <h4 class="ui header">Range Slider</h4>
+      <div class="ui range" id="range-25"></div>
+      <br/>
+      <div class="ui input">
+        <input type="text" id="slider-input-25" disabled="">
+      </div>
+    </div>
+
+    <div class="no example">
+      <h4 class="ui header">FontAwesome 5.3.1</h4>
+      <p>We have updated the icons to the newest FontAwesome release</p>
+      <i class="calendar huge icon"></i>
+      <i class="city huge icon"></i>
+      <i class="envelope open text huge icon"></i>
+      <i class="hamsa huge icon"></i>
+      <i class="peace huge icon"></i>
+      <i class="socks huge icon"></i>
+      <i class="wifi huge icon"></i>
+    </div>
+
+    <div class="no example" data-class="colors">
+      <h4 class="ui header">Colored Loaders</h4>
+      <div class="ui active red inline loader"></div>
+      <div class="ui active orange inline loader"></div>
+      <div class="ui active blue inline loader"></div>
+    </div>
+
+    <div class="no example">
+      <h4 class="ui header">More Inverted Components</h4>
+      <p>In 2.5 we made a big push to add more support for inverted components</p>
+
+      <h5 class="ui header">Comments</h5>
+      <div class="ui inverted segment">
+        <div class="ui inverted threaded comments">
+          <h3 class="ui inverted dividing header">Comments</h3>
+          <div class="comment">
+            <a class="avatar">
+              <img src="/images/avatar/small/matt.jpg">
+            </a>
+            <div class="content">
+              <a class="author">Matt</a>
+              <div class="metadata">
+                <span class="date">Today at 5:42PM</span>
+              </div>
+              <div class="text">
+                How artistic!
+              </div>
+              <div class="actions">
+                <a class="reply">Reply</a>
+              </div>
+            </div>
+          </div>
+          <div class="comment">
+            <a class="avatar">
+              <img src="/images/avatar/small/elliot.jpg">
+            </a>
+            <div class="content">
+              <a class="author">Elliot Fu</a>
+              <div class="metadata">
+                <span class="date">Yesterday at 12:30AM</span>
+              </div>
+              <div class="text">
+                <p>This has been very useful for my research. Thanks as well!</p>
+              </div>
+              <div class="actions">
+                <a class="reply">Reply</a>
+              </div>
+            </div>
+            <div class="comments">
+              <div class="comment">
+                <a class="avatar">
+                  <img src="/images/avatar/small/jenny.jpg">
+                </a>
+                <div class="content">
+                  <a class="author">Jenny Hess</a>
+                  <div class="metadata">
+                    <span class="date">Just now</span>
+                  </div>
+                  <div class="text">
+                    Elliot you are always so right :)
+                  </div>
+                  <div class="actions">
+                    <a class="reply">Reply</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="comment">
+            <a class="avatar">
+              <img src="/images/avatar/small/joe.jpg">
+            </a>
+            <div class="content">
+              <a class="author">Joe Henderson</a>
+              <div class="metadata">
+                <span class="date">5 days ago</span>
+              </div>
+              <div class="text">
+                Dude, this is awesome. Thanks so much
+              </div>
+              <div class="actions">
+                <a class="reply">Reply</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="ui header">Feed</h5>
+      <div class="ui inverted segment">
+        <div class="ui inverted feed">
+          <div class="event">
+            <div class="label">
+              <img src="/images/avatar/small/elliot.jpg">
+            </div>
+            <div class="content">
+              <div class="date">
+                Just now
+              </div>
+              <div class="summary">
+                <a class="user">
+                  Elliot Fu
+                </a> posted on his page
+              </div>
+              <div class="extra text">
+                Hey there !
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="label">
+              <img src="/images/avatar/small/elliot.jpg">
+            </div>
+            <div class="content">
+              <div class="summary">
+                <a class="user">
+                  Elliot Fu
+                </a> added you as a friend
+                <div class="date">
+                  1 Hour Ago
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="label">
+              <img src="/images/avatar/small/helen.jpg">
+            </div>
+            <div class="content">
+              <div class="summary">
+                <a>Helen Troy</a> added <a>2 new illustrations</a>
+                <div class="date">
+                  4 days ago
+                </div>
+              </div>
+              <div class="extra images">
+                <a><img src="/images/wireframe/image.png"></a>
+                <a><img src="/images/wireframe/image.png"></a>
+              </div>
+              <div class="meta">
+                <a class="like">
+                  <i class="like icon"></i> 1 Like
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="ui header">Step</h5>
+      <div class="ui inverted segment">
+        <div class="ui inverted ordered steps">
+          <div class="completed step">
+            <div class="content">
+              <div class="title">Shipping</div>
+              <div class="description">Choose your shipping options</div>
+            </div>
+          </div>
+          <div class="completed step">
+            <div class="content">
+              <div class="title">Billing</div>
+              <div class="description">Enter billing information</div>
+            </div>
+          </div>
+          <div class="active step">
+            <div class="content">
+              <div class="title">Confirm Order</div>
+              <div class="description">Verify order details</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="ui header">Cards</h5>
+      <div class="ui inverted segment">
+        <div class="ui inverted cards">
+          <div class="card">
+            <div class="image">
+              <img src="/images/avatar2/large/matthew.png">
+            </div>
+            <div class="content">
+              <a class="header">Matt Giampietro</a>
+              <div class="meta">
+                <a>Friends</a>
+              </div>
+              <div class="description">
+                Matthew is an interior designer living in New York.
+              </div>
+            </div>
+            <div class="extra content">
+        <span class="right floated">
+          Joined in 2013
+        </span>
+              <a>
+                <i class="user icon"></i>
+                75 Friends
+              </a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="/images/avatar2/large/molly.png">
+            </div>
+            <div class="content">
+              <a class="header">Molly</a>
+              <div class="meta">
+                <span class="date">Coworker</span>
+              </div>
+              <div class="description">
+                Molly is a personal assistant living in Paris.
+              </div>
+            </div>
+            <div class="extra content">
+        <span class="right floated">
+          Joined in 2011
+        </span>
+              <a>
+                <i class="user icon"></i>
+                35 Friends
+              </a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="/images/avatar2/large/elyse.png">
+            </div>
+            <div class="content">
+              <a class="header">Elyse</a>
+              <div class="meta">
+                <a>Coworker</a>
+              </div>
+              <div class="description">
+                Elyse is a copywriter working in New York.
+              </div>
+            </div>
+            <div class="extra content">
+        <span class="right floated">
+          Joined in 2014
+        </span>
+              <a>
+                <i class="user icon"></i>
+                151 Friends
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="no example">
+      <h4 class="ui header">Horizontal Cards</h4>
+      <div class="ui horizontal cards">
+        <div class="card">
+          <div class="image">
+            <img src="/images/avatar2/large/matthew.png">
+          </div>
+          <div class="content">
+            <div class="header">Matt Giampietro</div>
+            <div class="meta">
+              <a>Friends</a>
+            </div>
+            <div class="description">
+              Matthew is an interior designer living in New York.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="/images/avatar2/large/molly.png">
+          </div>
+          <div class="content">
+            <div class="header">Molly</div>
+            <div class="meta">
+              <span class="date">Coworker</span>
+            </div>
+            <div class="description">
+              Molly is a personal assistant living in Paris.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui tab" data-tab="twofour">
+    <h2 class="ui dividing header">A new life</h2>
+
+    <p>With active development slowing down the community has stood up to start a new life for Semantic, welcome to Fomantic-UI.</p>
+    <p>You can read the release notes <a href="https://github.com/fomantic/Fomantic-UI/blob/master/CHANGELOG.md">here</a>.</p>
+
+    <h2 class="ui dividing header">New Features</h2>
+
+    <div class="no example">
+      <h4 class="ui header">Inverted & basic Primary and Secondary buttons</h4>
+      <p>You can now use primary and secondary basic and inverted buttons.</p>
+      <div class="ui doubling four column vertically padded grid">
+        <div class="row">
+          <div class="column"><button class="ui basic primary button">Primary Basic</button></div>
+          <div class="column"><button class="ui basic secondary button">Secondary Basic</button></div>
+        </div>
+        <div class="row">
+          <div class="black column"><button class="ui inverted primary button">Primary Inverted</button></div>
+          <div class="black column"><button class="ui inverted secondary button">Secondary Inverted</button></div>
+          <div class="black column"><button class="ui basic inverted primary button">Primary Inverted</button></div>
+          <div class="black column"><button class="ui basic inverted secondary button">Secondary Inverted</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="no example">
+      <h4 class="ui header">Tertiary buttons</h4>
+      <p>New tertiary buttons allow for less important buttons</p>
+      <div class="ui doubling eight column vertically padded grid">
+        <div class="column"><button class="ui primary tertiary button">Primary</button></div>
+        <div class="column"><button class="ui secondary tertiary button">Secondary</button></div>
+        <div class="column"><button class="ui red tertiary button">Red</button></div>
+        <div class="column"><button class="ui orange tertiary button">Orange</button></div>
+        <div class="column"><button class="ui yellow tertiary button">Yellow</button></div>
+        <div class="column"><button class="ui olive tertiary button">Olive</button></div>
+        <div class="column"><button class="ui green tertiary button">Green</button></div>
+        <div class="column"><button class="ui teal tertiary button">Teal</button></div>
+        <div class="column"><button class="ui blue tertiary button">Blue</button></div>
+        <div class="column"><button class="ui violet tertiary button">Violet</button></div>
+        <div class="column"><button class="ui purple tertiary button">Purple</button></div>
+        <div class="column"><button class="ui pink tertiary button">Pink</button></div>
+        <div class="column"><button class="ui brown tertiary button">Brown</button></div>
+        <div class="column"><button class="ui grey tertiary button">Grey</button></div>
+        <div class="column"><button class="ui black tertiary button">Black</button></div>
+      </div>
+    </div>
+
+    <div class="no example">
+      <h4 class="ui header">Primary & Secondary colors</h4>
+      <p>Headers, Icons and Cards now all have primary and secondary colors</p>
+      <div class="ui doubling two column vertically padded grid">
+        <div class="column">
+          <div class="ui doubling two column vertically padded center aligned grid">
+            <div class="column"><div class="ui primary header">Primary Header</div></div>
+            <div class="column"><div class="ui secondary header">Secondary Header</div></div>
+            <div class="column"><i class="huge primary users icon"></i></div>
+            <div class="column"><i class="huge secondary users icon"></i></div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui doubling two column vertically padded grid">
+            <div class="column">
+              <a class="ui primary card">
+                <div class="image">
+                  <img src="/images/wireframe/white-image.png">
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a class="ui secondary card">
+                <div class="image">
+                  <img src="/images/wireframe/white-image.png">
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="no example">
+      <h4 class="ui header">Inverted dropdown variation</h4>
+      <p>Dropdowns can now be inverted, they look sweet in inverted segments.</p>
+      <div class="ui doubling two column vertically padded grid">
+        <div class="column">
+          <div class="ui inverted segment">
+            <div class="ui inverted selection dropdown">
+              <input type="hidden" name="choices">
+              <div class="default text">Select choice</div>
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <div class="item">Choice 1</div>
+                <div class="item">Choice 2</div>
+                <div class="item">Choice 3</div>
+                <div class="item">Choice 4</div>
+                <div class="item">Choice 5</div>
+                <div class="item">Choice 6</div>
+                <div class="item">Choice 7</div>
+                <div class="item">Choice 8</div>
+                <div class="item">Choice 9</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="no dropdown search example">
+      <h4 class="ui header">Dropdown Search dividers/headers</h4>
+      <p>A searchable dropdown menu can contain dividers and/or headers to separate related content. Using <code>hideDividers</code> lets you control how the elements are handled while filtering items.</p>
+      <div class="code" data-demo="false">
+        $('.dropdown')
+          .dropdown({
+            hideDividers: option
+          })
+        ;
+      </div>
+
+      <div class="ui stackable three column grid">
+        <div class="column">
+          <div class="ui sub header">false</div>
+          <div class="ui labeled icon pointing dropdown button">
+            <i class="filter icon"></i>
+            <span class="text">Filter Posts</span>
+            <div class="menu">
+              <div class="ui search icon input">
+                <i class="search icon"></i>
+                <input name="search" placeholder="Search issues..." type="text">
+              </div>
+              <div class="divider"></div>
+              <div class="header">
+                <i class="tags icon"></i>
+                Filter by tag
+              </div>
+              <div class="item">
+                <div class="ui red empty circular label"></div>
+                Important
+              </div>
+              <div class="item">
+                <div class="ui blue empty circular label"></div>
+                Announcement
+              </div>
+              <div class="item">
+                <div class="ui black empty circular label"></div>
+                Discussion
+              </div>
+              <div class="divider"></div>
+              <div class="header">
+                <i class="calendar icon"></i>
+                Filter by date
+              </div>
+              <div class="item">
+                <i class="olive circle icon"></i>
+                This Week
+              </div>
+              <div class="item">
+                <i class="violet circle icon"></i>
+                This Month
+              </div>
+              <div class="item">
+                <i class="orange circle icon"></i>
+                This Year
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui sub header">true</div>
+          <div class="ui labeled icon pointing dropdown button">
+            <i class="filter icon"></i>
+            <span class="text">Filter Posts</span>
+            <div class="menu">
+              <div class="ui search icon input">
+                <i class="search icon"></i>
+                <input name="search" placeholder="Search issues..." type="text">
+              </div>
+              <div class="divider"></div>
+              <div class="header">
+                <i class="tags icon"></i>
+                Filter by tag
+              </div>
+              <div class="item">
+                <div class="ui red empty circular label"></div>
+                Important
+              </div>
+              <div class="item">
+                <div class="ui blue empty circular label"></div>
+                Announcement
+              </div>
+              <div class="item">
+                <div class="ui black empty circular label"></div>
+                Discussion
+              </div>
+              <div class="divider"></div>
+              <div class="header">
+                <i class="calendar icon"></i>
+                Filter by date
+              </div>
+              <div class="item">
+                <i class="olive circle icon"></i>
+                This Week
+              </div>
+              <div class="item">
+                <i class="violet circle icon"></i>
+                This Month
+              </div>
+              <div class="item">
+                <i class="orange circle icon"></i>
+                This Year
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui sub header">'empty'</div>
+          <div class="ui labeled icon pointing dropdown button">
+            <i class="filter icon"></i>
+            <span class="text">Filter Posts</span>
+            <div class="menu">
+              <div class="ui search icon input">
+                <i class="search icon"></i>
+                <input name="search" placeholder="Search issues..." type="text">
+              </div>
+              <div class="divider"></div>
+              <div class="header">
+                <i class="tags icon"></i>
+                Filter by tag
+              </div>
+              <div class="item">
+                <div class="ui red empty circular label"></div>
+                Important
+              </div>
+              <div class="item">
+                <div class="ui blue empty circular label"></div>
+                Announcement
+              </div>
+              <div class="item">
+                <div class="ui black empty circular label"></div>
+                Discussion
+              </div>
+              <div class="divider"></div>
+              <div class="header">
+                <i class="calendar icon"></i>
+                Filter by date
+              </div>
+              <div class="item">
+                <i class="olive circle icon"></i>
+                This Week
+              </div>
+              <div class="item">
+                <i class="violet circle icon"></i>
+                This Month
+              </div>
+              <div class="item">
+                <i class="orange circle icon"></i>
+                This Year
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="no dropdown search example">
+      <h4 class="ui header">Clearable selection Dropdown</h4>
+      <p>Adding the <code>clearable</code> class to a single selection dropdown now allow you to clear a previous selected value.</p>
+      <div class="ui clearable selection dropdown">
+        <input type="hidden" name="language" value="English">
+        <i class="dropdown icon"></i>
+        <div class="default text">Select Language</div>
+        <div class="menu">
+          <div class="item">Arabic</div>
+          <div class="item">Chinese</div>
+          <div class="item">Danish</div>
+          <div class="item">Dutch</div>
+          <div class="item">English</div>
+          <div class="item">French</div>
+          <div class="item">German</div>
+          <div class="item">Greek</div>
+          <div class="item">Hungarian</div>
+          <div class="item">Italian</div>
+          <div class="item">Japanese</div>
+          <div class="item">Korean</div>
+          <div class="item">Lithuanian</div>
+          <div class="item">Persian</div>
+          <div class="item">Polish</div>
+          <div class="item">Portuguese</div>
+          <div class="item">Russian</div>
+          <div class="item">Spanish</div>
+          <div class="item">Swedish</div>
+          <div class="item">Turkish</div>
+          <div class="item">Vietnamese</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ui tab" data-tab="twothree">
+    <h2 class="ui dividing header">A New Approach</h2>
+
+    <p>After an extended period of patches, Semantic UI <code>2.3</code> marks the return to significant feature changes for the project.</p>
+    <p>In upcoming Semantic releases we will be releasing more frequently, but with smaller changesets, to make it easier for users to upgrade and adjust to global changes.</p>
+
+    <h2 class="ui dividing header">New Features</h2>
+    <div class="no icon example">
+
+      <h4 class="ui header">Font Awesome 5.0 &amp; Better Icon Searching</h4>
+      <p>In <code>2.3</code> <a href="/elements/icon.html">icons</a> now include a full port of <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> <code>5.0.6</code>, including 929 icons.</p>
+      <p>Icon categories now match icon categories in Font Awesome's documentation, making it easier to find icons between docs.</p>
+      <div class="ui doubling five column vertically padded grid">
+        <div class="column"><i class="smile icon"></i>Smile</div>
+        <div class="column"><i class="smile outline icon"></i>Smile Outline</div>
+        <div class="column"><i class="hand rock icon"></i>Hand Rock </div>
+        <div class="column"><i class="hand paper icon"></i>Hand Paper </div>
+        <div class="column"><i class="hand scissors icon"></i>Hand Scissors</div>
+      </div>
+      <p>Semantic UI <a href="/elements/icon.html">icon docs</a> now includes a global icon search with easy copy and paste access to html</p>
+    </div>
+
+
+    <div class="no modal example">
+      <h4 class="ui header">Flexbox Modals and Dimmers</h4>
+
+      <p>Semantic UI <code>2.3</code> includes a rewrite of modal to include non-js flexbox positioning for vertical centering. No longer will you have to call <code>$('.ui.modal').modal('refresh')</code> if content height changes to recenter.</p>
+
+      <p>In addition there's a new setting <code>centered: false</code> which makes it easier to do top aligned modals when the internal may be dynamic and you don't want content to shift vertically.</p>
+
+
+      <div class="ui special modal">
+        <div class="header">
+          Top Aligned Modal
+        </div>
+        <div class="content">
+          <img class="ui wireframe image" src="/images/wireframe/paragraph.png">
+          <div class="ui hidden divider"></div>
+        </div>
+        <div class="actions">
+          <div class="ui button">
+            Cancel
+          </div>
+          <div class="ui primary right labeled icon button">
+            Submit
+            <i class="checkmark icon"></i>
+          </div>
+        </div>
+      </div>
+      <a class="ui button" data-url="/images/large-pdf.pdf">
+        Open Top Aligned Modal
+      </a>
+      <div class="evaluated code" data-type="javascript">
+        $('.ui.special.modal')
+          .modal({
+            centered: false
+          })
+          .modal('attach events', '.modal.example .button')
+        ;
+      </div>
+    </div>
+
+    <div class="no modal example">
+      <h4 class="ui header">New Transitions</h4>
+      <p>
+        <a href="/modules/transition.html">Transition</a> now includes <code>zoom</code> and <code>glow</code>. Glow is useful for highlighting elements on page,
+      </p>
+      <div class="code" data-demo="true">
+        $('.autumn.leaf')
+          .transition('zoom')
+        ;
+      </div>
+      <div class="code" data-demo="true">
+        $('.autumn.leaf')
+          .transition('glow')
+        ;
+      </div>
+      <img src="/images/leaves/7.png" class="ui autumn leaf medium image">
+    </div>
+
+    <div class="example">
+      <h4 class="ui header">Global Font Weight Variables</h4>
+      <p>Theming now uses two no global variables <code>@bold</code> and <code>@normal</code> making it easier to modify font weights in a more complex font stack</p>
+      <div class="code" data-type="less" data-title="site.variables">
+        /* Use some custom font weights */
+        @bold: 600;
+        @normal: 400;
+      </div>
+
+    </div>
+    <div class="local-category example">
+      <h4 class="ui header">Local Category Search</h4>
+      <p>You can now use category search with the <code>source</code> option without having to add API callbacks</p>
+      <div class="ui search">
+        <div class="ui icon input">
+          <input class="prompt" type="text" placeholder="Search countries...">
+          <i class="search icon"></i>
+        </div>
+        <div class="results"></div>
+      </div>
+      <div class="evaluated code" data-type="javascript">
+        var categoryContent = [
+          { category: 'South America', title: 'Brazil' },
+          { category: 'South America', title: 'Peru' },
+          { category: 'North America', title: 'Canada' },
+          { category: 'Asia', title: 'South Korea' },
+          { category: 'Asia', title: 'Japan' },
+          { category: 'Asia', title: 'China' },
+          { category: 'Europe', title: 'Denmark' },
+          { category: 'Europe', title: 'England' },
+          { category: 'Europe', title: 'France' },
+          { category: 'Europe', title: 'Germany' },
+          { category: 'Africa', title: 'Ethiopia' },
+          { category: 'Africa', title: 'Nigeria' },
+          { category: 'Africa', title: 'Zimbabwe' },
+        ];
+        $('.local-category.example .ui.search')
+          .search({
+            type: 'category',
+            source: categoryContent,
+            searchFields: [
+              'title',
+              'category'
+            ]
+          })
+        ;
+      </div>
+    </div>
+    <div class="no centering example">
+      <h4 class="ui header">Arrow Alignment on Small Popups</h4>
+      <p>Semantic <a href="/modules/popup.html">popups</a> now detects when horizontally aligning the popup on it's arrow is more reasonable than matching edges with a popup.</p>
+      <div class="ui info message">
+        To use this feature be sure to specify <code>movePopup: false</code> in your settings
+      </div>
+      <img src="/images/new_popup_alignment.png" class="ui image">
+
+      <div class="ui divider"></div>
+      <img src="/images/avatar/small/elliot.jpg" data-title="Elliot Fu" data-content="Elliot has been a member since July 2012" class="ui avatar image">
+      <div class="evaluated code" data-type="javascript">
+        $('.centering.example .avatar.image').popup();
+      </div>
+    </div>
+    <div class="complex-popup no example">
+      <h4 class="ui header">Popups Support Multiple Coordinate Systems</h4>
+      <p>Popups now can correctly place elements with two different coordinate systems. These are typically caused by having a parent element with css properties <code>transform</code> or <code>position</code>.</p>
+      <div id="one">
+        <p>Button is in here</p>
+        <div class="ui button">Button</div>
+      </div>
+      <div id="two">
+        <p>Popup is in here</p>
+        <div class="ui popup">
+          <h4 class="ui header">
+            Test
+          </h4>
+          <p>This popup now appears correct without having to move the popup to the same coordinate system by moving the DOM element.</p>
+        </div>
+      </div>
+      <div class="code" data-type="html">
+        <div id="one">
+          <p>Button is in here</p>
+          <div class="ui button">Button</div>
+        </div>
+        <div id="two">
+          <p>Popup is in here</p>
+          <div class="ui popup">
+            <h4 class="ui header">
+              Test
+            </h4>
+            <p>This popup now appears correct without having to move the popup to the same coordinate system by moving the DOM element.</p>
+          </div>
+        </div>
+      </div>
+      <div class="code" data-type="css">
+        /* Activating element is inside #one with different positioning context */
+        #one {
+          display: block;
+          position: relative;
+          padding: 50px 100px;
+          background-color: #F0F0F0;
+        }
+        /* Popup is inside two with position relative (creating another positioning context) */
+        #two {
+          display: block;
+          background-color: #E2EAE4;
+          position: relative;
+          top: 10px;
+          padding: 50px 8px;
+        }
+      </div>
+      <div class="evaluated code" data-type="javascript">
+        $('.complex-popup.example .ui.button')
+          .popup({
+            movePopup: false,
+            popup: $('.complex-popup.example .popup')
+          })
+        ;
+      </div>
+    </div>
+
+    <div class="no example">
+      <h4 class="ui header">New Matching Options</h4>
+      <p>In addition, search now includes three tiers of matched results, similar to the options available in dropdown. Fuzzy results now are turned off by the new default <code>fullTextSearch: 'exact'</code> </p>
+      <div class="ui bulleted list">
+        <div class="item">Query matches the start of field exactly</div>
+        <div class="item">
+          Query matches any part of field <div class="ui teal label">New</div>
+        </div>
+        <div class="item">Query "fuzzy" matches field</div>
+      </div>
+      <div class="ignored code" data-type="javascript">
+        $('.ui.search')
+          .search({
+            fullTextSearch: 'exact' // only matches exact matches (no fuzzy matching)
+          })
+        ;
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,352 @@
+---
+layout      : 'default'
+css         : 'started'
+standalone  : true
+order       : 1
+
+title       : 'Getting Started'
+description : 'Getting up and running with Fomantic-UI'
+type        : 'Main'
+---
+<script src="/javascript/started.js"></script>
+
+<%- @partial('header') %>
+
+<div class="main ui intro container">
+
+  <p>
+    This page contains detailed guides on how to get started using Fomantic-UI. If you have any
+    problems or questions please open a issue on the
+    <a href="https://github.com/fomantic/Fomantic-UI/issues/new/choose" target="_blank">
+      GitHub repository
+    </a>.
+  </p>
+
+  <h2 class="ui dividing header">General Usage</h2>
+    <div class="no example">
+      <h4 class="ui header">Descriptive classnames</h4>
+
+        <p>The base concept of Fomantic-UI is adding descriptional classnames to HTML nodes</p>
+        <div class="ui basic segment">
+            <code>ui primary button</code>
+            <div class="ui primary button">Button</div>
+        </div>
+        <div class="ui ignored info message">
+         The <code>ui</code> class is used as namespace to avoid problems when additional custom CSS is used.
+        </div>
+        <p>In many cases you can also combine variations to achieve multiple effects on the same component.</p>
+        <div class="ui basic segment">
+            <code>ui huge primary button</code>
+            <div class="ui huge primary button">Button</div>
+        </div>
+    </div>
+    <div class="no example">
+      <h4 class="ui header">Class order</h4>
+        <p>By specification, CSS allows to declare classnames in any order.</p>
+        <div class="ui basic segment">
+            <code>huge ui button primary</code>
+            <div class="huge ui button primary">Button</div>
+        </div>
+        <p>
+            However, some combinations of FUI classnames <b>MUST</b> be declared in a strict predefined order divided by <b>ONE</b> space character.
+            This is sometimes needed to avoid description confusion when the same classnames are used but have a different meaning.
+        </p>
+        <div class="ui basic segment">
+            <code>ui left labeled right floated button</code>
+            <div class="ui left labeled right floated button"><div class="ui secondary label">Labeled</div><div class="ui primary button">Button</div></div>
+        </div>
+        <p>If the classes are given unordered, the CSS selectors get confused and FUI does not know what the description means, thus the styling is broken.</p>
+        <div class="ui basic segment">
+            <code>ui left right button floated labeled</code>
+            <div class="ui left right button floated labeled"><div class="ui secondary label">Labeled</div><div class="ui primary button">Button</div></div>
+            <div class="ui bulleted list">
+                <div class="item">Where should the button be <b>floated</b>? Left or right?</div>
+                <div class="item">Where should the button be <b>labeled</b>? Left or right?</div>
+            </div>
+        </div>
+        <p>Some examples are labeled by <span class="ui small wordorder label"><i class="attention icon"></i>Word order required</span> to indicate the word order necessity.</p>
+        <p>So, as a general advise, just declare the classname order like a grammatical correct spoken description.</p>
+        <div class="ui ignored warning message">
+            <div class="header">Use <code>&lt;&gt;</code></div>
+            <div class="content">
+                <p>While there are situations where a strict ordered class name list is important, in most cases it isn't. If in doubt, always watch out for the <code>&lt;&gt;</code> symbol displayed to the right of the examples which shows the source code when clicked and highlights a possible required classname order.</p>
+                <div class="example" data-class="!left labeled, !right floated, button, primary, secondary, tiny" data-use-content="true">
+                    <div class="code" data-type="html">
+                        <div class="ui left labeled tiny right floated button">
+                            <div class="ui secondary label">Labeled</div>
+                            <div class="ui primary button">Button</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <h2 class="ui dividing header">Installation</h2>
+
+  <p>You can install Fomantic-UI via NPM or one of our CDN providers. You can also host the distribution files locally if you prefer to.</p>
+  <p>If you want to use theming you must install Fomantic-UI with NPM this ensures you get all the files needed to create and manage your theme.</p>
+
+  <div class="no example">
+    <h4 class="ui header">Installing via NPM</h4>
+
+    <h5 class="ui header">Requirements</h5>
+    <ul class="ui list">
+      <li class="item">NodeJS >= v12</li>
+      <li class="item">NPM >= v6</li>
+    </ul>
+    <p>You can download NodeJS <a href="https://nodejs.org/en/download/" target="_blank">here</a>, NPM is installed with NodeJS.</p>
+    <div class="ui ignored info message" data-since="2.9.0"><i class="circle info icon"></i>Fomantic-UI also supports <code><a href="https://www.npmjs.com/package/yarn" target="_blank">yarn</a></code> as alternative package manager.</div>
+    <br />
+
+    <p>Once you have NodeJS and NPM installed, you will need to install <a href="https://npmjs.com/package/fomantic-ui">Fomantic-UI</a> as a dependency of your project.</p>
+
+    <p>If you haven't already, create a <code>package.json</code> file with the following command</p>
+    <div class="ignored code" data-type="bash">
+      $ npm init
+    </div>
+    <p>
+      The <code>package.json</code> file will keep track of your dependencies and their versions. If you want to learn more about the <code>package.json</code> file you can
+      <a href="https://docs.npmjs.com/files/package.json">here</a>.
+    </p>
+
+    <p>To install Fomantic-UI run the following command</p>
+    <div class="ignored code" data-type="bash">
+      $ npm install fomantic-ui
+    </div>
+
+    <p>Or try living on the edge and give our nightly build a test and try new features and bug fixes early!</p>
+    <div class="ignored code" data-type="bash">
+      $ npm install fomantic-ui@nightly
+    </div>
+
+    <p>
+      When NPM finishes installing, a precompiled version of Fomantic-UI is already available inside the <code>dist</code> folder.
+      Starting from 2.9.0, the interactive installation prompt will not start automatically after npm install anymore. If you need a custom installed version of Fomantic-UI, you have to manually run the following right after npm install
+    </p>
+    <div class="ignored code" data-type="bash">
+      $ cd node_modules/fomantic-ui
+      $ npx gulp install
+    </div>
+    <p>
+      The installation prompt is used to create your <code>semantic.json</code> file which stores
+      critical information for when you need to install Fomantic-UI and also about the build
+      process. It will also create a new directory containing all the files needed to create a
+      theme. The directory will be created where you specified in the installation prompt.
+    </p>
+
+    <p>Once complete it will also add the following to your <code>package.json</code> file</p>
+    <div class="code" data-type="json">
+      "dependencies": {
+        ...
+        "fomantic-ui": "^<%= @getVersion() %>"
+        ...
+      }
+    </div>
+
+    <p>
+      Now you will need to build your distribution of the CSS and JavaScript you use on your
+      website. To do this run the following command inside the directory created by the installer.
+      This is <code>semantic/</code> by default.
+    </p>
+    <div class="ignored code" data-type="bash">
+      $ cd semantic/
+      $ npx gulp build
+    </div>
+    <p>
+      Once complete you should have a new directory <code>dist/</code> which contains all the CSS
+      and JavaScript files. You can now include these in your web page and start using Fomantic-UI.
+    </p>
+    <div class="code" data-type="html">
+      <!-- You MUST include jQuery 3.4+ before Fomantic -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="/dist/semantic.min.css">
+      <script src="/dist/semantic.min.js"></script>
+    </div>
+  </div>
+
+  <div class="no example">
+    <h4 class="ui header">Using a CDN provider</h4>
+
+    <p>Fomantic-UI is available on the top 3 popular CDN providers.</p>
+
+    <ul class="ui list">
+      <li class="item">
+        <a href="https://www.jsdelivr.com/package/npm/fomantic-ui" target="_blank">
+          jsDelivr
+        </a>
+        <span class="ui tiny grey label">
+          Recommended
+        </span>
+      </li>
+      <li class="item">
+        <a href="https://cdnjs.com/libraries/fomantic-ui" target="_blank">
+          cdnjs
+        </a>
+      </li>
+      <li class="item">
+        <a href="https://unpkg.com/fomantic-ui@<%= @getVersion() %>/" target="_blank">
+          unpkg
+        </a>
+      </li>
+    </ul>
+
+    <div class="ui secondary menu">
+      <a data-tab="jsdelivr" class="active item">jsDelivr</a>
+      <a data-tab="cdnjs" class="item">cdnjs</a>
+      <a data-tab="unpkg" class="item">unpkg</a>
+    </div>
+    <div class="ui active basic tab vertical segment" data-tab="jsdelivr">
+      <div class="code" data-type="html">
+        <!-- You MUST include jQuery 3.4+ before Fomantic -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@<%= @getVersion() %>/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@<%= @getVersion() %>/dist/semantic.min.js"></script>
+      </div>
+    </div>
+    <div class="ui basic tab vertical segment" data-tab="cdnjs">
+      <div class="code" data-type="html">
+        <!-- You MUST include jQuery 3.4+ before Fomantic -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/<%= @getVersion() %>/semantic.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/<%= @getVersion() %>/semantic.min.js"></script>
+      </div>
+    </div>
+    <div class="ui basic tab vertical segment" data-tab="unpkg">
+      <div class="code" data-type="html">
+        <!-- You MUST include jQuery 3.4+ before Fomantic -->
+        <script src="https://unpkg.com/jquery@3.7.1/dist/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/fomantic-ui@<%= @getVersion() %>/dist/semantic.min.css">
+        <script src="https://unpkg.com/fomantic-ui@<%= @getVersion() %>/dist/semantic.min.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <div class="no example">
+    <h4 class="ui header">CSS, LESS & SASS distributions</h4>
+
+    <p>Fomantic-UI provides a separate repository for a CSS, LESS & SASS only distributions.</p>
+
+    <ul class="ui list">
+      <li class="item">
+        <a href="https://github.com/fomantic/Fomantic-UI-CSS" target="_blank">
+          CSS Repository
+        </a>
+      </li>
+      <li class="item">
+        <a href="https://github.com/fomantic/Fomantic-UI-LESS" target="_blank">
+          LESS Repository
+        </a>
+      </li>
+      <li class="item">
+        <a href="https://github.com/fomantic/Fomantic-UI-SASS" target="_blank">
+          SASS Repository
+        </a>
+      </li>
+    </ul>
+    <br />
+
+    <p>You can install both CSS and LESS via NPM or download any of them and use them in your project as local files.</p>
+
+    <div class="ui secondary menu">
+      <a data-tab="cssdistinstall" class="active item">CSS</a>
+      <a data-tab="lessdistinstall" class="item">LESS</a>
+    </div>
+    <div class="ui active basic tab vertical segment" data-tab="cssdistinstall">
+      <div class="ignored code" data-type="bash">
+        $ npm install fomantic-ui-css
+      </div>
+    </div>
+    <div class="ui basic tab vertical segment" data-tab="lessdistinstall">
+      <div class="ignored code" data-type="bash">
+        $ npm install fomantic-ui-less
+      </div>
+    </div>
+  </div>
+
+  <h2 class="ui dividing header">Updating</h2>
+
+  <div class="no example">
+    <h4 class="ui header">Updating NPM Installation</h4>
+
+    <p>If you are using Fomantic-UI via NPM you can simply run the following command</p>
+    <div class="ignored code" data-type="bash">
+      $ npm update fomantic-ui
+    </div>
+    <p>
+      This will install the latest version and will run the interactive installer to install any new
+      files which are required. You will need to rebuild Fomantic-UI after the installer has
+      finished.
+    </p>
+
+    <p>
+      To build the distribution files for the latest version run the following command in your
+      fomantic directory
+    </p>
+    <div class="ignored code" data-type="bash">
+      $ npx gulp build
+    </div>
+  </div>
+
+  <div class="no example">
+    <h4 class="ui header">Updating CDN</h4>
+
+    <p>
+      If you are using a CDN provider updating is simple, just change the version number in your
+      CDN url.
+    </p>
+    <div class="ui segment">
+      <p>https://cdn.jsdelivr.net/npm/fomantic-ui@<span class="ui red text"><%= @getVersion() %></span>/dist/semantic.min.css</p>
+      <p>https://cdn.jsdelivr.net/npm/fomantic-ui@<span class="ui red text"><%= @getVersion() %></span>/dist/semantic.min.js</p>
+    </div>
+  </div>
+
+  <div class="no example">
+    <h4 class="ui header">Updating CSS, LESS & SASS Distributions</h4>
+
+    <p>If you are using the CSS or LESS distributions via NPM you can run the following command</p>
+    <div class="ui secondary menu">
+      <a data-tab="cssdistupdate" class="active item">CSS</a>
+      <a data-tab="lessdistupdate" class="item">LESS</a>
+    </div>
+    <div class="ui active basic tab vertical segment" data-tab="cssdistupdate">
+      <div class="ignored code" data-type="bash">
+        $ npm update fomantic-ui-css
+      </div>
+    </div>
+    <div class="ui basic tab vertical segment" data-tab="lessdistupdate">
+      <div class="ignored code" data-type="bash">
+        $ npm update fomantic-ui-less
+      </div>
+    </div>
+    <br />
+
+    <p>
+      If you have the files downloaded locally you will have to download the latest version and
+      replace your local files with the latest ones.
+    </p>
+  </div>
+
+
+  <div class="no example">
+    <h2 class="ui dividing header">Resources</h2>
+
+    <p>
+      This is a list of some useful resources about Fomantic-UI. If you find any resources or want
+      to add something you created feel free to create a pull request <a href="https://github.com/fomantic/Fomantic-UI-Docs" target="_blank">here</a>!
+    </p>
+
+    <ul class="ui list">
+      <li class="item">
+        <a target="_blank" href="https://medium.com/@fomantic/setting-up-fomantic-ui-with-react-f701b68f736c">
+          Setting up Fomantic-UI with React
+        </a>
+      </li>
+      <li class="item">
+        <a target="_blank" href="https://medium.com/@marekurbanowicz/how-to-customize-fomantic-ui-with-less-and-webpack-applicable-to-semantic-ui-too-fbf98a74506c">
+          How to customize Fomantic UI with LESS and Webpack? (applicable to Semantic UI too)
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>

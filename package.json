@@ -1,0 +1,23 @@
+{
+  "name": "fomantic-ui-docs",
+  "title": "Fomantic UI Docs",
+  "description": "Fomantic empowers designers and developers by creating a shared vocabulary for UI.",
+  "homepage": "https://fomantic-ui.com",
+  "author": "Jack Lukic <jacklukic@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fomantic/Fomantic-UI-Docs.git"
+  },
+  "dependencies": {
+    "docpad": "^6.83.2",
+    "docpad-plugin-babel": "^2.5.0",
+    "docpad-plugin-eco": "^2.8.0",
+    "docpad-plugin-partials": "^2.14.0",
+    "docpad-plugin-raw": "^2.9.0",
+    "docpad-plugin-serve": "^2.4.0"
+  },
+  "devDependencies": {
+    "docpad-plugin-ghpages": "github:docpad/docpad-plugin-ghpages#2.11.0"
+  }
+}

@@ -1,0 +1,82 @@
+---
+layout      : 'default'
+css         : 'flag-page'
+element     : 'flag'
+elementType : 'element'
+standalone  : true
+
+title       : 'Flag'
+description : 'A flag is used to represent a political state'
+type        : 'UI Element'
+
+---
+<link rel="stylesheet/less" type="text/css" href="/src/definitions/elements/flag.less" />
+
+<%- @partial('header') %>
+
+<script src="/javascript/flag.js"></script>
+<div class="main ui container">
+
+  <div class="ui active tab" data-tab="flags">
+
+    <h2 class="ui header">Definition</h2>
+
+    <div class="no example">
+      <h4 class="ui header">Flag</h4>
+      <p>A flag can use the two digit country code, the full name, or a common alias</p>
+      <div class="code" data-type="html" data-preview="true">
+        <i class="ae flag"></i>
+        <i class="france flag"></i>
+        <i class="myanmar flag"></i>
+      </div>
+    </div>
+
+    <h2 class="ui header">Types</h2>
+    <div class="ui info message">
+      <p>Since Fomantic 2.9.0, flags are based on SVG emojis in the default theme. If you want to return to the sprite approach using the <a target="_blank" href="http://www.famfamfam.com/lab/icons/flags/">famfamfam icon set</a> (as used in Fomantic up to 2.8.8), you only have to change the <code>@flag</code> variable in your <code>theme.config</code> to <code>'famfamfam'</code>. However, the famfamfam theme does not support sizing and lots of flags are missing.</p>
+    </div>
+    <div class="ui ignored info message">
+      You can reduce your custom generated CSS by adjusting the <code>@flags</code> variable in your themes <code>flag.variables</code> file to only the flags you need.
+    </div>
+    <table class="ui selectable sortable compact celled striped definition table">
+      <thead>
+        <th class="one wide">Flag</th>
+        <th>Name</th>
+        <th>ISO 3166-2 Code <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">?</a></th>
+        <th>Additional Aliases</th>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+      <div class="example">
+        <h4 class="ui header">Size</h4>
+        <p>A flag can vary in size</p>
+        <div class="ui basic segment">
+          <i class="small de flag"></i> Small
+          <br>
+          <i class="medium fr flag"></i> Medium
+          <br>
+          <i class="large li flag"></i> Large
+          <br>
+          <i class="big jp flag"></i> Big
+          <br>
+          <i class="huge gb flag"></i> Huge
+          <br>
+          <i class="massive un flag"></i> Massive
+        </div>
+      </div>
+      <div class="another example">
+        <h4 class="ui header">Autosizing</h4>
+        <p>If no specific size class is given, all flags are automatically sized according to the current element font-size</p>
+        <div class="ui basic segment">
+          <div class="ui small header">Within a header <i class="us flag"></i></div>
+          <div class="ui large button">Within a button <i class="eu flag"></i></div>
+          <br><br>
+          <div class="ui massive label">Within a label <i class="pirate flag"></i></div>
+          <br><br>
+          <span class="ui small orange text">Within a text <i class="rainbow flag"></i></span>
+        </div>
+      </div>
+
+  </div>
+</div>

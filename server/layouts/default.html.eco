@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- @partial('meta') %>
+  <%- @partial('javascript') %>
+  <%- @partial('css') %>
+</head>
+<body id="example" class="<%= @document.css %>" ontouchstart="">
+  <% if @document.element is 'sidebar': %>
+  <%- @partial('demo-sidebar') %>
+  <% end %>
+  <% if @document.element is 'flyout': %>
+  <%- @partial('demo-flyout') %>
+  <% end %>
+  <%- @partial('sidebar') %>
+  <%- @partial('fixed-menu') %>
+  <div class="pusher">
+    <div class="full height">
+      <div class="toc">
+        <div class="ui big vertical inverted menu">
+          <%- @partial('site-menu') %>
+        </div>
+      </div>
+      <div class="article">
+        <%- @content %>
+        <%- @partial('footer') %>
+      </div>
+    </div>
+  </div>
+  <%- @partial('dimmer-demo') %>
+  <%- @partial('less') %>
+</body>
+</html>

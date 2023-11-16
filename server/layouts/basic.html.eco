@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- @partial('meta') %>
+  <%- @partial('library-javascript') %>
+  <%- @partial('ui-javascript') %>
+  <%- @partial('ui-css') %>
+
+</head>
+<body id="example" class="pushable <%= @document.css %>" ontouchstart="">
+  <%- @content %>
+  <%- @partial('less') %>
+</body>
+
+</html>
