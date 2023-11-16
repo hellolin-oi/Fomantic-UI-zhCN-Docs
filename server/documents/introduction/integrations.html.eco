@@ -4,13 +4,17 @@ css         : 'started'
 standalone  : true
 order       : 2
 
-title       : 'Integrations'
-description : 'Using Fomantic UI with Other Libraries'
+title       : '集成'
+description : '与其他库一起使用 Fomantic UI'
 type        : 'Introduction'
 ---
 <%- @partial('header') %>
 
 <div class="main ui intro container">
+
+  <div class="ui ignored warning message">
+    译者注：以下介绍的是 Semantic-UI 的集成，而非 Fomantic-UI。此部分暂时保持不译。
+  </div>
 
   <h2 class="ui dividing header">
     React
