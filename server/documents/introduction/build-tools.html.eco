@@ -4,45 +4,45 @@ css         : 'started'
 standalone  : true
 order       : 3
 
-title       : 'Build Tools'
-description : 'Using Gulp with Fomantic UI'
+title       : '构建工具'
+description : '在 Fomantic UI 中使用 Gulp'
 type        : 'Introduction'
 ---
 <%- @partial('header') %>
 
 <div class="main ui intro container">
 
-  <h2 class="ui dividing header">Overview</h2>
+  <h2 class="ui dividing header">概述</h2>
 
   <div class="no example">
-    <h4>30 Second Explanation</h4>
-    <p><a href="/introduction/getting-started.html">Download Fomantic UI</a> navigate to the install folder then run a <a href="#gulp-commands">gulp command</a>.</p>
+    <h4>30 秒解释</h4>
+    <p><a href="/introduction/getting-started.html">下载 Fomantic UI</a> 后，打开安装文件夹，即可运行 <a href="#gulp-commands">gulp 命令</a>。</p>
 
-    <p>To build all files:</p>
+    <p>构建所有文件：</p>
     <div class="code" data-type="bash">
       npx gulp build
     </div>
 
-    <p>To watch for changes</p>
+    <p>监听文件变化：</p>
     <div class="code" data-type="bash">
       npx gulp watch
     </div>
   </div>
   <div class="no example">
-    <h4>Why Build Tools?</h4>
-    <p>Fomantic UI uses Gulp for several reasons:</p>
+    <h4>为啥要用构建工具？</h4>
+    <p>有以下几个原因：</p>
     <div class="ui large bulleted list">
-      <div class="item">Process LESS files with <a href="/usage/theming.html">theming variables</a></div>
-      <div class="item">Add vendor prefixes for <a href="https://github.com/fomantic/Fomantic-UI/blob/master/README.md#-browser-support">supported browsers</a> with <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer</a></div>
-      <div class="item">Watch file changes and rebuild the necessary files when adjusting themes</div>
-      <div class="item">Automatically process asset paths, so that minified and concatenated releases can exist in different directories</div>
-      <div class="item">Allow custom builds with only the required components for your site</div>
-      <div class="item">Allow advanced usage like Right-To-Left (RTL) languages using <a href="https://github.com/MohammadYounes/rtlcss" target="_blank">RTLCSS</a></div>
+      <div class="item">可使用 <a href="/usage/theming.html">主题化变量</a> 处理 LESS 文件</div>
+      <div class="item">可为 <a href="https://github.com/fomantic/Fomantic-UI/blob/master/README.md#-browser-support">支持的浏览器</a> 使用 <a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer</a> 添加 vendor 前缀</div>
+      <div class="item">可监听文件变化并重新渲染必要的文件</div>
+      <div class="item">可自动处理 assets 路径</div>
+      <div class="item">可只生成网站需要的部分组件</div>
+      <div class="item">可使用例如 <a href="https://github.com/MohammadYounes/rtlcss" target="_blank">RTLCSS</a> 的高级用法</div>
     </div>
   </div>
   <div class="no example">
-    <h3 class="ui header">Folder Structure</h3>
-    <p>A Fomantic UI project includes the following folder structure.</p>
+    <h3 class="ui header">目录结构</h3>
+    <p>Fomantic UI 项目包含以下文件结构：</p>
     <div class="ui list">
       <div class="item">
         <i class="folder icon"></i>
@@ -53,7 +53,7 @@ type        : 'Introduction'
               <i class="folder icon"></i>
               <div class="content">
                 <a href="/usage/theming.html#site-theme" class="header">site</a>
-                <div class="description">Your site's theme</div>
+                <div class="description">你的网站的主题</div>
               </div>
             </div>
             <div class="item">
@@ -65,14 +65,14 @@ type        : 'Introduction'
                     <i class="folder icon"></i>
                     <div class="content">
                       <a href="/usage/theming.html#default-theme" class="header">default</a>
-                      <div class="description">Default theme</div>
+                      <div class="description">默认主题</div>
                     </div>
                   </div>
                   <div class="item">
                     <i class="folder icon"></i>
                     <div class="content">
                       <a href="/usage/theming.html#packaged-theme" class="header">packaged-theme</a>
-                      <div class="description">Additional themes</div>
+                      <div class="description">其他主题</div>
                     </div>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ type        : 'Introduction'
               <i class="file icon"></i>
               <div class="content">
                 <a class="header" href="#themeconfig" >theme.config</a>
-                <div class="description">Config file for setting packaged themes</div>
+                <div class="description">用于设置打包主题的配置文件</div>
               </div>
             </div>
           </div>
@@ -92,27 +92,27 @@ type        : 'Introduction'
         <i class="folder icon"></i>
         <div class="content">
           <div class="header">dist</div>
-          <div class="description">Compiled CSS and JS files</div>
+          <div class="description">已编译的 CSS 和 JS 文件</div>
           <div class="list">
             <div class="item">
               <i class="folder icon"></i>
               <div class="content">
                 <div class="header">components</div>
-                <div class="description">Individual component CSS and JS</div>
+                <div class="description">独立 CSS 和 JS 组件</div>
               </div>
             </div>
             <div class="item">
               <i class="file icon"></i>
               <div class="content">
                 <div class="header">semantic.css</div>
-                <div class="description">concatenated release</div>
+                <div class="description">CSS 集合</div>
               </div>
             </div>
             <div class="item">
               <i class="file icon"></i>
               <div class="content">
                 <div class="header">semantic.js</div>
-                <div class="description">concatenated release</div>
+                <div class="description">JS 集合</div>
               </div>
             </div>
           </div>
@@ -122,71 +122,71 @@ type        : 'Introduction'
         <i class="file icon"></i>
         <div class="content">
           <a href="#semanticjson" class="header">semantic.json</a>
-          <div class="description">Contains build settings for gulp</div>
+          <div class="description">Gulp 的构建配置</div>
         </div>
       </div>
     </div>
   </div>
   <div class="no example">
-    <h4>Gulp Commands</h4>
-    <p>Below is a list of all available gulp commands</p>
+    <h4>Gulp 命令</h4>
+    <p>可用的 Gulp 命令如下表：</p>
     <table class="ui definition table">
       <thead>
-        <th>Command</th>
-        <th>Description</th>
+        <th>命令</th>
+        <th>描述</th>
       </thead>
       <tbody>
         <tr>
           <td>install</td>
-          <td>Asks install questions to setup semantic.json</td>
+          <td>询问一些问题以创建 semantic.json</td>
         </tr>
         <tr>
-          <td>watch (default)</td>
-          <td>Watches for changes in source files, and builds file on change</td>
+          <td>watch (默认)</td>
+          <td>监视源文件更改，自动重新生成文件</td>
         </tr>
         <tr>
           <td>build</td>
-          <td>Build all files</td>
+          <td>构建所有文件</td>
         </tr>
         <tr>
           <td>clean</td>
-          <td>Cleans <code>dist/</code> folder</td>
+          <td>清除 <code>dist/</code> 文件夹</td>
         </tr>
         <tr>
           <td>version</td>
-          <td>Outputs current version</td>
+          <td>查看当前版本</td>
         </tr>
         <tr>
           <td>build-javascript</td>
-          <td>Build JS files</td>
+          <td>只构建 JS</td>
         </tr>
         <tr>
           <td>build-css</td>
-          <td>Build CSS files</td>
+          <td>只构建 CSS</td>
         </tr>
         <tr>
           <td>build-assets</td>
-          <td>Build assets files</td>
+          <td>只构建 assets</td>
         </tr>
         <tr>
           <td>serve-docs</td>
-          <td>Serves files to local docs instance</td>
+          <td>向本地 docs 实例提供主题文件</td>
         </tr>
         <tr>
           <td>build-docs</td>
-          <td>Builds files to docs folder</td>
+          <td>将主题文件构建到 docs 文件夹</td>
         </tr>
       </tbody>
     </table>
   </div>
 
 
-  <h2 class="ui dividing header">Configuration Files</h2>
+  <h2 class="ui dividing header">配置文件</h2>
 
   <div class="no example">
     <h4>semantic.json</h4>
-    <p>Build tool settings are stored in a special file called <code>semantic.json</code> It can be included in any folder that is in a parent folder of the fomantic install folder.</p>
-    <p>If you used the npm or meteor, a <code>semantic.json</code> file is automatically generated for you in the root of your project. If you used a different package manager you can run <code>gulp install</code> to run the interactive installer.</p>
+    <p><code>semantic.json</code> 存储构建设置。可存在于 Fomantic 安装文件夹的父文件夹的任何子文件夹中。</p>
+    <p>如果你使用 npm 或 meteor，<code>semantic.json</code> 会自动生成。你也可以运行 <code>gulp install</code> 来手动安装。</p>
     <div class="ignored code" data-type="json" data-title="semantic.json">
     {
       // base path added to all other paths specified in "paths"
@@ -327,8 +327,8 @@ type        : 'Introduction'
 
   <div class="no example" data-since="2.8.1">
     <h4>variation.variables</h4>
-    <p>You can disable specific variations of components allowing you to generate CSS files which only contain features you require. This makes your custom distribution files much smaller in size</p>
-    <p>Most of the components also have a separate variable to decide which components should be rendered for which colors of your global color palette of colors.less or which sizes should be rendered.</p>
+    <p>为了减少分发文件的体积，你可以禁用某个组件的某些变体。</p>
+    <p>大多数组件还有一个单独的变量来决定应该为全局颜色调色板中的哪种颜色渲染哪些组件，或者应该渲染哪种尺寸。</p>
 
     <div class="code" data-type="less" data-title="src/themes/default/globals/variation.variables">
     // The defaults enable everything
@@ -343,10 +343,10 @@ type        : 'Introduction'
 
   <div class="no example" data-since="2.7.0">
     <h4>colors.less</h4>
-    <p>You can modify/define the global color palette entirely by adjusting a single LESS Map <code>@colors</code> in a custom <code>colors.less</code> file.</p>
-    <p>Each color consists of a predefined set of properties used in all components. You can define whatever color name you want.</p>
+    <p>你可以通过调整 <code>colors.less</code> 中的单个 LESS Map <code>@colors</code> 来修改或定义全局颜色。</p>
+    <p>每种颜色都由一组预定义的属性组成，这些属性用于所有组件。你可以定义任何你想要的颜色名称。</p>
     <div class="ui ignored info message">
-        If you only want to reduce the used colors from the default palette, you may only adjust the related colors-list variables inside <a href="#variationvariables"><code>variation.variables</code></a> instead of changing the colors.less file.
+        如果你只想减少默认调色板中的颜色，你应该修改 <a href="#variationvariables"><code>variation.variables</code></a>。
         <div class="code" data-type="less">
         // limit all components to yellow, purple and green
         @variationAllColors: yellow, purple, green;
@@ -358,7 +358,7 @@ type        : 'Introduction'
         </div>
     </div>
     <div class="ui ignored warning message">
-        If you change the whole available colors like in the example below, make sure you also adjust the related colors-list variables inside <a href="#variationvariables"><code>variation.variables</code></a> to avoid a build error.
+        调整调色板之后，别忘了修改 <a href="#variationvariables"><code>variation.variables</code></a> 以避免构建错误。
         <div class="code" data-type="less">
             @variationAllComponents: batman, spiderman;
         </div>
@@ -409,7 +409,7 @@ type        : 'Introduction'
     };
     </div>
 
-    <p>The colors.less file also contains another central LESS Map <code>@formStates</code>for defining form states. Also here, you can define any form state name and its colors as you like.</p>
+    <p>colors.less 文件还包含另一个中心 LESS Map <code>@formStates</code>，用于定义表单状态。你可以定义任何表单状态名称及其颜色。</p>
     <div class="code" data-type="less" data-title="src/themes/default/globals/colors.less">
 
 // Your final custom compiled build will offer form components like
@@ -446,28 +446,28 @@ type        : 'Introduction'
   </div>
 
   <div class="no example">
-    <h4>Excluding components from main css/js file</h4>
-    <p>By default, all components listed in semantic.json are added to semantic.css and semantic.js on build, but sometimes you don't need a component to be included on every page. To keep the file size of your main assets down, it's better to separate these components and reference them individually in your HTML.</p>
-    <p>To make this work, add these components to your semantic.json as "individuals" (see above example). Then the css/js files will still be generated/updated as usual under dist/components.</p>
-    <p><strong>Note:</strong> You can specify only the individuals in semantic.json and leave the components list empty. The individuals are automatically excluded from the main components list.</p>
+    <h4>从主 CSS/JS 文件中移除组件</h4>
+    <p>默认情况下，semantic.json 中列出的所有组件都会在构建时添加到 semantic.css 和 semantic.js 中，但有时为了减少文件大小，并不需要每个页面都包含某个组件，此时最好将这些组件分开，并在 HTML 中单独引用。</p>
+    <p>要做到这一点，请将这些组件作为个体（individuals）添加到 semantic.json 中（参见上面的示例）。然后，CSS/JS 文件仍然会在 <code>dist/components</code> 下照常生成和更新。</p>
+    <p><strong>注意：</strong> 您可以在 semantic.json 中仅指定个体，并将组件列表留空。个体会自动从主组件列表中排除。</p>
   </div>
 
   <div class="no example">
     <h4>theme.config</h4>
-    <p>LESS uses a special configuration file <code>theme.config</code> which lets you specify what theme each component should use. If you have not generated this file yet, you will receive an error message when running build tools</p>
-    <p>You can learn more about <code>theme.config</code> by checking out the <a href="/usage/theming.html#using-packaged-themes">theming guide</a></p>
+    <p>LESS 使用一个特殊的配置文件 <code>theme.config</code>，它允许你指定每个组件应该使用什么主题。如果未生成此文件，运行生成工具时会报错。</p>
+    <p>要了解更多有关 <code>theme.config</code> 的信息，请参阅 <a href="/usage/theming.html#using-packaged-themes">主题指南</a>。</p>
   </div>
 
   <div class="no example">
-    <h4>Importing Gulp Tasks</h4>
-    <p>See our <a href="/introduction/advanced-usage.html">recipes section</a> for examples on how to import individual gulp tasks into your custom Gulpfile.</p>
+    <h4>导入 Gulp 任务</h4>
+    <p>有关如何将单个 Gulp 任务导入到自定义 Gulpfile 中的示例，参阅我们的<a href="/introduction/advanced-usage.html">食谱</a>部分。</p>
   </div>
   <div class="no example" data-since="2.2">
     <h4>
-      Auto-Install & Continuous Integration
+      自动安装和持续集成（CI）
     </h4>
-    <p>We've added a new setting to <code>semantic.json</code> in 2.2 to help make working with a CLI, or other automated deployments more streamlined.</p>
-    <p>Specifying <code>autoInstall: true</code> in an environments <code>semantic.json</code> configuration will prevent any user prompting when running <code>npx gulp install</code> allowing for automated deployment.</p>
+    <p>2.2 中的 <code>semantic.json</code> 有一个新设置，用来帮助 CLI 或其他自动化部署更加简便。</p>
+    <p>在文件中指定 <code>autoInstall: true</code> 会阻止运行 <code>npx gulp install</code> 时的任何用户提示。</p>
   </div>
 
 </div>
