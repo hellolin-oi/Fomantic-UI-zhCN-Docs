@@ -4,8 +4,8 @@ css         : 'new'
 standalone  : true
 order       : 1
 
-title       : "What's New"
-description : 'An introduction to new features found in the latest release'
+title       : "新功能"
+description : '最新版本的更新日志'
 type        : 'Main'
 ---
 
