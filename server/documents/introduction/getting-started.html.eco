@@ -4,8 +4,8 @@ css         : 'started'
 standalone  : true
 order       : 1
 
-title       : 'Getting Started'
-description : 'Getting up and running with Fomantic-UI'
+title       : '立即上手'
+description : '立即开始使用 Fomantic-UI'
 type        : 'Main'
 ---
 <script src="/javascript/started.js"></script>
@@ -15,126 +15,125 @@ type        : 'Main'
 <div class="main ui intro container">
 
   <p>
-    This page contains detailed guides on how to get started using Fomantic-UI. If you have any
-    problems or questions please open a issue on the
+    你可以在此处浏览详尽的 Fomantic-UI 使用指南。如果你有任何问题，请在
     <a href="https://github.com/fomantic/Fomantic-UI/issues/new/choose" target="_blank">
-      GitHub repository
-    </a>.
+      GitHub 仓库
+    </a>
+    发起一个 issue。
   </p>
 
-  <h2 class="ui dividing header">General Usage</h2>
+  <h2 class="ui dividing header">基本使用</h2>
     <div class="no example">
-      <h4 class="ui header">Descriptive classnames</h4>
+      <h4 class="ui header">描述性类名</h4>
 
-        <p>The base concept of Fomantic-UI is adding descriptional classnames to HTML nodes</p>
+        <p>Fomantic-UI 的基本概念是向 HTML 节点添加抽象的描述性类名。</p>
         <div class="ui basic segment">
             <code>ui primary button</code>
-            <div class="ui primary button">Button</div>
+            <div class="ui primary button">按钮</div>
         </div>
         <div class="ui ignored info message">
-         The <code>ui</code> class is used as namespace to avoid problems when additional custom CSS is used.
+          <code>ui</code> 类是一个命名空间，目的是避免与自定义 CSS 发生冲突。
         </div>
-        <p>In many cases you can also combine variations to achieve multiple effects on the same component.</p>
+        <p>多数情况下，你可以额外描述一些变体，来在一个部件上实现多种效果。</p>
         <div class="ui basic segment">
             <code>ui huge primary button</code>
-            <div class="ui huge primary button">Button</div>
+            <div class="ui huge primary button">按钮</div>
         </div>
     </div>
     <div class="no example">
-      <h4 class="ui header">Class order</h4>
-        <p>By specification, CSS allows to declare classnames in any order.</p>
+      <h4 class="ui header">类名顺序</h4>
+        <p>原则上，CSS 允许以任何顺序声明类名。</p>
         <div class="ui basic segment">
             <code>huge ui button primary</code>
-            <div class="huge ui button primary">Button</div>
+            <div class="huge ui button primary">按钮</div>
         </div>
         <p>
-            However, some combinations of FUI classnames <b>MUST</b> be declared in a strict predefined order divided by <b>ONE</b> space character.
-            This is sometimes needed to avoid description confusion when the same classnames are used but have a different meaning.
+            但是，有些 FUI 类名组合 <b>必须</b> 有严格的顺序，并且类名之间以 <b>一个</b> 空格符分割。
+            有时这些类名顺序非常重要，严格按照顺序可以避免含义混淆。下面是一个示例。
         </p>
         <div class="ui basic segment">
             <code>ui left labeled right floated button</code>
-            <div class="ui left labeled right floated button"><div class="ui secondary label">Labeled</div><div class="ui primary button">Button</div></div>
+            <div class="ui left labeled right floated button"><div class="ui secondary label">有标记的</div><div class="ui primary button">按钮</div></div>
         </div>
-        <p>If the classes are given unordered, the CSS selectors get confused and FUI does not know what the description means, thus the styling is broken.</p>
+        <p>如果不按照顺序声明类名，CSS 选择器会混淆，导致 FUI 不知道你想表达的意思，导致样式被破坏。</p>
         <div class="ui basic segment">
             <code>ui left right button floated labeled</code>
-            <div class="ui left right button floated labeled"><div class="ui secondary label">Labeled</div><div class="ui primary button">Button</div></div>
+            <div class="ui left right button floated labeled"><div class="ui secondary label">有标记的</div><div class="ui primary button">按钮</div></div>
             <div class="ui bulleted list">
-                <div class="item">Where should the button be <b>floated</b>? Left or right?</div>
-                <div class="item">Where should the button be <b>labeled</b>? Left or right?</div>
+                <div class="item">按钮应该 <b>floated(浮动)</b> 在哪里？left(左边) 还是 right(右边)？</div>
+                <div class="item">按钮应该 <b>labeled(被标记)</b> 在哪里？left(左边) 还是 right(右边)？</div>
             </div>
         </div>
-        <p>Some examples are labeled by <span class="ui small wordorder label"><i class="attention icon"></i>Word order required</span> to indicate the word order necessity.</p>
-        <p>So, as a general advise, just declare the classname order like a grammatical correct spoken description.</p>
+        <p>一些示例上有 <span class="ui small wordorder label"><i class="attention icon"></i>严格类名顺序</span> 的标记，以表示词序的重要性。</p>
+        <p>所以，我们建议在开发时，按照正常口语表达的顺序来声明类名。</p>
         <div class="ui ignored warning message">
-            <div class="header">Use <code>&lt;&gt;</code></div>
+            <div class="header">留意 <code>&lt;&gt;</code></div>
             <div class="content">
-                <p>While there are situations where a strict ordered class name list is important, in most cases it isn't. If in doubt, always watch out for the <code>&lt;&gt;</code> symbol displayed to the right of the examples which shows the source code when clicked and highlights a possible required classname order.</p>
+                <p>尽管如此，有些时候类名顺序仍然是不重要的。如果你有疑问，可以点击某个示例右侧的 <code>&lt;&gt;</code> 查看源代码。</p>
                 <div class="example" data-class="!left labeled, !right floated, button, primary, secondary, tiny" data-use-content="true">
                     <div class="code" data-type="html">
                         <div class="ui left labeled tiny right floated button">
-                            <div class="ui secondary label">Labeled</div>
-                            <div class="ui primary button">Button</div>
+                            <div class="ui secondary label">有标记的</div>
+                            <div class="ui primary button">按钮</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-  <h2 class="ui dividing header">Installation</h2>
+  <h2 class="ui dividing header">安装</h2>
 
-  <p>You can install Fomantic-UI via NPM or one of our CDN providers. You can also host the distribution files locally if you prefer to.</p>
-  <p>If you want to use theming you must install Fomantic-UI with NPM this ensures you get all the files needed to create and manage your theme.</p>
+  <p>你可以通过 NPM 或直接使用 CDN 来安装 Fomantic-UI。你也可以在本地托管分发文件。</p>
+  <p>但如果你想要主题化 Fomantic-UI，请务必使用 NPM 安装 Fomantic-UI，这能确保你获得了创建和管理主题地必要文件。</p>
 
   <div class="no example">
-    <h4 class="ui header">Installing via NPM</h4>
+    <h4 class="ui header">通过 NPM 安装</h4>
 
-    <h5 class="ui header">Requirements</h5>
+    <h5 class="ui header">要求</h5>
     <ul class="ui list">
       <li class="item">NodeJS >= v12</li>
       <li class="item">NPM >= v6</li>
     </ul>
-    <p>You can download NodeJS <a href="https://nodejs.org/en/download/" target="_blank">here</a>, NPM is installed with NodeJS.</p>
-    <div class="ui ignored info message" data-since="2.9.0"><i class="circle info icon"></i>Fomantic-UI also supports <code><a href="https://www.npmjs.com/package/yarn" target="_blank">yarn</a></code> as alternative package manager.</div>
+    <p>可以在 <a href="https://nodejs.org/en/download/" target="_blank">此处</a> 下载 NodeJS，NPM 会随 NodeJS 一起安装。</p>
+    <div class="ui ignored info message" data-since="2.9.0"><i class="circle info icon"></i>Fomantic-UI 还支持 <code><a href="https://www.npmjs.com/package/yarn" target="_blank">yarn</a></code> 作为包管理器。</div>
     <br />
 
-    <p>Once you have NodeJS and NPM installed, you will need to install <a href="https://npmjs.com/package/fomantic-ui">Fomantic-UI</a> as a dependency of your project.</p>
+    <p>当安装完成后，你需要安装 <a href="https://npmjs.com/package/fomantic-ui">Fomantic-UI</a> 作为你项目的依赖。</p>
 
-    <p>If you haven't already, create a <code>package.json</code> file with the following command</p>
+    <p>如果你的项目刚刚起草，还没有 <code>package.json</code>，运行以下命令来生成一个：</p>
     <div class="ignored code" data-type="bash">
       $ npm init
     </div>
     <p>
-      The <code>package.json</code> file will keep track of your dependencies and their versions. If you want to learn more about the <code>package.json</code> file you can
-      <a href="https://docs.npmjs.com/files/package.json">here</a>.
+      <code>package.json</code> 会跟踪项目依赖项以及版本。如果你想获得关于<code>package.json</code> 的更多信息，你可以参阅
+      <a href="https://docs.npmjs.com/files/package.json">此处</a>。
     </p>
 
-    <p>To install Fomantic-UI run the following command</p>
+    <p>运行以下命令安装 Fomantic-UI：</p>
     <div class="ignored code" data-type="bash">
       $ npm install fomantic-ui
     </div>
 
-    <p>Or try living on the edge and give our nightly build a test and try new features and bug fixes early!</p>
+    <p>或安装 nightly 版本：</p>
     <div class="ignored code" data-type="bash">
       $ npm install fomantic-ui@nightly
     </div>
 
     <p>
-      When NPM finishes installing, a precompiled version of Fomantic-UI is already available inside the <code>dist</code> folder.
-      Starting from 2.9.0, the interactive installation prompt will not start automatically after npm install anymore. If you need a custom installed version of Fomantic-UI, you have to manually run the following right after npm install
+      当 NPM 完成安装后，Fomantic-UI 的预编译版本已在 <code>dist</code> 文件夹内可用。
+      自 2.9.0 开始，交互式安装将不会在 NPM 安装完成后自动启动。如果你需要自定义的 Fomantic-UI 安装，请运行以下命令：
     </p>
     <div class="ignored code" data-type="bash">
       $ cd node_modules/fomantic-ui
       $ npx gulp install
     </div>
     <p>
-      The installation prompt is used to create your <code>semantic.json</code> file which stores
-      critical information for when you need to install Fomantic-UI and also about the build
-      process. It will also create a new directory containing all the files needed to create a
-      theme. The directory will be created where you specified in the installation prompt.
+      安装完成后，会出现一个 <code>semantic.json</code> 文件，该文件的作用是存储
+      安装 Fomantic-UI 时的关键信息以及其他构建过程的信息。同时会出现一个新文件夹，其中包含创建
+      主题所需的文件，这个文件夹的位置会在安装时要求指定。
     </p>
 
-    <p>Once complete it will also add the following to your <code>package.json</code> file</p>
+    <p>安装完成后，你的 <code>package.json</code> 内还会出现以下内容：</p>
     <div class="code" data-type="json">
       "dependencies": {
         ...
@@ -144,20 +143,19 @@ type        : 'Main'
     </div>
 
     <p>
-      Now you will need to build your distribution of the CSS and JavaScript you use on your
-      website. To do this run the following command inside the directory created by the installer.
-      This is <code>semantic/</code> by default.
+      现在，你需要构建适用于你的网站上的 CSS 和 JS。
+      请在安装程序生成的文件夹（默认是 <code>semantic/</code>）下执行以下命令：
     </p>
     <div class="ignored code" data-type="bash">
       $ cd semantic/
       $ npx gulp build
     </div>
     <p>
-      Once complete you should have a new directory <code>dist/</code> which contains all the CSS
-      and JavaScript files. You can now include these in your web page and start using Fomantic-UI.
+      完成之后，你会看到一个新文件夹 <code>dist</code>，包含所有 CSS 和 JS 文件。
+      现在可以在网页内使用 Fomantic-UI 了：
     </p>
     <div class="code" data-type="html">
-      <!-- You MUST include jQuery 3.4+ before Fomantic -->
+      <!-- 必须在 Fomantic 之前先引入 jQuery 3.4+ -->
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
       <link rel="stylesheet" type="text/css" href="/dist/semantic.min.css">
       <script src="/dist/semantic.min.js"></script>
@@ -165,9 +163,9 @@ type        : 'Main'
   </div>
 
   <div class="no example">
-    <h4 class="ui header">Using a CDN provider</h4>
+    <h4 class="ui header">直接使用 CDN</h4>
 
-    <p>Fomantic-UI is available on the top 3 popular CDN providers.</p>
+    <p>Fomantic-UI 在以下三个 CDN 提供商上可用：</p>
 
     <ul class="ui list">
       <li class="item">
@@ -175,7 +173,7 @@ type        : 'Main'
           jsDelivr
         </a>
         <span class="ui tiny grey label">
-          Recommended
+          推荐
         </span>
       </li>
       <li class="item">
@@ -197,7 +195,7 @@ type        : 'Main'
     </div>
     <div class="ui active basic tab vertical segment" data-tab="jsdelivr">
       <div class="code" data-type="html">
-        <!-- You MUST include jQuery 3.4+ before Fomantic -->
+        <!-- 必须在 Fomantic 之前先引入 jQuery 3.4+ -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@<%= @getVersion() %>/dist/semantic.min.css">
         <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@<%= @getVersion() %>/dist/semantic.min.js"></script>
@@ -205,7 +203,7 @@ type        : 'Main'
     </div>
     <div class="ui basic tab vertical segment" data-tab="cdnjs">
       <div class="code" data-type="html">
-        <!-- You MUST include jQuery 3.4+ before Fomantic -->
+        <!-- 必须在 Fomantic 之前先引入 jQuery 3.4+ -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/<%= @getVersion() %>/semantic.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/<%= @getVersion() %>/semantic.min.js"></script>
@@ -213,7 +211,7 @@ type        : 'Main'
     </div>
     <div class="ui basic tab vertical segment" data-tab="unpkg">
       <div class="code" data-type="html">
-        <!-- You MUST include jQuery 3.4+ before Fomantic -->
+        <!-- 必须在 Fomantic 之前先引入 jQuery 3.4+ -->
         <script src="https://unpkg.com/jquery@3.7.1/dist/jquery.js"></script>
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/fomantic-ui@<%= @getVersion() %>/dist/semantic.min.css">
         <script src="https://unpkg.com/fomantic-ui@<%= @getVersion() %>/dist/semantic.min.js"></script>
@@ -222,30 +220,30 @@ type        : 'Main'
   </div>
 
   <div class="no example">
-    <h4 class="ui header">CSS, LESS & SASS distributions</h4>
+    <h4 class="ui header">CSS、LESS 和 SASS 发行版</h4>
 
-    <p>Fomantic-UI provides a separate repository for a CSS, LESS & SASS only distributions.</p>
+    <p>Fomantic-UI 为 CSS、LESS 和 SASS 提供了单独的仓库：</p>
 
     <ul class="ui list">
       <li class="item">
         <a href="https://github.com/fomantic/Fomantic-UI-CSS" target="_blank">
-          CSS Repository
+          CSS 仓库
         </a>
       </li>
       <li class="item">
         <a href="https://github.com/fomantic/Fomantic-UI-LESS" target="_blank">
-          LESS Repository
+          LESS 仓库
         </a>
       </li>
       <li class="item">
         <a href="https://github.com/fomantic/Fomantic-UI-SASS" target="_blank">
-          SASS Repository
+          SASS 仓库
         </a>
       </li>
     </ul>
     <br />
 
-    <p>You can install both CSS and LESS via NPM or download any of them and use them in your project as local files.</p>
+    <p>你可以通过 NPM 安装 CSS 和 LESS，或下载任何一个以在你的项目中使用。</p>
 
     <div class="ui secondary menu">
       <a data-tab="cssdistinstall" class="active item">CSS</a>
@@ -263,24 +261,22 @@ type        : 'Main'
     </div>
   </div>
 
-  <h2 class="ui dividing header">Updating</h2>
+  <h2 class="ui dividing header">更新</h2>
 
   <div class="no example">
-    <h4 class="ui header">Updating NPM Installation</h4>
+    <h4 class="ui header">通过 NPM 更新</h4>
 
-    <p>If you are using Fomantic-UI via NPM you can simply run the following command</p>
+    <p>运行以下命令：</p>
     <div class="ignored code" data-type="bash">
       $ npm update fomantic-ui
     </div>
     <p>
-      This will install the latest version and will run the interactive installer to install any new
-      files which are required. You will need to rebuild Fomantic-UI after the installer has
-      finished.
+      这条指令会安装最新版本的 Fomantic-UI。
+      安装完成后，你需要重新构建 Fomantic-UI。
     </p>
 
     <p>
-      To build the distribution files for the latest version run the following command in your
-      fomantic directory
+      和前面一样，在指定文件夹下运行以下命令来构建：
     </p>
     <div class="ignored code" data-type="bash">
       $ npx gulp build
@@ -288,11 +284,10 @@ type        : 'Main'
   </div>
 
   <div class="no example">
-    <h4 class="ui header">Updating CDN</h4>
+    <h4 class="ui header">通过 CDN 更新</h4>
 
     <p>
-      If you are using a CDN provider updating is simple, just change the version number in your
-      CDN url.
+      只需更改 CDN URL 中的版本号即可。
     </p>
     <div class="ui segment">
       <p>https://cdn.jsdelivr.net/npm/fomantic-ui@<span class="ui red text"><%= @getVersion() %></span>/dist/semantic.min.css</p>
@@ -301,9 +296,9 @@ type        : 'Main'
   </div>
 
   <div class="no example">
-    <h4 class="ui header">Updating CSS, LESS & SASS Distributions</h4>
+    <h4 class="ui header">更新 CSS、LESS 和 SASS 发行版</h4>
 
-    <p>If you are using the CSS or LESS distributions via NPM you can run the following command</p>
+    <p>如果是 NPM 安装，运行以下命令：</p>
     <div class="ui secondary menu">
       <a data-tab="cssdistupdate" class="active item">CSS</a>
       <a data-tab="lessdistupdate" class="item">LESS</a>
@@ -321,18 +316,17 @@ type        : 'Main'
     <br />
 
     <p>
-      If you have the files downloaded locally you will have to download the latest version and
-      replace your local files with the latest ones.
+      如果是在本地下载了文件，则必须下载更新版本的文件并手动替换。
     </p>
   </div>
 
 
   <div class="no example">
-    <h2 class="ui dividing header">Resources</h2>
+    <h2 class="ui dividing header">资源</h2>
 
     <p>
-      This is a list of some useful resources about Fomantic-UI. If you find any resources or want
-      to add something you created feel free to create a pull request <a href="https://github.com/fomantic/Fomantic-UI-Docs" target="_blank">here</a>!
+      这里是一些关于 Fomantic-UI 的有用的资源。如果你想添加一些资源，请在
+      <a href="https://github.com/fomantic/Fomantic-UI-Docs" target="_blank">这里</a> 发起 pull request。
     </p>
 
     <ul class="ui list">
