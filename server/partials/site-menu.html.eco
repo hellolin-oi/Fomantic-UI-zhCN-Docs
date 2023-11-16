@@ -11,16 +11,16 @@
   <a class="ui logo icon image" href="/">
     <img src="/images/logo.png">
   </a>
-  <a href="/"><b>UI Docs</b></a>
+  <a href="/"><b>UI 文档</b></a>
 </div>
 <a class="item" href="/introduction/getting-started.html">
-  <b>Getting Started</b>
+  <b>立即上手</b>
 </a>
 <a class="item" href="/introduction/new.html">
-  <b>New in 2.9</b>
+  <b>2.9 中的新增功能</b>
 </a>
 <div class="item">
-  <div class="<%= if @document.elementType is 'introduction' then 'active ' %>header">Introduction</div>
+  <div class="<%= if @document.elementType is 'introduction' then 'active ' %>header">介绍</div>
   <div class="menu">
     <% for element in introduction: %>
       <a class="<%= if element.id is @document.id then 'active ' %>item" href="<%= element.url %>">
@@ -30,7 +30,7 @@
   </div>
 </div>
 <div class="item">
-  <div class="<%= if @document.elementType is 'usage' then 'active ' %>header">Usage</div>
+  <div class="<%= if @document.elementType is 'usage' then 'active ' %>header">使用</div>
   <div class="menu">
     <% for element in usage: %>
       <a class="<%= if element.id is @document.id then 'active ' %>item" href="<%= element.url %>">
@@ -40,7 +40,7 @@
   </div>
 </div>
 <div class="item">
-  <div class="<%= if @document.elementType is 'global' then 'active ' %> header">Globals</div>
+  <div class="<%= if @document.elementType is 'global' then 'active ' %> header">全局</div>
   <div class="menu">
     <% for element in uiGlobals: %>
       <a class="<%= if element.id is @document.id then 'active ' %>item" href="<%= element.url %>">
@@ -53,7 +53,7 @@
   </div>
 </div>
 <div class="item">
-  <div class="<%= if @document.elementType is 'element' then 'active ' %> header">Elements</div>
+  <div class="<%= if @document.elementType is 'element' then 'active ' %> header">元素</div>
   <div class="menu">
     <% for element in uiElements: %>
       <a class="<%= if element.id is @document.id then 'active ' %>item" href="<%= element.url %>">
@@ -66,7 +66,7 @@
   </div>
 </div>
 <div class="item">
-  <div class="<%= if @document.elementType is 'collection' then 'active ' %> header">Collections</div>
+  <div class="<%= if @document.elementType is 'collection' then 'active ' %> header">集合</div>
   <div class="menu">
     <% for element in uiCollections: %>
       <a class="<%= if element.id is @document.id then 'active ' %>item" href="<%= element.url %>">
@@ -79,7 +79,7 @@
   </div>
 </div>
 <div class="item">
-  <div class="<%= if @document.elementType is 'view' then 'active ' %> header">Views</div>
+  <div class="<%= if @document.elementType is 'view' then 'active ' %> header">视图</div>
   <div class="menu">
     <% for element in uiViews: %>
       <a class="<%= if element.id is @document.id then 'active ' %>item" href="<%= element.url %>">
@@ -92,7 +92,7 @@
   </div>
 </div>
 <div class="item">
-  <div class="<%= if @document.elementType is 'module' then 'active ' %> header">Modules</div>
+  <div class="<%= if @document.elementType is 'module' then 'active ' %> header">模块</div>
   <div class="menu">
     <% for element in uiModules: %>
       <a class="<%= if element.id is @document.id then 'active ' %>item" href="<%= element.url %>">
@@ -105,7 +105,7 @@
   </div>
 </div>
 <div class="item">
-  <div class="<%= if @document.elementType is 'behavior' then 'active ' %> header">Behaviors</div>
+  <div class="<%= if @document.elementType is 'behavior' then 'active ' %> header">行为</div>
   <div class="menu">
     <% for element in uiBehavior: %>
       <a class="<%= if element.id is @document.id then 'active ' %>item" href="<%= element.url %>">
