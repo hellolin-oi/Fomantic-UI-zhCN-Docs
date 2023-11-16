@@ -4,8 +4,8 @@ css         : 'started'
 standalone  : true
 order       : 4
 
-title       : 'Recipes'
-description : 'Additional integration paths for advanced users'
+title       : '食谱'
+description : '为进阶用户提供的其他集成方法'
 type        : 'Introduction'
 ---
 <%- @partial('header') %>
@@ -13,11 +13,11 @@ type        : 'Introduction'
 <div class="main ui intro container">
 
 
-  <h2 class="ui dividing header">Custom Pipelines</h2>
+  <h2 class="ui dividing header">自定义管道</h2>
   <div class="no example">
-    <h4>Importing Gulp Tasks</h4>
-    <p>You don't have to use <a href="/introduction/build-tools.html">our gulp pipeline</a>, just import the task into your own <code>gulpfile</code></p>
-    <p>You can <a href="https://github.com/Semantic-Org/Example-External-Gulpfile" target="_blank">fork this example project</a> to see an example of how to import Fomantic UI tasks into your project.</p>
+    <h4>导入 Gulp 任务</h4>
+    <p>无需使用 <a href="/introduction/build-tools.html">我们的 gulp 管道</a>，只需要将任务导入到你自己的 <code>gulpfile</code> 中即可。</p>
+    <p>可以 <a href="https://github.com/Semantic-Org/Example-External-Gulpfile" target="_blank">fork 这个示例项目</a> 来查看如何将任务导入到你的项目中。</p>
     <div class="ignored code" data-type="javascript" data-title="Custom gulpfile.js">
     var
       gulp  = require('gulp'),
@@ -30,11 +30,11 @@ type        : 'Introduction'
     </div>
   </div>
 
-  <h2 class="ui dividing header">Semantic.json Settings</h2>
+  <h2 class="ui dividing header">Semantic.json 设置</h2>
 
   <div class="no example">
-    <h4>Auto-Install</h4>
-    <p>Running <code>npx gulp install</code> normally will launch an interactive installer, to allow this installer to run without user interaction and use all settings from your semantic.json instead, include a special flag <code>autoInstall: true</code>in your <code>semantic.json</code> file.</p>
+    <h4>自动安装</h4>
+    <p>默认情况下，运行 <code>npx gulp install</code> 会启动一个交互式安装程序，要在自动化部署中使用，在 <code>semantic.json</code> 使用 <code>autoInstall: true</code>。</p>
     <div class="ignored code" data-type="json" data-title="semantic.json">
      {
       // install will now automatically build your project files without user interaction
@@ -64,9 +64,9 @@ type        : 'Introduction'
   </div>
 
     <div class="no example">
-      <h4>Right-to-left (RTL) Languages</h4>
-      <p>Including the flag <code>rtl:true</code> will build Fomantic UI using <a href="https://github.com/MohammadYounes/rtlcss" target="_blank">RTLCSS</a>.</p>
-      <p>To build both LTR and RTL versions use the flag <code>rtl: 'both'</code></p>
+      <h4>从右至左 (RTL) 语言</h4>
+      <p>使用 <code>rtl: true</code> 将在构建时使用 <a href="https://github.com/MohammadYounes/rtlcss" target="_blank">RTLCSS</a>。</p>
+      <p>使用 <code>rtl: 'both'</code> 可以同时构建 LTR 和 RTL 版本。</p>
       <div class="ignored code" data-type="json" data-title="semantic.json">
        {
         // builds both LTR and RTL version
@@ -94,40 +94,40 @@ type        : 'Introduction'
       </div>
   </div>
 
-  <h2 class="ui dividing header">Prototyping with Fomantic UI</h2>
+  <h2 class="ui dividing header">使用 Fomantic UI 进行原型开发</h2>
   <div class="no example">
-    <h4>Sketch Files</h4>
-    <p>If you are looking to prototype layouts using <a href="https://bohemiancoding.com/sketch/" target="_blank">Sketch</a> with Fomantic UI check out <a href="https://github.com/guacamoly/semantic-ui-kit-for-sketch" target="_blank">Semantic UI Sketch Files</a></p>
+    <h4>Sketch 文件</h4>
+    <p>要获取 <a href="https://www.sketch.com" target="_blank">Sketch</a> 文件，请参阅 <a href="https://github.com/guacamoly/semantic-ui-kit-for-sketch" target="_blank">Semantic UI Sketch Files</a>。</p>
     <img class="ui bordered rounded fluid image" src="https://github.com/guacamoly/semantic-ui-kit-for-sketch/raw/master/snapshot.jpg?raw=true">
   </div>
 
-  <h2 class="ui dividing header">Single Components</h2>
+  <h2 class="ui dividing header">单一组件</h2>
 
   <div class="no example">
-    <h4>CDN Releases</h4>
-    <p>Individual components are available on <a href="https://www.jsdelivr.com/package/npm/fomantic-ui">jsDelivr</a></p>
+    <h4>CDN</h4>
+    <p><a href="https://www.jsdelivr.com/package/npm/fomantic-ui">jsDelivr</a> 上提供了各个组件。</p>
     <div class="code">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@<%= @getVersion() %>/dist/semantic.min.css">
     </div>
     <div class="code">
     <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@<%= @getVersion() %>/dist/semantic.min.js"></script>
     </div>
-    <a class="ui button" href="https://www.jsdelivr.com/package/npm/fomantic-ui" target="_blank">View All CDN Files</a>
+    <a class="ui button" href="https://www.jsdelivr.com/package/npm/fomantic-ui" target="_blank">查看所有 CDN 文件</a>
   </div>
 
   <div class="no example">
-    <h4>Tagged Releases</h4>
-    <p>Component repos are released on NPM and as tagged releases on GitHub.</p>
-    <p>Check the list of repos available under <a href="https://github.com/fomantic?utf8=%E2%9C%93&query=ui-">fomantic</a> on GitHub</p>
-    <p>Each component's release notes will automatically update with the relevant notes for that component from the main release.</p>
+    <h4>带标签的发行版本</h4>
+    <p>组件仓库在 NPM 上发布，并在 GitHub 上作为带标签版本发布。</p>
+    <p>查看 GitHub 上 <a href="https://github.com/fomantic?utf8=%E2%9C%93&query=ui-">fomantic</a> 下可用的仓库列表。</p>
+    <p>每个组件的发行说明将自动更新为主版本中该组件的相关说明。</p>
     <div class="ignored code" data-type="bash">
      npm install semantic-ui-component
     </div>
   </div>
 
   <div class="no example">
-    <h4>Server-Side Rendering</h4>
-    <p>Individual components repos include an <a href="https://github.com/fomantic/Fomantic-UI/blob/master/tasks/admin/components/create.js" target="_blank">auto-generated</a> <code>index.js</code> file to simplify <a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/" target="_blank"><code>require</code></a> use with NodeJS, for server-side rendering or with <a href="https://browserify.org/" target="_blank">Browserify</a>.</p>
+    <h4>服务端渲染</h4>
+    <p>单个组件仓库包括一个 <a href="https://github.com/fomantic/Fomantic-UI/blob/master/tasks/admin/components/create.js" target="_blank">自动生成的</a> <code>index.js</code>，以简化 NodeJS 的 <a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/" target="_blank"><code>require</code></a> 使用，用于服务端渲染或者 <a href="https://browserify.org/" target="_blank">Browserify</a>。</p>
     <div class="ignored code" data-type="bash">
      npm install semantic-ui-dropdown
     </div>
@@ -139,17 +139,17 @@ type        : 'Introduction'
     </div>
   </div>
 
-  <h2 class="ui dividing header">Importing LESS</h2>
+  <h2 class="ui dividing header">引入 LESS</h2>
 
   <div class="no example">
-    <h4>LESS Only Distribution</h4>
-    <p>A special distribution <a href="https://github.com/fomantic/Fomantic-UI-LESS">Fomantic-UI-LESS</a> is available for projects that use custom integrations and do not require our build tools.</p>
-    <div class="ui ignored warning message">LESS source files are not prefixed, and will need to be run through <a href="https://github.com/postcss/autoprefixer">autoprefixer</a> before being used</div>
+    <h4>仅 LESS 的分发</h4>
+    <p>一个特殊的分发 <a href="https://github.com/fomantic/Fomantic-UI-LESS">Fomantic-UI-LESS</a> 可用于使用自定义集成且不需要构建工具的项目。</p>
+    <div class="ui ignored warning message">LESS 源文件没有前缀，在使用之前需要运行 <a href="https://github.com/postcss/autoprefixer">autoprefixer</a>。</div>
   </div>
 
   <div class="no example">
-    <h4>Importing Semantic</h4>
-    <p><code>semantic.less</code> is available in all releases as an entry point for importing multiple components from other LESS files.</p>
+    <h4>引入 Semantic</h4>
+    <p><code>semantic.less</code> 在所有版本中都可用作从其他 LESS 文件导入多个组件的入口点。</p>
     <div class="ignored code"  data-type="less" data-title="Importing LESS">
       /* Import all components */
       @import 'src/semantic';
@@ -157,8 +157,8 @@ type        : 'Introduction'
   </div>
 
   <div class="no example">
-    <h4>Importing Components</h4>
-    <p>If you need to import individual components, you should scope each import to avoid inheritance issues.</p>
+    <h4>引入组件</h4>
+    <p>如果需要导入单个组件，则应限定每个导入的范围以避免继承问题。</p>
     <div class="ignored code" data-type="less" data-title="Importing LESS Components">
       /* Import specific components with scope */
       & { @import 'src/definitions/elements/button'; }
@@ -166,18 +166,19 @@ type        : 'Introduction'
     </div>
   </div>
 
-  <h2 class="ui dividing header">Running Docs Locally</h2>
+  <h2 class="ui dividing header">本地运行文档</h2>
 
   <div class="no example">
-    <h4>Download Docs Server</h4>
-    <p>The easiest way to get <a href="https://github.com/fomantic/Fomantic-UI-Docs/">Fomantic UI docs</a> is to clone the repo</p>
+    <h4>下载文档服务器</h4>
+    <p>克隆 <a href="https://github.com/fomantic/Fomantic-UI-Docs/">Fomantic UI Docs</a> 或 <a href="https://github.com/hellolin-oi/Fomantic-UI-zhCN-Docs">Fomantic UI 中文文档</a> 库到本地：</p>
     <div class="code" data-type="bash">
       git clone https://github.com/fomantic/Fomantic-UI-Docs.git
+      # git clone https://github.com/hellolin-oi/Fomantic-UI-zhCN-Docs.git
     </div>
   </div>
   <div class="no example">
-    <h4>Install Dependencies</h4>
-    <p>Fomantic UI's documentation is written in <a href="https://docpad.bevry.me/" target="_blank">Docpad</a> an amazing static site generator built in NodeJS</p>
+    <h4>安装依赖</h4>
+    <p>Fomantic UI 的文档使用 <a href="https://docpad.bevry.me/" target="_blank">Docpad</a> 编写。</p>
     <div class="code" data-type="bash">
       cd docs/
       npm install
@@ -185,62 +186,61 @@ type        : 'Introduction'
   </div>
 
   <div class="no example">
-    <h4>A Note About Paths</h4>
-    <p>Fomantic UI's <a href="introduction/build-tools.html">build tools</a> include two special commands <code>build-docs</code> and <code>serve-docs</code> for use with the documentation. These will pass changes from the ui/ folder directly to a live docs server.</p>
-    <p>These gulp tasks expect two sibling folders</p>
+    <h4>关于路径的注意事项</h4>
+    <p>Fomantic UI 的 <a href="introduction/build-tools.html">构建工具</a> 包含两个用于文档的特殊的指令 <code>build-docs</code> 和 <code>serve-docs</code>，这些会把更改直接从 <code>ui/</code> 文件夹传递到服务器。</p>
+    <p>这些 Gulp 任务需要两个同级文件夹：</p>
     <div class="ui list">
       <div class="item">
         <i class="folder icon"></i>
         <div class="content">
           <div class="header">ui/</div>
-          <div class="description">Files from fomantic ui repo</div>
+          <div class="description">Fomantic UI 仓库内容</div>
         </div>
       </div>
       <div class="item">
         <i class="folder icon"></i>
         <div class="content">
           <div class="header">docs/</div>
-          <div class="description">Files from docs repo</div>
+          <div class="description">Fomantic UI Docs 仓库内容</div>
         </div>
       </div>
     </div>
   </div>
   <div class="no example">
-    <h4>Build UI</h4>
-    <p>The first time you run docs you will need to build the whole project once</p>
+    <h4>构建 UI</h4>
+    <p>第一次运行时，你需要构建 UI。</p>
     <div class="code" data-type="bash">
       cd ui/
       npx gulp build-docs
     </div>
   </div>
   <div class="no example">
-    <h4>Run Docpad Server</h4>
-    <p>Docpad</p>
+    <h4>运行 Docpad 服务器</h4>
     <div class="code" data-type="bash">
       cd docs/
-      # initial build may take several minutes
+      # 初始化需要几分钟
       docpad run
     </div>
   </div>
   <div class="no example">
-    <h4>Serve UI to Docs</h4>
-    <p>You can then continue to make modifications to UI and "serve" these files to a live docs instance to see your changes immediately</p>
+    <h4>为文档服务器提供 UI</h4>
+    <p>你可以对 UI 进行更改，然后立即在服务器上查看效果。</p>
     <div class="code" data-type="bash">
       cd ui/
       gulp serve-docs
     </div>
   </div>
   <div class="no example">
-    <h4>Hosted Docs</h4>
-    <p>If you are managing your documentation you can automatically deploy to GitHub Pages using a built in <a href="https://github.com/docpad/docpad-plugin-ghpages">docpad gh-pages</a> plugin</p>
-    <p>For more information about GitHub Pages, check out the <a href="https://pages.github.com/" target="_blank">docs on GitHub</a></p>
+    <h4>托管文档</h4>
+    <p>可以使用内置的 <a href="https://github.com/docpad/docpad-plugin-ghpages">docpad gh-pages</a> 插件将文档自动部署到 GitHub Pages。</p>
+    <p>有关更多信息，请参阅 <a href="https://pages.github.com/" target="_blank">GitHub 上的文档</a>。</p>
     <div class="code" data-type="bash">
       docpad deploy-ghpages --env static
     </div>
   </div>
   <div class="no example">
-    <h4>Custom Docs Paths</h4>
-    <p>Doc task paths are specified in a file <a href="https://github.com/fomantic/Fomantic-UI/blob/master/tasks/config/docs.js"><code>tasks/config/docs.js</code></a> and can be adjusted to use any folder set-up necessary for your project.</p>
+    <h4>自定义文档路径</h4>
+    <p>路径在 <a href="https://github.com/fomantic/Fomantic-UI/blob/master/tasks/config/docs.js"><code>tasks/config/docs.js</code></a> 中指定。</p>
   </div>
 
 </div>
